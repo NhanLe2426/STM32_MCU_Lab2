@@ -11,7 +11,6 @@
 /* Variables */
 int timer1_flag = 0;
 int timer1_counter = 0;
-int timer1_mul = 0;
 
 /* Functions */
 
@@ -21,8 +20,7 @@ int timer1_mul = 0;
  * @retval 	None
  */
 void timer1_set(int ms) {
-	timer1_mul = ms / TIMER_CYCLE_1;
-	timer1_counter = timer1_mul;
+	timer1_counter = ms;
 	timer1_flag = 0;
 }
 
