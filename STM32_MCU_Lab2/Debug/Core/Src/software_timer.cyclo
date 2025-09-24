@@ -1,2 +1,3 @@
-../Core/Src/software_timer.c:23:6:timer1_set	1
-../Core/Src/software_timer.c:34:6:timerRun	3
+../Core/Src/software_timer.c:25:6:timer1_set	1
+../Core/Src/software_timer.c:30:6:timer2_set	1
+../Core/Src/software_timer.c:40:6:timerRun	5

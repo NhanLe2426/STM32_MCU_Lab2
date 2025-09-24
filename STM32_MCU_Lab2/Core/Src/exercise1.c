@@ -26,24 +26,24 @@ int currentState = LED_7SEG_1;
 void display(void) {
 	switch (currentState) {
 	case LED_7SEG_1:
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
+		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
 
 		display7SEG(1);
 		currentState = LED_7SEG_2;
 		break;
 
 	case LED_7SEG_2:
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
+		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
 
 		display7SEG(2);
 		currentState = LED_7SEG_1;
 		break;
 
 	default:
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
 		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
 
 		break;
 	}

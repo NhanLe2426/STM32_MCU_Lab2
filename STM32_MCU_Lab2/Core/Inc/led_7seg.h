@@ -15,5 +15,6 @@
 
 /* Functions */
 extern void display7SEG(int num);
+extern void clear7SEG(void);
 
 #endif /* INC_LED_7SEG_H_ */

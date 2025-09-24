@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
 #include "led_7seg.h"
+#include "exercise1.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -210,14 +211,14 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, EN1_Pin|EN2_Pin|LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_Pin|EN0_Pin|EN1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED7_a_Pin|LED7_b_Pin|LED7_c_Pin|LED7_d_Pin
                           |LED7_e_Pin|LED7_f_Pin|LED7_g_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : EN1_Pin EN2_Pin LED_Pin */
-  GPIO_InitStruct.Pin = EN1_Pin|EN2_Pin|LED_Pin;
+  /*Configure GPIO pins : LED_Pin EN0_Pin EN1_Pin */
+  GPIO_InitStruct.Pin = LED_Pin|EN0_Pin|EN1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -239,6 +240,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void init_system(void) {
 	HAL_TIM_Base_Start_IT(&htim2);
+	clear7SEG();
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All, SET);
 	timer1_set(100);
 	timer2_set(50);
 }

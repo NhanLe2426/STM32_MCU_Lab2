@@ -47,7 +47,7 @@ void timerRun(void) {
 
 	if (timer2_counter > 0) {
 		timer2_counter--;
-		if (timer1_counter <= 0) {
+		if (timer2_counter <= 0) {
 			timer2_flag = 1;
 		}
 	}

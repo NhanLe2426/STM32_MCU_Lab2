@@ -9,6 +9,12 @@
 #include "led_7seg.h"
 
 /* Functions */
+
+/**
+ * @brief	Display number on 7-segment LED
+ * @param	num : number displayed on LED
+ * @retval	None
+ */
 void display7SEG(int num) {
 	switch (num) {
 	case 0:
@@ -124,4 +130,13 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_All, SET);
 		break;
 	}
+}
+
+/**
+ * @brief	Clear number on 7-segment LED
+ * @param	None
+ * @retval	None
+ */
+void clear7SEG(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_All, SET);
 }
