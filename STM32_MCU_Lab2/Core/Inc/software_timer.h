@@ -11,6 +11,9 @@
 /* Includes */
 #include "main.h"
 
+/* Define */
+#define TIMER_CYCLE		1
+
 /* Variables */
 extern int timer1_flag;
 

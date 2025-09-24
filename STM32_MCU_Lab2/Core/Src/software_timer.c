@@ -20,7 +20,7 @@ int timer1_counter = 0;
  * @retval 	None
  */
 void timer1_set(int ms) {
-	timer1_counter = ms;
+	timer1_counter = ms / TIMER_CYCLE;
 	timer1_flag = 0;
 }
 
