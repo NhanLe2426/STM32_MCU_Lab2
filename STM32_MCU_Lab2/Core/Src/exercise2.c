@@ -33,6 +33,8 @@ void display4LEDs(void) {
 	case LED_7SEG_1:
 		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
 		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
+		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
+		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
 
 		display7SEG(1);
 		currentState = LED_7SEG_2;
@@ -41,6 +43,8 @@ void display4LEDs(void) {
 	case LED_7SEG_2:
 		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
 		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
+		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
+		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
 
 		display7SEG(2);
 		currentState = LED_7SEG_3;
@@ -49,6 +53,8 @@ void display4LEDs(void) {
 	case LED_7SEG_3:
 		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
 		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
+		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
 
 		display7SEG(3);
 		currentState = LED_7SEG_4;
@@ -57,6 +63,8 @@ void display4LEDs(void) {
 	case LED_7SEG_4:
 		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
 		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
+		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
 
 		display7SEG(0);
 		currentState = LED_7SEG_1;

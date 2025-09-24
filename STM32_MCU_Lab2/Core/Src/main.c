@@ -22,7 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
-#include "led_7seg.h";
+#include "led_7seg.h"
 #include "exercise2.h"
 /* USER CODE END Includes */
 
@@ -100,7 +100,7 @@ int main(void)
   {
 	  if (timer1_flag == 1) {
 		  timer1_set(1000);
-		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 	  }
 
 	  if (timer2_flag == 1) {
