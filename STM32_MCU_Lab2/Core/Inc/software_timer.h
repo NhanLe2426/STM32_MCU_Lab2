@@ -12,13 +12,19 @@
 #include "main.h"
 
 /* Define */
-#define TIMER_CYCLE		1
+#define TIMER_CYCLE_1	10
+#define TIMER_CYCLE_2	10
+#define TIMER_CYCLE_3	10
 
 /* Variables */
 extern int timer1_flag;
+extern int timer2_flag;
+extern int timer3_flag;
 
 /* Functions */
-extern void timer1_set(int ms);
+extern void timer1_set(int duration);
+extern void timer2_set(int duration);
+extern void timer3_set(int duration);
 void timerRun(void);
 
 #endif /* INC_SOFTWARE_TIMER_H_ */
