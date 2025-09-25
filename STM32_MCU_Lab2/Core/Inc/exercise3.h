@@ -19,7 +19,7 @@
 #define LED_7SEG_4	4
 
 /* Variables */
-// extern int index_led;
+extern int index_led;
 extern int currentState;
 
 /* Functions */
