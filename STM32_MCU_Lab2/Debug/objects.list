@@ -1,4 +1,4 @@
-"./Core/Src/exercise3.o"
+"./Core/Src/exercise4.o"
 "./Core/Src/led_7seg.o"
 "./Core/Src/main.o"
 "./Core/Src/software_timer.o"
