@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
 #include "led_7seg.h"
-#include "exercise2.h"
+#include "exercise3.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,7 +105,8 @@ int main(void)
 
 	  if (timer2_flag == 1) {
 		  timer2_set(500);
-		  display4LEDs();
+		  if (index_led > 3) index_led = 0;
+		  update7SEG(index_led++);
 	  }
 
 	  if (timer3_flag == 1) {
