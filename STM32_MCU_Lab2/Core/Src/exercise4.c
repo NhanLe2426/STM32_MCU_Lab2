@@ -1,18 +1,18 @@
 /*
- * exercise3.c
+ * exercise4.c
  *
- *  Created on: Sep 24, 2025
+ *  Created on: Sep 25, 2025
  *      Author: ASUS
  */
 
 /* Includes */
-#include "exercise3.h"
+#include "exercise4.h"
 #include "led_7seg.h"
 
 /* Variables */
 const int MAX_LED = 4;
 int index_led = 0;
-int led_buffer[4] = { 9, 6, 3, 0 };
+int led_buffer[4] = { 2, 4, 6, 8 };
 
 /* Functions */
 

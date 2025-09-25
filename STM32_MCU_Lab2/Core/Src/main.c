@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
 #include "led_7seg.h"
-#include "exercise3.h"
+#include "exercise4.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,9 +102,15 @@ int main(void)
 		  timer1_set(1000);
 		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 	  }
-
+	  /**
+	   * In order to set the frequency of 4 7-SEG LEDs to 1Hz,
+	   * the update7SEG() function must be invoked every 25ms.
+	   * With the scanning frequency of 1Hz (f = 1Hz), the scanning cycle will be 1s (T = 1s).
+	   * We have 4 LEDs in total, so the invoke period of update7SEG() function will be:
+	   * 					invoke period = 1 / 4 = 0.25s = 250ms
+	   */
 	  if (timer2_flag == 1) {
-		  timer2_set(500);
+		  timer2_set(250);
 		  if (index_led > 3) index_led = 0;
 		  update7SEG(index_led++);
 	  }
@@ -252,7 +258,7 @@ void init_system(void) {
 	clear7SEG();
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All, SET);
 	timer1_set(1000);
-	timer2_set(500);
+	timer2_set(250);
 	timer3_set(1000);
 }
 
