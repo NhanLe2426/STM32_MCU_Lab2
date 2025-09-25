@@ -1,3 +1,2 @@
-../Core/Src/exercise3.c:26:6:displayDot	8	static
-../Core/Src/exercise3.c:35:6:update7SEG	16	static
-../Core/Src/exercise3.c:87:6:display4LEDs	8	static
+../Core/Src/exercise3.c:24:6:displayDot	8	static
+../Core/Src/exercise3.c:33:6:update7SEG	16	static

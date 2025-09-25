@@ -12,9 +12,7 @@
 /* Variables */
 const int MAX_LED = 4;
 int index_led = 0;
-int led_buffer[4] = { 1, 2, 3, 4 };
-
-int currentState = LED_7SEG_1;
+int led_buffer[4] = { 9, 6, 3, 0 };
 
 /* Functions */
 
@@ -75,63 +73,6 @@ void update7SEG(int index) {
 		break;
 
 	default:
-		break;
-	}
-}
-
-/**
- * @brief	Display 4 7-segment LEDs (switching time for each LED is half of second)
- * @param	None
- * @retval	None
- */
-void display4LEDs(void) {
-	switch (currentState) {
-	case LED_7SEG_1:
-		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
-		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
-
-		display7SEG(1);
-		currentState = LED_7SEG_2;
-		break;
-
-	case LED_7SEG_2:
-		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
-		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
-
-		display7SEG(2);
-		currentState = LED_7SEG_3;
-		break;
-
-	case LED_7SEG_3:
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
-		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
-		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
-
-		display7SEG(3);
-		currentState = LED_7SEG_4;
-		break;
-
-	case LED_7SEG_4:
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
-		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
-		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
-
-		display7SEG(0);
-		currentState = LED_7SEG_1;
-		break;
-
-	default:
-		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
-		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
-
 		break;
 	}
 }
