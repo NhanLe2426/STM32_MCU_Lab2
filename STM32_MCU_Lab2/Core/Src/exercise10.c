@@ -1,12 +1,12 @@
 /*
- * exercise9.c
+ * exercise10.c
  *
  *  Created on: Sep 26, 2025
  *      Author: ASUS
  */
 
 /* Includes */
-#include "exercise9.h"
+#include "exercise10.h"
 
 /* Variables */
 const int MAX_LED_MATRIX = 8;
@@ -21,6 +21,14 @@ uint8_t matrix_buffer[8] = {
 		0x66,	// 0-x-x-0-0-x-x-0
 		0x66	// 0-x-x-0-0-x-x-0
 };
+
+uint8_t window_buffer[16] = {
+		0x18, 0x3C, 0x66, 0x66, 0x7E, 0x7E, 0x66, 0x66,		// letter A
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00		// space
+};
+
+int offset_L = 0;
+int offset_R = 8;
 
 /* Functions */
 
@@ -123,4 +131,41 @@ void clearLEDMatrix(void) {
 	HAL_GPIO_WritePin(ROW5_GPIO_Port, ROW5_Pin, SET);
 	HAL_GPIO_WritePin(ROW6_GPIO_Port, ROW6_Pin, SET);
 	HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, SET);
+}
+
+/**
+ * @brief	Shift the character to the left
+ * @param	None
+ * @retval	None
+ */
+void shiftLeft(void) {
+	// Copy the columns from window_buffer to matrix_buffer
+	matrix_buffer[0] = window_buffer[offset + 0];
+	matrix_buffer[1] = window_buffer[offset + 1];
+	matrix_buffer[2] = window_buffer[offset + 2];
+	matrix_buffer[3] = window_buffer[offset + 3];
+	matrix_buffer[4] = window_buffer[offset + 4];
+	matrix_buffer[5] = window_buffer[offset + 5];
+	matrix_buffer[6] = window_buffer[offset + 6];
+	matrix_buffer[7] = window_buffer[offset + 7];
+
+	// Increase the offset for shifting left
+	offset_L++;
+	if (offset_L > 8) offset_L = 0;			// reset the offset
+}
+
+void shiftRight(void) {
+	// Copy the columns from window_buffer to matrix_buffer
+	matrix_buffer[0] = window_buffer[offset + 0];
+	matrix_buffer[1] = window_buffer[offset + 1];
+	matrix_buffer[2] = window_buffer[offset + 2];
+	matrix_buffer[3] = window_buffer[offset + 3];
+	matrix_buffer[4] = window_buffer[offset + 4];
+	matrix_buffer[5] = window_buffer[offset + 5];
+	matrix_buffer[6] = window_buffer[offset + 6];
+	matrix_buffer[7] = window_buffer[offset + 7];
+
+	// Decrease the offset for shifting right
+	offset_R--;
+	if (offset_R < 0) offset_R = 0;			// reset the offset
 }

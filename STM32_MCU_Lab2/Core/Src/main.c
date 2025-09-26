@@ -24,7 +24,7 @@
 #include "software_timer.h"
 #include "led_7seg.h"
 #include "digital_clock.h"
-#include "exercise9.h"
+#include "exercise10.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,6 +102,7 @@ int main(void)
 	  if (timer1_flag == 1) {
 		  timer1_set(1000);
 		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
+		  displayDot();
 	  }
 
 	  if (timer2_flag == 1) {
@@ -111,20 +112,20 @@ int main(void)
 	  }
 
 	  if (timer3_flag == 1) {
-		  timer3_set(1000);
-		  displayDot();
-	  }
-
-	  if (timer4_flag == 1) {
-		  timer4_set(250);
+		  timer3_set(250);
 		  if (index_led > 3) index_led = 0;
 		  update7SEG(index_led++);
 	  }
 
-	  if (timer5_flag == 1) {
-		  timer5_set(500);
+	  if (timer4_flag == 1) {
+		  timer4_set(10);
 		  if (index_led_matrix > 7) index_led_matrix = 0;
 		  updateLEDMatrix(index_led_matrix++);
+	  }
+
+	  if (timer5_flag == 1) {
+		  timer5_set(200);
+		  shiftLeft();
 	  }
     /* USER CODE END WHILE */
 
@@ -276,11 +277,11 @@ void init_system(void) {
 	HAL_TIM_Base_Start_IT(&htim2);
 	clear7SEG();
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All, SET);
-	timer1_set(1000);	// timer for LED PA5
+	timer1_set(1000);	// timer for LED PA5 and 2 dots (2 LEDs)
 	timer2_set(1000);	// timer for digital clock simulation
-	timer3_set(1000);	// timer for dot (2 LEDs)
-	timer4_set(250);	// timer for displaying 4 7-segments LEDs
-	timer5_set(500);	// timer for displaying LED matrix
+	timer3_set(250);	// timer for displaying 4 7-segments LEDs
+	timer4_set(10);		// timer for displaying LED matrix
+	timer5_set(200);	// timer for displaying animation of LED matrix (shiftLeft or shiftRight)
 	hour = 15;
 	minute = 58;
 	second = 50;
