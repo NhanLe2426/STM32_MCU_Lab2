@@ -1,18 +1,18 @@
 /*
- * exercise5.c
+ * exercise678.c
  *
  *  Created on: Sep 25, 2025
  *      Author: ASUS
  */
 
 /* Includes */
-#include "exercise5.h"
+#include "exercise678.h"
 #include "led_7seg.h"
 
 /* Variables */
 const int MAX_LED = 4;
 int index_led = 0;
-int led_buffer[4] = { 1, 5, 5, 8 };
+int led_buffer[4] = {};
 
 int hour;
 int minute;
@@ -93,4 +93,24 @@ void updateClockBuffer(void) {
 	led_buffer[1] = hour - (temp1 * 10);
 	led_buffer[2] = temp2;
 	led_buffer[3] = minute - (temp2 * 10);
+}
+
+/**
+ * @brief	Simulate the clock behavior
+ * @param	hour, minute, second : the initial time
+ * @retval	None
+ */
+void clockRun(int hour, int minute, int second) {
+	second++;
+	if (second >= 60) {
+		second = 0;
+		minute++;
+	}
+	if (minute >= 60) {
+		minute = 0;
+		hour++;
+	}
+	if (hour >= 24) {
+		hour = 0;
+	}
 }

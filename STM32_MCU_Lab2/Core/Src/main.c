@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
 #include "led_7seg.h"
-#include "exercise5.h"
+#include "exercise678.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,18 +105,7 @@ int main(void)
 
 	  if (timer2_flag == 1) {
 		  timer2_set(1000);
-		  second++;
-		  if (second >= 60) {
-			  second = 0;
-			  minute++;
-		  }
-		  if (minute >= 60) {
-			  minute = 0;
-			  hour++;
-		  }
-		  if (hour >= 24) {
-			  hour = 0;
-		  }
+		  clockRun(hour, minute, second);
 		  updateClockBuffer();
 	  }
 

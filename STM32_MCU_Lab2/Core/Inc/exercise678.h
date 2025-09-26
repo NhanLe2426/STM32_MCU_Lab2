@@ -1,12 +1,12 @@
 /*
- * exercise5.h
+ * exercise678.h
  *
  *  Created on: Sep 25, 2025
  *      Author: ASUS
  */
 
-#ifndef INC_EXERCISE5_H_
-#define INC_EXERCISE5_H_
+#ifndef INC_EXERCISE678_H_
+#define INC_EXERCISE678_H_
 
 /* Includes */
 #include "main.h"
@@ -22,5 +22,6 @@ extern int second;
 extern void displayDot(void);
 extern void update7SEG(int index);
 extern void updateClockBuffer(void);
+extern void clockRun(int hour, int minute, int second);
 
-#endif /* INC_EXERCISE5_H_ */
+#endif /* INC_EXERCISE678_H_ */
