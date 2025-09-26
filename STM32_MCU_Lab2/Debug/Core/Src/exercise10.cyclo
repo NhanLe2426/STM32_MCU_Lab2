@@ -1,0 +1,4 @@
+../Core/Src/exercise10.c:46:6:updateLEDMatrix	9
+../Core/Src/exercise10.c:131:6:clearLEDMatrix	1
+../Core/Src/exercise10.c:147:6:shiftLeft	2
+../Core/Src/exercise10.c:219:6:shiftRight	2

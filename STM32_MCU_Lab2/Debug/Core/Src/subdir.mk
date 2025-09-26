@@ -6,7 +6,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/digital_clock.c \
-../Core/Src/exercise9.c \
+../Core/Src/exercise10.c \
 ../Core/Src/led_7seg.c \
 ../Core/Src/main.c \
 ../Core/Src/software_timer.c \
@@ -18,7 +18,7 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/digital_clock.o \
-./Core/Src/exercise9.o \
+./Core/Src/exercise10.o \
 ./Core/Src/led_7seg.o \
 ./Core/Src/main.o \
 ./Core/Src/software_timer.o \
@@ -30,7 +30,7 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/digital_clock.d \
-./Core/Src/exercise9.d \
+./Core/Src/exercise10.d \
 ./Core/Src/led_7seg.d \
 ./Core/Src/main.d \
 ./Core/Src/software_timer.d \
@@ -48,7 +48,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/digital_clock.cyclo ./Core/Src/digital_clock.d ./Core/Src/digital_clock.o ./Core/Src/digital_clock.su ./Core/Src/exercise9.cyclo ./Core/Src/exercise9.d ./Core/Src/exercise9.o ./Core/Src/exercise9.su ./Core/Src/led_7seg.cyclo ./Core/Src/led_7seg.d ./Core/Src/led_7seg.o ./Core/Src/led_7seg.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/software_timer.cyclo ./Core/Src/software_timer.d ./Core/Src/software_timer.o ./Core/Src/software_timer.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su
+	-$(RM) ./Core/Src/digital_clock.cyclo ./Core/Src/digital_clock.d ./Core/Src/digital_clock.o ./Core/Src/digital_clock.su ./Core/Src/exercise10.cyclo ./Core/Src/exercise10.d ./Core/Src/exercise10.o ./Core/Src/exercise10.su ./Core/Src/led_7seg.cyclo ./Core/Src/led_7seg.d ./Core/Src/led_7seg.o ./Core/Src/led_7seg.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/software_timer.cyclo ./Core/Src/software_timer.d ./Core/Src/software_timer.o ./Core/Src/software_timer.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su
 
 .PHONY: clean-Core-2f-Src
 

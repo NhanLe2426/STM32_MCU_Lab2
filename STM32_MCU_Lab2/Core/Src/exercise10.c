@@ -22,13 +22,19 @@ uint8_t matrix_buffer[8] = {
 		0x66	// 0-x-x-0-0-x-x-0
 };
 
-uint8_t window_buffer[16] = {
-		0x18, 0x3C, 0x66, 0x66, 0x7E, 0x7E, 0x66, 0x66,		// letter A
-		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00		// space
+uint8_t window_buffer[8][16] = {
+		{0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},		// 0x18 - 0x00
+		{0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},		// 0x3C - 0x00
+		{0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},		// 0x66 - 0x00
+		{0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},		// 0x66 - 0x00
+		{0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},		// 0x7E - 0x00
+		{0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},		// 0x7E - 0x00
+		{0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},		// 0x66 - 0x00
+		{0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}		// 0x66 - 0x00
 };
 
 int offset_L = 0;
-int offset_R = 8;
+int offset_R = 0;
 
 /* Functions */
 
@@ -139,33 +145,145 @@ void clearLEDMatrix(void) {
  * @retval	None
  */
 void shiftLeft(void) {
-	// Copy the columns from window_buffer to matrix_buffer
-	matrix_buffer[0] = window_buffer[offset_L + 0];
-	matrix_buffer[1] = window_buffer[offset_L + 1];
-	matrix_buffer[2] = window_buffer[offset_L + 2];
-	matrix_buffer[3] = window_buffer[offset_L + 3];
-	matrix_buffer[4] = window_buffer[offset_L + 4];
-	matrix_buffer[5] = window_buffer[offset_L + 5];
-	matrix_buffer[6] = window_buffer[offset_L + 6];
-	matrix_buffer[7] = window_buffer[offset_L + 7];
+	// Shift each row to the left 1 unit
+	matrix_buffer[0] = (window_buffer[0][offset_L + 0] << 0) |
+					   (window_buffer[0][offset_L + 1] << 1) |
+					   (window_buffer[0][offset_L + 2] << 2) |
+					   (window_buffer[0][offset_L + 3] << 3) |
+					   (window_buffer[0][offset_L + 4] << 4) |
+					   (window_buffer[0][offset_L + 5] << 5) |
+					   (window_buffer[0][offset_L + 6] << 6) |
+					   (window_buffer[0][offset_L + 7] << 7);
+	matrix_buffer[1] = (window_buffer[1][offset_L + 0] << 0) |
+			   	   	   (window_buffer[1][offset_L + 1] << 1) |
+					   (window_buffer[1][offset_L + 2] << 2) |
+					   (window_buffer[1][offset_L + 3] << 3) |
+					   (window_buffer[1][offset_L + 4] << 4) |
+					   (window_buffer[1][offset_L + 5] << 5) |
+					   (window_buffer[1][offset_L + 6] << 6) |
+					   (window_buffer[1][offset_L + 7] << 7);
+	matrix_buffer[2] = (window_buffer[2][offset_L + 0] << 0) |
+			   	   	   (window_buffer[2][offset_L + 1] << 1) |
+					   (window_buffer[2][offset_L + 2] << 2) |
+					   (window_buffer[2][offset_L + 3] << 3) |
+					   (window_buffer[2][offset_L + 4] << 4) |
+					   (window_buffer[2][offset_L + 5] << 5) |
+					   (window_buffer[2][offset_L + 6] << 6) |
+					   (window_buffer[2][offset_L + 7] << 7);
+	matrix_buffer[3] = (window_buffer[3][offset_L + 0] << 0) |
+			   	   	   (window_buffer[3][offset_L + 1] << 1) |
+					   (window_buffer[3][offset_L + 2] << 2) |
+					   (window_buffer[3][offset_L + 3] << 3) |
+					   (window_buffer[3][offset_L + 4] << 4) |
+					   (window_buffer[3][offset_L + 5] << 5) |
+					   (window_buffer[3][offset_L + 6] << 6) |
+					   (window_buffer[3][offset_L + 7] << 7);
+	matrix_buffer[4] = (window_buffer[4][offset_L + 0] << 0) |
+			   	   	   (window_buffer[4][offset_L + 1] << 1) |
+					   (window_buffer[4][offset_L + 2] << 2) |
+					   (window_buffer[4][offset_L + 3] << 3) |
+					   (window_buffer[4][offset_L + 4] << 4) |
+					   (window_buffer[4][offset_L + 5] << 5) |
+					   (window_buffer[4][offset_L + 6] << 6) |
+					   (window_buffer[4][offset_L + 7] << 7);
+	matrix_buffer[5] = (window_buffer[5][offset_L + 0] << 0) |
+			   	   	   (window_buffer[5][offset_L + 1] << 1) |
+					   (window_buffer[5][offset_L + 2] << 2) |
+					   (window_buffer[5][offset_L + 3] << 3) |
+					   (window_buffer[5][offset_L + 4] << 4) |
+					   (window_buffer[5][offset_L + 5] << 5) |
+					   (window_buffer[5][offset_L + 6] << 6) |
+					   (window_buffer[5][offset_L + 7] << 7);
+	matrix_buffer[6] = (window_buffer[6][offset_L + 0] << 0) |
+			   	   	   (window_buffer[6][offset_L + 1] << 1) |
+					   (window_buffer[6][offset_L + 2] << 2) |
+					   (window_buffer[6][offset_L + 3] << 3) |
+					   (window_buffer[6][offset_L + 4] << 4) |
+					   (window_buffer[6][offset_L + 5] << 5) |
+					   (window_buffer[6][offset_L + 6] << 6) |
+					   (window_buffer[6][offset_L + 7] << 7);
+	matrix_buffer[7] = (window_buffer[7][offset_L + 0] << 0) |
+			   	   	   (window_buffer[7][offset_L + 1] << 1) |
+					   (window_buffer[7][offset_L + 2] << 2) |
+					   (window_buffer[7][offset_L + 3] << 3) |
+					   (window_buffer[7][offset_L + 4] << 4) |
+					   (window_buffer[7][offset_L + 5] << 5) |
+					   (window_buffer[7][offset_L + 6] << 6) |
+					   (window_buffer[7][offset_L + 7] << 7);
 
-	// Increase the offset for shifting left
+	// Increase the offset
 	offset_L++;
-	if (offset_L > 8) offset_L = 0;			// reset the offset
+	if (offset_L > 8) offset_L = 0;		// reset the offset
 }
 
 void shiftRight(void) {
-	// Copy the columns from window_buffer to matrix_buffer
-	matrix_buffer[0] = window_buffer[offset_R + 0];
-	matrix_buffer[1] = window_buffer[offset_R + 1];
-	matrix_buffer[2] = window_buffer[offset_R + 2];
-	matrix_buffer[3] = window_buffer[offset_R + 3];
-	matrix_buffer[4] = window_buffer[offset_R + 4];
-	matrix_buffer[5] = window_buffer[offset_R + 5];
-	matrix_buffer[6] = window_buffer[offset_R + 6];
-	matrix_buffer[7] = window_buffer[offset_R + 7];
+	// Shift each row to the right 1 unit
+	matrix_buffer[0] = (window_buffer[0][offset_R + 0] >> 0) |
+					   (window_buffer[0][offset_R + 1] >> 1) |
+					   (window_buffer[0][offset_R + 2] >> 2) |
+					   (window_buffer[0][offset_R + 3] >> 3) |
+					   (window_buffer[0][offset_R + 4] >> 4) |
+					   (window_buffer[0][offset_R + 5] >> 5) |
+					   (window_buffer[0][offset_R + 6] >> 6) |
+					   (window_buffer[0][offset_R + 7] >> 7);
+	matrix_buffer[1] = (window_buffer[1][offset_R + 0] >> 0) |
+				   	   (window_buffer[1][offset_R + 1] >> 1) |
+					   (window_buffer[1][offset_R + 2] >> 2) |
+					   (window_buffer[1][offset_R + 3] >> 3) |
+					   (window_buffer[1][offset_R + 4] >> 4) |
+					   (window_buffer[1][offset_R + 5] >> 5) |
+					   (window_buffer[1][offset_R + 6] >> 6) |
+					   (window_buffer[1][offset_R + 7] >> 7);
+	matrix_buffer[2] = (window_buffer[2][offset_R + 0] >> 0) |
+				   	   (window_buffer[2][offset_R + 1] >> 1) |
+					   (window_buffer[2][offset_R + 2] >> 2) |
+					   (window_buffer[2][offset_R + 3] >> 3) |
+					   (window_buffer[2][offset_R + 4] >> 4) |
+					   (window_buffer[2][offset_R + 5] >> 5) |
+					   (window_buffer[2][offset_R + 6] >> 6) |
+					   (window_buffer[2][offset_R + 7] >> 7);
+	matrix_buffer[3] = (window_buffer[3][offset_R + 0] >> 0) |
+				   	   (window_buffer[3][offset_R + 1] >> 1) |
+					   (window_buffer[3][offset_R + 2] >> 2) |
+					   (window_buffer[3][offset_R + 3] >> 3) |
+					   (window_buffer[3][offset_R + 4] >> 4) |
+					   (window_buffer[3][offset_R + 5] >> 5) |
+					   (window_buffer[3][offset_R + 6] >> 6) |
+					   (window_buffer[3][offset_R + 7] >> 7);
+	matrix_buffer[4] = (window_buffer[4][offset_R + 0] >> 0) |
+				   	   (window_buffer[4][offset_R + 1] >> 1) |
+					   (window_buffer[4][offset_R + 2] >> 2) |
+					   (window_buffer[4][offset_R + 3] >> 3) |
+					   (window_buffer[4][offset_R + 4] >> 4) |
+					   (window_buffer[4][offset_R + 5] >> 5) |
+					   (window_buffer[4][offset_R + 6] >> 6) |
+					   (window_buffer[4][offset_R + 7] >> 7);
+	matrix_buffer[5] = (window_buffer[5][offset_R + 0] >> 0) |
+				   	   (window_buffer[5][offset_R + 1] >> 1) |
+					   (window_buffer[5][offset_R + 2] >> 2) |
+					   (window_buffer[5][offset_R + 3] >> 3) |
+					   (window_buffer[5][offset_R + 4] >> 4) |
+					   (window_buffer[5][offset_R + 5] >> 5) |
+					   (window_buffer[5][offset_R + 6] >> 6) |
+					   (window_buffer[5][offset_R + 7] >> 7);
+	matrix_buffer[6] = (window_buffer[6][offset_R + 0] >> 0) |
+				   	   (window_buffer[6][offset_R + 1] >> 1) |
+					   (window_buffer[6][offset_R + 2] >> 2) |
+					   (window_buffer[6][offset_R + 3] >> 3) |
+					   (window_buffer[6][offset_R + 4] >> 4) |
+					   (window_buffer[6][offset_R + 5] >> 5) |
+					   (window_buffer[6][offset_R + 6] >> 6) |
+					   (window_buffer[6][offset_R + 7] >> 7);
+	matrix_buffer[7] = (window_buffer[7][offset_R + 0] >> 0) |
+				   	   (window_buffer[7][offset_R + 1] >> 1) |
+					   (window_buffer[7][offset_R + 2] >> 2) |
+					   (window_buffer[7][offset_R + 3] >> 3) |
+					   (window_buffer[7][offset_R + 4] >> 4) |
+					   (window_buffer[7][offset_R + 5] >> 5) |
+					   (window_buffer[7][offset_R + 6] >> 6) |
+					   (window_buffer[7][offset_R + 7] >> 7);
 
-	// Decrease the offset for shifting right
-	offset_R--;
-	if (offset_R < 0) offset_R = 0;			// reset the offset
+	// Increase the offset
+	offset_R++;
+	if (offset_R > 8) offset_R = 0;		// reset the offset
 }

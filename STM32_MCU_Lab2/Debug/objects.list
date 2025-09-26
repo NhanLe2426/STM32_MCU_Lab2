@@ -1,5 +1,5 @@
 "./Core/Src/digital_clock.o"
-"./Core/Src/exercise9.o"
+"./Core/Src/exercise10.o"
 "./Core/Src/led_7seg.o"
 "./Core/Src/main.o"
 "./Core/Src/software_timer.o"

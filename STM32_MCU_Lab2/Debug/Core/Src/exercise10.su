@@ -1,0 +1,4 @@
+../Core/Src/exercise10.c:46:6:updateLEDMatrix	16	static
+../Core/Src/exercise10.c:131:6:clearLEDMatrix	8	static
+../Core/Src/exercise10.c:147:6:shiftLeft	4	static
+../Core/Src/exercise10.c:219:6:shiftRight	4	static
