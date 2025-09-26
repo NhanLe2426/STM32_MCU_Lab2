@@ -12,7 +12,7 @@
 /* Variables */
 const int MAX_LED = 4;
 int index_led = 0;
-int led_buffer[4] = {};
+int led_buffer[4] = { 1, 5, 5, 8 };
 
 int hour;
 int minute;
@@ -97,10 +97,10 @@ void updateClockBuffer(void) {
 
 /**
  * @brief	Simulate the clock behavior
- * @param	hour, minute, second : the initial time
+ * @param	None
  * @retval	None
  */
-void clockRun(int hour, int minute, int second) {
+void clockRun(void) {
 	second++;
 	if (second >= 60) {
 		second = 0;

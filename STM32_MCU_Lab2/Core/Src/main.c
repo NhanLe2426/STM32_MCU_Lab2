@@ -105,7 +105,7 @@ int main(void)
 
 	  if (timer2_flag == 1) {
 		  timer2_set(1000);
-		  clockRun(hour, minute, second);
+		  clockRun();
 		  updateClockBuffer();
 	  }
 
@@ -263,7 +263,7 @@ void init_system(void) {
 	timer4_set(1000);
 	hour = 15;
 	minute = 58;
-	second = 50;
+	second = 0;
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {

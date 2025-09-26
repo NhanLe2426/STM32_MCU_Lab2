@@ -1,0 +1,4 @@
+../Core/Src/exercise678.c:28:6:displayDot	1
+../Core/Src/exercise678.c:37:6:update7SEG	5
+../Core/Src/exercise678.c:89:6:updateClockBuffer	1
+../Core/Src/exercise678.c:103:6:clockRun	4

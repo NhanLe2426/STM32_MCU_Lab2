@@ -1,5 +1,6 @@
-Core/Src/exercise5.o: ../Core/Src/exercise5.c ../Core/Inc/exercise5.h \
- ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+Core/Src/exercise678.o: ../Core/Src/exercise678.c \
+ ../Core/Inc/exercise678.h ../Core/Inc/main.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -24,7 +25,7 @@ Core/Src/exercise5.o: ../Core/Src/exercise5.c ../Core/Inc/exercise5.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/led_7seg.h ../Core/Inc/led_7seg.h
-../Core/Inc/exercise5.h:
+../Core/Inc/exercise678.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:

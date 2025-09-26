@@ -22,6 +22,6 @@ extern int second;
 extern void displayDot(void);
 extern void update7SEG(int index);
 extern void updateClockBuffer(void);
-extern void clockRun(int hour, int minute, int second);
+extern void clockRun(void);
 
 #endif /* INC_EXERCISE678_H_ */
