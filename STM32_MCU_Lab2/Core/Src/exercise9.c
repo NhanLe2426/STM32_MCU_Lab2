@@ -12,14 +12,14 @@
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
 uint8_t matrix_buffer[8] = {
-		0x01,
-		0x02,
-		0x03,
-		0x04,
-		0x05,
-		0x06,
-		0x07,
-		0x08
+		0x18,	// 0-0-0-x-x-0-0-0
+		0x3C,	// 0-0-x-x-x-x-0-0
+		0x66,	// 0-x-x-0-0-x-x-0
+		0x66,	// 0-x-x-0-0-x-x-0
+		0x7E,	// 0-x-x-x-x-x-x-0
+		0x7E,	// 0-x-x-x-x-x-x-0
+		0x66,	// 0-x-x-0-0-x-x-0
+		0x66	// 0-x-x-0-0-x-x-0
 };
 
 /* Functions */
@@ -41,16 +41,34 @@ void updateLEDMatrix(int index) {
 	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
 
 	// Get the data of the current column
+/*
+ * 	This code displays the character in horizontal
+ *
 	uint8_t data = matrix_buffer[index];
 
-	HAL_GPIO_WritePin(ROW0_GPIO_Port, ROW0_Pin, (data & 0x01) ? SET : RESET);
-	HAL_GPIO_WritePin(ROW1_GPIO_Port, ROW1_Pin, (data & 0x02) ? SET : RESET);
-	HAL_GPIO_WritePin(ROW2_GPIO_Port, ROW2_Pin, (data & 0x04) ? SET : RESET);
-	HAL_GPIO_WritePin(ROW3_GPIO_Port, ROW3_Pin, (data & 0x08) ? SET : RESET);
-	HAL_GPIO_WritePin(ROW4_GPIO_Port, ROW4_Pin, (data & 0x10) ? SET : RESET);
-	HAL_GPIO_WritePin(ROW5_GPIO_Port, ROW5_Pin, (data & 0x20) ? SET : RESET);
-	HAL_GPIO_WritePin(ROW6_GPIO_Port, ROW6_Pin, (data & 0x40) ? SET : RESET);
-	HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, (data & 0x80) ? SET : RESET);
+	HAL_GPIO_WritePin(ROW0_GPIO_Port, ROW0_Pin, (data & 0x01) ? RESET : SET);
+	HAL_GPIO_WritePin(ROW1_GPIO_Port, ROW1_Pin, (data & 0x02) ? RESET : SET);
+	HAL_GPIO_WritePin(ROW2_GPIO_Port, ROW2_Pin, (data & 0x04) ? RESET : SET);
+	HAL_GPIO_WritePin(ROW3_GPIO_Port, ROW3_Pin, (data & 0x08) ? RESET : SET);
+	HAL_GPIO_WritePin(ROW4_GPIO_Port, ROW4_Pin, (data & 0x10) ? RESET : SET);
+	HAL_GPIO_WritePin(ROW5_GPIO_Port, ROW5_Pin, (data & 0x20) ? RESET : SET);
+	HAL_GPIO_WritePin(ROW6_GPIO_Port, ROW6_Pin, (data & 0x40) ? RESET : SET);
+	HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, (data & 0x80) ? RESET : SET);
+ *
+ *
+ */
+
+/*
+ * 	This code displays the character in vertical
+ */
+	HAL_GPIO_WritePin(ROW0_GPIO_Port, ROW0_Pin, (matrix_buffer[0] >> index) & 0x01 ? RESET : SET);
+	HAL_GPIO_WritePin(ROW1_GPIO_Port, ROW1_Pin, (matrix_buffer[1] >> index) & 0x01 ? RESET : SET);
+	HAL_GPIO_WritePin(ROW2_GPIO_Port, ROW2_Pin, (matrix_buffer[2] >> index) & 0x01 ? RESET : SET);
+	HAL_GPIO_WritePin(ROW3_GPIO_Port, ROW3_Pin, (matrix_buffer[3] >> index) & 0x01 ? RESET : SET);
+	HAL_GPIO_WritePin(ROW4_GPIO_Port, ROW4_Pin, (matrix_buffer[4] >> index) & 0x01 ? RESET : SET);
+	HAL_GPIO_WritePin(ROW5_GPIO_Port, ROW5_Pin, (matrix_buffer[5] >> index) & 0x01 ? RESET : SET);
+	HAL_GPIO_WritePin(ROW6_GPIO_Port, ROW6_Pin, (matrix_buffer[6] >> index) & 0x01 ? RESET : SET);
+	HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, (matrix_buffer[7] >> index) & 0x01 ? RESET : SET);
 
 	// Display the column at the index position
 	switch (index) {

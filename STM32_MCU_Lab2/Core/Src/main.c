@@ -101,7 +101,7 @@ int main(void)
   {
 	  if (timer1_flag == 1) {
 		  timer1_set(1000);
-		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 	  }
 
 	  if (timer2_flag == 1) {
@@ -117,12 +117,12 @@ int main(void)
 
 	  if (timer4_flag == 1) {
 		  timer4_set(250);
-		  if (index_led > 3) index_lex = 0;
+		  if (index_led > 3) index_led = 0;
 		  update7SEG(index_led++);
 	  }
 
 	  if (timer5_flag == 1) {
-		  timer5_set(1000);
+		  timer5_set(500);
 		  if (index_led_matrix > 7) index_led_matrix = 0;
 		  updateLEDMatrix(index_led_matrix++);
 	  }
@@ -280,7 +280,7 @@ void init_system(void) {
 	timer2_set(1000);	// timer for digital clock simulation
 	timer3_set(1000);	// timer for dot (2 LEDs)
 	timer4_set(250);	// timer for displaying 4 7-segments LEDs
-	timer5_set(1000);	// timer for displaying LED matrix
+	timer5_set(500);	// timer for displaying LED matrix
 	hour = 15;
 	minute = 58;
 	second = 50;

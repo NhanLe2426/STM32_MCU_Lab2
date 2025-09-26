@@ -1,0 +1,4 @@
+../Core/Src/digital_clock.c:28:6:displayDot	8	static
+../Core/Src/digital_clock.c:37:6:update7SEG	16	static
+../Core/Src/digital_clock.c:89:6:updateClockBuffer	16	static
+../Core/Src/digital_clock.c:103:6:clockRun	4	static
