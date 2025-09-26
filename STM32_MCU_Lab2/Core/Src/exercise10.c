@@ -140,14 +140,14 @@ void clearLEDMatrix(void) {
  */
 void shiftLeft(void) {
 	// Copy the columns from window_buffer to matrix_buffer
-	matrix_buffer[0] = window_buffer[offset + 0];
-	matrix_buffer[1] = window_buffer[offset + 1];
-	matrix_buffer[2] = window_buffer[offset + 2];
-	matrix_buffer[3] = window_buffer[offset + 3];
-	matrix_buffer[4] = window_buffer[offset + 4];
-	matrix_buffer[5] = window_buffer[offset + 5];
-	matrix_buffer[6] = window_buffer[offset + 6];
-	matrix_buffer[7] = window_buffer[offset + 7];
+	matrix_buffer[0] = window_buffer[offset_L + 0];
+	matrix_buffer[1] = window_buffer[offset_L + 1];
+	matrix_buffer[2] = window_buffer[offset_L + 2];
+	matrix_buffer[3] = window_buffer[offset_L + 3];
+	matrix_buffer[4] = window_buffer[offset_L + 4];
+	matrix_buffer[5] = window_buffer[offset_L + 5];
+	matrix_buffer[6] = window_buffer[offset_L + 6];
+	matrix_buffer[7] = window_buffer[offset_L + 7];
 
 	// Increase the offset for shifting left
 	offset_L++;
@@ -156,14 +156,14 @@ void shiftLeft(void) {
 
 void shiftRight(void) {
 	// Copy the columns from window_buffer to matrix_buffer
-	matrix_buffer[0] = window_buffer[offset + 0];
-	matrix_buffer[1] = window_buffer[offset + 1];
-	matrix_buffer[2] = window_buffer[offset + 2];
-	matrix_buffer[3] = window_buffer[offset + 3];
-	matrix_buffer[4] = window_buffer[offset + 4];
-	matrix_buffer[5] = window_buffer[offset + 5];
-	matrix_buffer[6] = window_buffer[offset + 6];
-	matrix_buffer[7] = window_buffer[offset + 7];
+	matrix_buffer[0] = window_buffer[offset_R + 0];
+	matrix_buffer[1] = window_buffer[offset_R + 1];
+	matrix_buffer[2] = window_buffer[offset_R + 2];
+	matrix_buffer[3] = window_buffer[offset_R + 3];
+	matrix_buffer[4] = window_buffer[offset_R + 4];
+	matrix_buffer[5] = window_buffer[offset_R + 5];
+	matrix_buffer[6] = window_buffer[offset_R + 6];
+	matrix_buffer[7] = window_buffer[offset_R + 7];
 
 	// Decrease the offset for shifting right
 	offset_R--;
