@@ -118,13 +118,14 @@ int main(void)
 	  }
 
 	  if (timer4_flag == 1) {
-		  timer4_set(10);
+		  timer4_set(50);
 		  if (index_led_matrix > 7) index_led_matrix = 0;
 		  updateLEDMatrix(index_led_matrix++);
 	  }
 
 	  if (timer5_flag == 1) {
 		  timer5_set(500);
+		  // shiftLeft();
 		  shiftRight();
 	  }
     /* USER CODE END WHILE */
@@ -280,8 +281,8 @@ void init_system(void) {
 	timer1_set(1000);	// timer for LED PA5 and 2 dots (2 LEDs)
 	timer2_set(1000);	// timer for digital clock simulation
 	timer3_set(250);	// timer for displaying 4 7-segments LEDs
-	timer4_set(10);		// timer for displaying LED matrix
-	timer5_set(200);	// timer for displaying animation of LED matrix (shiftLeft or shiftRight)
+	timer4_set(50);		// timer for displaying LED matrix
+	timer5_set(500);	// timer for displaying animation of LED matrix (shiftLeft or shiftRight)
 	hour = 15;
 	minute = 58;
 	second = 50;

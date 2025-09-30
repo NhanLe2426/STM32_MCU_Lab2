@@ -34,7 +34,7 @@ uint8_t window_buffer[8][16] = {
 };
 
 int offset_L = 0;
-int offset_R = 0;
+int offset_R = 8;
 
 /* Functions */
 
@@ -146,144 +146,142 @@ void clearLEDMatrix(void) {
  */
 void shiftLeft(void) {
 	// Shift each row to the left 1 unit
-	matrix_buffer[0] = (window_buffer[0][offset_L + 0] << 0) |
-					   (window_buffer[0][offset_L + 1] << 1) |
-					   (window_buffer[0][offset_L + 2] << 2) |
-					   (window_buffer[0][offset_L + 3] << 3) |
-					   (window_buffer[0][offset_L + 4] << 4) |
-					   (window_buffer[0][offset_L + 5] << 5) |
-					   (window_buffer[0][offset_L + 6] << 6) |
-					   (window_buffer[0][offset_L + 7] << 7);
-	matrix_buffer[1] = (window_buffer[1][offset_L + 0] << 0) |
-			   	   	   (window_buffer[1][offset_L + 1] << 1) |
-					   (window_buffer[1][offset_L + 2] << 2) |
-					   (window_buffer[1][offset_L + 3] << 3) |
-					   (window_buffer[1][offset_L + 4] << 4) |
-					   (window_buffer[1][offset_L + 5] << 5) |
-					   (window_buffer[1][offset_L + 6] << 6) |
-					   (window_buffer[1][offset_L + 7] << 7);
-	matrix_buffer[2] = (window_buffer[2][offset_L + 0] << 0) |
-			   	   	   (window_buffer[2][offset_L + 1] << 1) |
-					   (window_buffer[2][offset_L + 2] << 2) |
-					   (window_buffer[2][offset_L + 3] << 3) |
-					   (window_buffer[2][offset_L + 4] << 4) |
-					   (window_buffer[2][offset_L + 5] << 5) |
-					   (window_buffer[2][offset_L + 6] << 6) |
-					   (window_buffer[2][offset_L + 7] << 7);
-	matrix_buffer[3] = (window_buffer[3][offset_L + 0] << 0) |
-			   	   	   (window_buffer[3][offset_L + 1] << 1) |
-					   (window_buffer[3][offset_L + 2] << 2) |
-					   (window_buffer[3][offset_L + 3] << 3) |
-					   (window_buffer[3][offset_L + 4] << 4) |
-					   (window_buffer[3][offset_L + 5] << 5) |
-					   (window_buffer[3][offset_L + 6] << 6) |
-					   (window_buffer[3][offset_L + 7] << 7);
-	matrix_buffer[4] = (window_buffer[4][offset_L + 0] << 0) |
-			   	   	   (window_buffer[4][offset_L + 1] << 1) |
-					   (window_buffer[4][offset_L + 2] << 2) |
-					   (window_buffer[4][offset_L + 3] << 3) |
-					   (window_buffer[4][offset_L + 4] << 4) |
-					   (window_buffer[4][offset_L + 5] << 5) |
-					   (window_buffer[4][offset_L + 6] << 6) |
-					   (window_buffer[4][offset_L + 7] << 7);
-	matrix_buffer[5] = (window_buffer[5][offset_L + 0] << 0) |
-			   	   	   (window_buffer[5][offset_L + 1] << 1) |
-					   (window_buffer[5][offset_L + 2] << 2) |
-					   (window_buffer[5][offset_L + 3] << 3) |
-					   (window_buffer[5][offset_L + 4] << 4) |
-					   (window_buffer[5][offset_L + 5] << 5) |
-					   (window_buffer[5][offset_L + 6] << 6) |
-					   (window_buffer[5][offset_L + 7] << 7);
-	matrix_buffer[6] = (window_buffer[6][offset_L + 0] << 0) |
-			   	   	   (window_buffer[6][offset_L + 1] << 1) |
-					   (window_buffer[6][offset_L + 2] << 2) |
-					   (window_buffer[6][offset_L + 3] << 3) |
-					   (window_buffer[6][offset_L + 4] << 4) |
-					   (window_buffer[6][offset_L + 5] << 5) |
-					   (window_buffer[6][offset_L + 6] << 6) |
-					   (window_buffer[6][offset_L + 7] << 7);
-	matrix_buffer[7] = (window_buffer[7][offset_L + 0] << 0) |
-			   	   	   (window_buffer[7][offset_L + 1] << 1) |
-					   (window_buffer[7][offset_L + 2] << 2) |
-					   (window_buffer[7][offset_L + 3] << 3) |
-					   (window_buffer[7][offset_L + 4] << 4) |
-					   (window_buffer[7][offset_L + 5] << 5) |
-					   (window_buffer[7][offset_L + 6] << 6) |
-					   (window_buffer[7][offset_L + 7] << 7);
+	matrix_buffer[0] = (window_buffer[0][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+					   (window_buffer[0][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[0][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[0][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[0][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[0][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[0][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[0][(offset_L + 7)%WINDOW_BUFFER] << 7);
+	matrix_buffer[1] = (window_buffer[1][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+			   	   	   (window_buffer[1][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[1][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[1][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[1][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[1][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[1][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[1][(offset_L + 7)%WINDOW_BUFFER] << 7);
+	matrix_buffer[2] = (window_buffer[2][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+			   	   	   (window_buffer[2][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[2][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[2][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[2][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[2][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[2][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[2][(offset_L + 7)%WINDOW_BUFFER] << 7);
+	matrix_buffer[3] = (window_buffer[3][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+			   	   	   (window_buffer[3][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[3][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[3][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[3][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[3][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[3][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[3][(offset_L + 7)%WINDOW_BUFFER] << 7);
+	matrix_buffer[4] = (window_buffer[4][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+			   	   	   (window_buffer[4][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[4][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[4][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[4][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[4][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[4][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[4][(offset_L + 7)%WINDOW_BUFFER] << 7);
+	matrix_buffer[5] = (window_buffer[5][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+			   	   	   (window_buffer[5][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[5][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[5][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[5][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[5][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[5][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[5][(offset_L + 7)%WINDOW_BUFFER] << 7);
+	matrix_buffer[6] = (window_buffer[6][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+			   	   	   (window_buffer[6][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[6][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[6][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[6][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[6][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[6][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[6][(offset_L + 7)%WINDOW_BUFFER] << 7);
+	matrix_buffer[7] = (window_buffer[7][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+			   	   	   (window_buffer[7][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[7][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[7][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[7][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[7][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[7][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[7][(offset_L + 7)%WINDOW_BUFFER] << 7);
 
 	// Increase the offset
-	offset_L++;
-	if (offset_L > 8) offset_L = 0;		// reset the offset
+	offset_L = (offset_L + 1) % WINDOW_BUFFER;
 }
 
 void shiftRight(void) {
 	// Shift each row to the right 1 unit
-	matrix_buffer[0] = (window_buffer[0][offset_R + 0] >> 0) |
-					   (window_buffer[0][offset_R + 1] >> 1) |
-					   (window_buffer[0][offset_R + 2] >> 2) |
-					   (window_buffer[0][offset_R + 3] >> 3) |
-					   (window_buffer[0][offset_R + 4] >> 4) |
-					   (window_buffer[0][offset_R + 5] >> 5) |
-					   (window_buffer[0][offset_R + 6] >> 6) |
-					   (window_buffer[0][offset_R + 7] >> 7);
-	matrix_buffer[1] = (window_buffer[1][offset_R + 0] >> 0) |
-				   	   (window_buffer[1][offset_R + 1] >> 1) |
-					   (window_buffer[1][offset_R + 2] >> 2) |
-					   (window_buffer[1][offset_R + 3] >> 3) |
-					   (window_buffer[1][offset_R + 4] >> 4) |
-					   (window_buffer[1][offset_R + 5] >> 5) |
-					   (window_buffer[1][offset_R + 6] >> 6) |
-					   (window_buffer[1][offset_R + 7] >> 7);
-	matrix_buffer[2] = (window_buffer[2][offset_R + 0] >> 0) |
-				   	   (window_buffer[2][offset_R + 1] >> 1) |
-					   (window_buffer[2][offset_R + 2] >> 2) |
-					   (window_buffer[2][offset_R + 3] >> 3) |
-					   (window_buffer[2][offset_R + 4] >> 4) |
-					   (window_buffer[2][offset_R + 5] >> 5) |
-					   (window_buffer[2][offset_R + 6] >> 6) |
-					   (window_buffer[2][offset_R + 7] >> 7);
-	matrix_buffer[3] = (window_buffer[3][offset_R + 0] >> 0) |
-				   	   (window_buffer[3][offset_R + 1] >> 1) |
-					   (window_buffer[3][offset_R + 2] >> 2) |
-					   (window_buffer[3][offset_R + 3] >> 3) |
-					   (window_buffer[3][offset_R + 4] >> 4) |
-					   (window_buffer[3][offset_R + 5] >> 5) |
-					   (window_buffer[3][offset_R + 6] >> 6) |
-					   (window_buffer[3][offset_R + 7] >> 7);
-	matrix_buffer[4] = (window_buffer[4][offset_R + 0] >> 0) |
-				   	   (window_buffer[4][offset_R + 1] >> 1) |
-					   (window_buffer[4][offset_R + 2] >> 2) |
-					   (window_buffer[4][offset_R + 3] >> 3) |
-					   (window_buffer[4][offset_R + 4] >> 4) |
-					   (window_buffer[4][offset_R + 5] >> 5) |
-					   (window_buffer[4][offset_R + 6] >> 6) |
-					   (window_buffer[4][offset_R + 7] >> 7);
-	matrix_buffer[5] = (window_buffer[5][offset_R + 0] >> 0) |
-				   	   (window_buffer[5][offset_R + 1] >> 1) |
-					   (window_buffer[5][offset_R + 2] >> 2) |
-					   (window_buffer[5][offset_R + 3] >> 3) |
-					   (window_buffer[5][offset_R + 4] >> 4) |
-					   (window_buffer[5][offset_R + 5] >> 5) |
-					   (window_buffer[5][offset_R + 6] >> 6) |
-					   (window_buffer[5][offset_R + 7] >> 7);
-	matrix_buffer[6] = (window_buffer[6][offset_R + 0] >> 0) |
-				   	   (window_buffer[6][offset_R + 1] >> 1) |
-					   (window_buffer[6][offset_R + 2] >> 2) |
-					   (window_buffer[6][offset_R + 3] >> 3) |
-					   (window_buffer[6][offset_R + 4] >> 4) |
-					   (window_buffer[6][offset_R + 5] >> 5) |
-					   (window_buffer[6][offset_R + 6] >> 6) |
-					   (window_buffer[6][offset_R + 7] >> 7);
-	matrix_buffer[7] = (window_buffer[7][offset_R + 0] >> 0) |
-				   	   (window_buffer[7][offset_R + 1] >> 1) |
-					   (window_buffer[7][offset_R + 2] >> 2) |
-					   (window_buffer[7][offset_R + 3] >> 3) |
-					   (window_buffer[7][offset_R + 4] >> 4) |
-					   (window_buffer[7][offset_R + 5] >> 5) |
-					   (window_buffer[7][offset_R + 6] >> 6) |
-					   (window_buffer[7][offset_R + 7] >> 7);
+	matrix_buffer[0] = (window_buffer[0][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+					   (window_buffer[0][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[0][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[0][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[0][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[0][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[0][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[0][(offset_R + 7)%WINDOW_BUFFER] << 0);
+	matrix_buffer[1] = (window_buffer[1][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+				   	   (window_buffer[1][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[1][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[1][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[1][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[1][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[1][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[1][(offset_R + 7)%WINDOW_BUFFER] << 0);
+	matrix_buffer[2] = (window_buffer[2][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+				   	   (window_buffer[2][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[2][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[2][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[2][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[2][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[2][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[2][(offset_R + 7)%WINDOW_BUFFER] << 0);
+	matrix_buffer[3] = (window_buffer[3][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+				   	   (window_buffer[3][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[3][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[3][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[3][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[3][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[3][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[3][(offset_R + 7)%WINDOW_BUFFER] << 0);
+	matrix_buffer[4] = (window_buffer[4][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+				   	   (window_buffer[4][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[4][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[4][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[4][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[4][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[4][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[4][(offset_R + 7)%WINDOW_BUFFER] << 0);
+	matrix_buffer[5] = (window_buffer[5][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+				   	   (window_buffer[5][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[5][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[5][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[5][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[5][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[5][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[5][(offset_R + 7)%WINDOW_BUFFER] << 0);
+	matrix_buffer[6] = (window_buffer[6][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+				   	   (window_buffer[6][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[6][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[6][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[6][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[6][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[6][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[6][(offset_R + 7)%WINDOW_BUFFER] << 0);
+	matrix_buffer[7] = (window_buffer[7][(offset_R + 0)%WINDOW_BUFFER] << 7) |
+				   	   (window_buffer[7][(offset_R + 1)%WINDOW_BUFFER] << 6) |
+					   (window_buffer[7][(offset_R + 2)%WINDOW_BUFFER] << 5) |
+					   (window_buffer[7][(offset_R + 3)%WINDOW_BUFFER] << 4) |
+					   (window_buffer[7][(offset_R + 4)%WINDOW_BUFFER] << 3) |
+					   (window_buffer[7][(offset_R + 5)%WINDOW_BUFFER] << 2) |
+					   (window_buffer[7][(offset_R + 6)%WINDOW_BUFFER] << 1) |
+					   (window_buffer[7][(offset_R + 7)%WINDOW_BUFFER] << 0);
 
 	// Increase the offset
-	offset_R++;
-	if (offset_R > 8) offset_R = 0;		// reset the offset
+	offset_R = (offset_R - 1 + WINDOW_BUFFER) % WINDOW_BUFFER;
 }

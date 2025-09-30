@@ -11,6 +11,9 @@
 /* Includes */
 #include "main.h"
 
+/* Define */
+#define WINDOW_BUFFER	16
+
 /* Variables */
 extern int index_led_matrix;
 
