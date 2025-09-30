@@ -87,10 +87,8 @@ void update7SEG(int index) {
  * @retval	None
  */
 void updateClockBuffer(void) {
-	int temp1 = hour / 10;
-	int temp2 = minute / 10;
-	led_buffer[0] = temp1;
-	led_buffer[1] = hour - (temp1 * 10);
-	led_buffer[2] = temp2;
-	led_buffer[3] = minute - (temp2 * 10);
+	led_buffer[0] = hour / 10;
+	led_buffer[1] = hour % 10;
+	led_buffer[2] = minute / 10;
+	led_buffer[3] = minute % 10;
 }
