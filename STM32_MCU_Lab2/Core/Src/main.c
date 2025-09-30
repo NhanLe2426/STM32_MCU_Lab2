@@ -99,12 +99,12 @@ int main(void)
   while (1)
   {
 	  if (timer1_flag == 1) {
-		  timer1_set(100);
+		  timer1_set(1000);
 		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 	  }
 
 	  if (timer2_flag == 1) {
-		  timer2_set(50);
+		  timer2_set(500);
 		  display();
 	  }
     /* USER CODE END WHILE */
@@ -242,8 +242,8 @@ void init_system(void) {
 	HAL_TIM_Base_Start_IT(&htim2);
 	clear7SEG();
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All, SET);
-	timer1_set(100);
-	timer2_set(50);
+	timer1_set(1000);
+	timer2_set(500);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {

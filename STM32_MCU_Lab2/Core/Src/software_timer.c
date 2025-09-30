@@ -22,13 +22,13 @@ int timer2_counter = 0;
  * @param	duration : Duration of software timer interrupt
  * @retval 	None
  */
-void timer1_set(int ms) {
-	timer1_counter = ms;
+void timer1_set(int duration) {
+	timer1_counter = duration / TIMER_CYCLE_1;
 	timer1_flag = 0;
 }
 
-void timer2_set(int ms) {
-	timer2_counter = ms;
+void timer2_set(int duration) {
+	timer2_counter = duration / TIMER_CYCLE_2;
 	timer2_flag = 0;
 }
 
