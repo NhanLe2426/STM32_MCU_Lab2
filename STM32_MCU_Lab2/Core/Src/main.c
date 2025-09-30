@@ -125,8 +125,8 @@ int main(void)
 
 	  if (timer5_flag == 1) {
 		  timer5_set(500);
-		  // shiftLeft();
-		  shiftRight();
+		  shiftLeft();
+		  //shiftRight();
 	  }
     /* USER CODE END WHILE */
 

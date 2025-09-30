@@ -9,43 +9,43 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .rodata       00000024  08002ec8  08002ec8  00012ec8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08002eec  08002eec  000200a8  2**0
+  3 .ARM.extab    00000000  08002eec  08002eec  000200a4  2**0
                   CONTENTS
-  4 .ARM          00000000  08002eec  08002eec  000200a8  2**0
+  4 .ARM          00000000  08002eec  08002eec  000200a4  2**0
                   CONTENTS
-  5 .preinit_array 00000000  08002eec  08002eec  000200a8  2**0
+  5 .preinit_array 00000000  08002eec  08002eec  000200a4  2**0
                   CONTENTS, ALLOC, LOAD, DATA
   6 .init_array   00000004  08002eec  08002eec  00012eec  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   7 .fini_array   00000004  08002ef0  08002ef0  00012ef0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         000000a8  20000000  08002ef4  00020000  2**2
+  8 .data         000000a4  20000000  08002ef4  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000000a4  200000a8  08002f9c  000200a8  2**2
+  9 .bss          000000a8  200000a4  08002f98  000200a4  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  2000014c  08002f9c  0002014c  2**0
+ 10 ._user_heap_stack 00000604  2000014c  08002f98  0002014c  2**0
                   ALLOC
- 11 .ARM.attributes 00000029  00000000  00000000  000200a8  2**0
+ 11 .ARM.attributes 00000029  00000000  00000000  000200a4  2**0
                   CONTENTS, READONLY
- 12 .comment      00000043  00000000  00000000  000200d1  2**0
+ 12 .comment      00000043  00000000  00000000  000200cd  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00008419  00000000  00000000  00020114  2**0
+ 13 .debug_info   00008419  00000000  00000000  00020110  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001abd  00000000  00000000  0002852d  2**0
+ 14 .debug_abbrev 00001abd  00000000  00000000  00028529  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000a18  00000000  00000000  00029ff0  2**3
+ 15 .debug_aranges 00000a18  00000000  00000000  00029fe8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 000007b8  00000000  00000000  0002aa08  2**0
+ 16 .debug_rnglists 000007b8  00000000  00000000  0002aa00  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00016a9b  00000000  00000000  0002b1c0  2**0
+ 17 .debug_macro  00016a9b  00000000  00000000  0002b1b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000bf75  00000000  00000000  00041c5b  2**0
+ 18 .debug_line   0000bf75  00000000  00000000  00041c53  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000824ee  00000000  00000000  0004dbd0  2**0
+ 19 .debug_str    000824ee  00000000  00000000  0004dbc8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00002858  00000000  00000000  000d00c0  2**2
+ 20 .debug_frame  00002858  00000000  00000000  000d00b8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000052  00000000  00000000  000d2918  2**0
+ 21 .debug_line_str 00000052  00000000  00000000  000d2910  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -62,7 +62,7 @@ Disassembly of section .text:
  800011e:	2301      	movs	r3, #1
  8000120:	7023      	strb	r3, [r4, #0]
  8000122:	bd10      	pop	{r4, pc}
- 8000124:	200000a8 	.word	0x200000a8
+ 8000124:	200000a4 	.word	0x200000a4
  8000128:	00000000 	.word	0x00000000
  800012c:	08002eb0 	.word	0x08002eb0
 
@@ -75,7 +75,7 @@ Disassembly of section .text:
  800013a:	f3af 8000 	nop.w
  800013e:	bd08      	pop	{r3, pc}
  8000140:	00000000 	.word	0x00000000
- 8000144:	200000ac 	.word	0x200000ac
+ 8000144:	200000a8 	.word	0x200000a8
  8000148:	08002eb0 	.word	0x08002eb0
 
 0800014c <displayDot>:
@@ -318,10 +318,10 @@ void updateClockBuffer(void) {
  80002d2:	46bd      	mov	sp, r7
  80002d4:	bc80      	pop	{r7}
  80002d6:	4770      	bx	lr
- 80002d8:	200000c8 	.word	0x200000c8
+ 80002d8:	200000c4 	.word	0x200000c4
  80002dc:	66666667 	.word	0x66666667
  80002e0:	20000000 	.word	0x20000000
- 80002e4:	200000cc 	.word	0x200000cc
+ 80002e4:	200000c8 	.word	0x200000c8
 
 080002e8 <clockRun>:
 /**
@@ -385,9 +385,9 @@ void clockRun(void) {
  8000336:	46bd      	mov	sp, r7
  8000338:	bc80      	pop	{r7}
  800033a:	4770      	bx	lr
- 800033c:	200000d0 	.word	0x200000d0
- 8000340:	200000cc 	.word	0x200000cc
- 8000344:	200000c8 	.word	0x200000c8
+ 800033c:	200000cc 	.word	0x200000cc
+ 8000340:	200000c8 	.word	0x200000c8
+ 8000344:	200000c4 	.word	0x200000c4
 
 08000348 <updateLEDMatrix>:
 /**
@@ -676,1122 +676,1122 @@ void updateLEDMatrix(int index) {
  800058c:	20000010 	.word	0x20000010
  8000590:	40010c00 	.word	0x40010c00
 
-08000594 <shiftRight>:
-
-	// Increase the offset
-	offset_L = (offset_L + 1) % WINDOW_BUFFER;
-}
-
-void shiftRight(void) {
+08000594 <shiftLeft>:
+/**
+ * @brief	Shift the character to the left
+ * @param	None
+ * @retval	None
+ */
+void shiftLeft(void) {
  8000594:	b480      	push	{r7}
  8000596:	af00      	add	r7, sp, #0
-	// Shift each row to the right 1 unit
-	matrix_buffer[0] = (window_buffer[0][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000598:	4bad      	ldr	r3, [pc, #692]	; (8000850 <shiftRight+0x2bc>)
+	// Shift each row to the left 1 unit
+	matrix_buffer[0] = (window_buffer[0][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000598:	4bac      	ldr	r3, [pc, #688]	; (800084c <shiftLeft+0x2b8>)
  800059a:	681b      	ldr	r3, [r3, #0]
  800059c:	425a      	negs	r2, r3
  800059e:	f003 030f 	and.w	r3, r3, #15
  80005a2:	f002 020f 	and.w	r2, r2, #15
  80005a6:	bf58      	it	pl
  80005a8:	4253      	negpl	r3, r2
- 80005aa:	4aaa      	ldr	r2, [pc, #680]	; (8000854 <shiftRight+0x2c0>)
+ 80005aa:	4aa9      	ldr	r2, [pc, #676]	; (8000850 <shiftLeft+0x2bc>)
  80005ac:	5cd3      	ldrb	r3, [r2, r3]
- 80005ae:	01db      	lsls	r3, r3, #7
- 80005b0:	b25a      	sxtb	r2, r3
-					   (window_buffer[0][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 80005b2:	4ba7      	ldr	r3, [pc, #668]	; (8000850 <shiftRight+0x2bc>)
- 80005b4:	681b      	ldr	r3, [r3, #0]
- 80005b6:	3301      	adds	r3, #1
- 80005b8:	4259      	negs	r1, r3
- 80005ba:	f003 030f 	and.w	r3, r3, #15
- 80005be:	f001 010f 	and.w	r1, r1, #15
- 80005c2:	bf58      	it	pl
- 80005c4:	424b      	negpl	r3, r1
- 80005c6:	49a3      	ldr	r1, [pc, #652]	; (8000854 <shiftRight+0x2c0>)
- 80005c8:	5ccb      	ldrb	r3, [r1, r3]
- 80005ca:	019b      	lsls	r3, r3, #6
-	matrix_buffer[0] = (window_buffer[0][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80005cc:	b25b      	sxtb	r3, r3
- 80005ce:	4313      	orrs	r3, r2
- 80005d0:	b25a      	sxtb	r2, r3
-					   (window_buffer[0][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 80005d2:	4b9f      	ldr	r3, [pc, #636]	; (8000850 <shiftRight+0x2bc>)
- 80005d4:	681b      	ldr	r3, [r3, #0]
- 80005d6:	3302      	adds	r3, #2
- 80005d8:	4259      	negs	r1, r3
- 80005da:	f003 030f 	and.w	r3, r3, #15
- 80005de:	f001 010f 	and.w	r1, r1, #15
- 80005e2:	bf58      	it	pl
- 80005e4:	424b      	negpl	r3, r1
- 80005e6:	499b      	ldr	r1, [pc, #620]	; (8000854 <shiftRight+0x2c0>)
- 80005e8:	5ccb      	ldrb	r3, [r1, r3]
- 80005ea:	015b      	lsls	r3, r3, #5
-					   (window_buffer[0][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 80005ec:	b25b      	sxtb	r3, r3
- 80005ee:	4313      	orrs	r3, r2
- 80005f0:	b25a      	sxtb	r2, r3
-					   (window_buffer[0][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 80005f2:	4b97      	ldr	r3, [pc, #604]	; (8000850 <shiftRight+0x2bc>)
- 80005f4:	681b      	ldr	r3, [r3, #0]
- 80005f6:	3303      	adds	r3, #3
- 80005f8:	4259      	negs	r1, r3
- 80005fa:	f003 030f 	and.w	r3, r3, #15
- 80005fe:	f001 010f 	and.w	r1, r1, #15
- 8000602:	bf58      	it	pl
- 8000604:	424b      	negpl	r3, r1
- 8000606:	4993      	ldr	r1, [pc, #588]	; (8000854 <shiftRight+0x2c0>)
- 8000608:	5ccb      	ldrb	r3, [r1, r3]
- 800060a:	011b      	lsls	r3, r3, #4
-					   (window_buffer[0][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 800060c:	b25b      	sxtb	r3, r3
- 800060e:	4313      	orrs	r3, r2
- 8000610:	b25a      	sxtb	r2, r3
-					   (window_buffer[0][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000612:	4b8f      	ldr	r3, [pc, #572]	; (8000850 <shiftRight+0x2bc>)
- 8000614:	681b      	ldr	r3, [r3, #0]
- 8000616:	3304      	adds	r3, #4
- 8000618:	4259      	negs	r1, r3
- 800061a:	f003 030f 	and.w	r3, r3, #15
- 800061e:	f001 010f 	and.w	r1, r1, #15
- 8000622:	bf58      	it	pl
- 8000624:	424b      	negpl	r3, r1
- 8000626:	498b      	ldr	r1, [pc, #556]	; (8000854 <shiftRight+0x2c0>)
- 8000628:	5ccb      	ldrb	r3, [r1, r3]
- 800062a:	00db      	lsls	r3, r3, #3
-					   (window_buffer[0][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 800062c:	b25b      	sxtb	r3, r3
- 800062e:	4313      	orrs	r3, r2
- 8000630:	b25a      	sxtb	r2, r3
-					   (window_buffer[0][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000632:	4b87      	ldr	r3, [pc, #540]	; (8000850 <shiftRight+0x2bc>)
- 8000634:	681b      	ldr	r3, [r3, #0]
- 8000636:	3305      	adds	r3, #5
- 8000638:	4259      	negs	r1, r3
- 800063a:	f003 030f 	and.w	r3, r3, #15
- 800063e:	f001 010f 	and.w	r1, r1, #15
- 8000642:	bf58      	it	pl
- 8000644:	424b      	negpl	r3, r1
- 8000646:	4983      	ldr	r1, [pc, #524]	; (8000854 <shiftRight+0x2c0>)
- 8000648:	5ccb      	ldrb	r3, [r1, r3]
- 800064a:	009b      	lsls	r3, r3, #2
-					   (window_buffer[0][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 800064c:	b25b      	sxtb	r3, r3
- 800064e:	4313      	orrs	r3, r2
- 8000650:	b25a      	sxtb	r2, r3
-					   (window_buffer[0][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000652:	4b7f      	ldr	r3, [pc, #508]	; (8000850 <shiftRight+0x2bc>)
- 8000654:	681b      	ldr	r3, [r3, #0]
- 8000656:	3306      	adds	r3, #6
- 8000658:	4259      	negs	r1, r3
- 800065a:	f003 030f 	and.w	r3, r3, #15
- 800065e:	f001 010f 	and.w	r1, r1, #15
- 8000662:	bf58      	it	pl
- 8000664:	424b      	negpl	r3, r1
- 8000666:	497b      	ldr	r1, [pc, #492]	; (8000854 <shiftRight+0x2c0>)
- 8000668:	5ccb      	ldrb	r3, [r1, r3]
- 800066a:	005b      	lsls	r3, r3, #1
-					   (window_buffer[0][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 800066c:	b25b      	sxtb	r3, r3
- 800066e:	4313      	orrs	r3, r2
- 8000670:	b25a      	sxtb	r2, r3
-					   (window_buffer[0][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 8000672:	4b77      	ldr	r3, [pc, #476]	; (8000850 <shiftRight+0x2bc>)
- 8000674:	681b      	ldr	r3, [r3, #0]
- 8000676:	3307      	adds	r3, #7
- 8000678:	4259      	negs	r1, r3
- 800067a:	f003 030f 	and.w	r3, r3, #15
- 800067e:	f001 010f 	and.w	r1, r1, #15
- 8000682:	bf58      	it	pl
- 8000684:	424b      	negpl	r3, r1
- 8000686:	4973      	ldr	r1, [pc, #460]	; (8000854 <shiftRight+0x2c0>)
- 8000688:	5ccb      	ldrb	r3, [r1, r3]
+ 80005ae:	b25a      	sxtb	r2, r3
+					   (window_buffer[0][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 80005b0:	4ba6      	ldr	r3, [pc, #664]	; (800084c <shiftLeft+0x2b8>)
+ 80005b2:	681b      	ldr	r3, [r3, #0]
+ 80005b4:	3301      	adds	r3, #1
+ 80005b6:	4259      	negs	r1, r3
+ 80005b8:	f003 030f 	and.w	r3, r3, #15
+ 80005bc:	f001 010f 	and.w	r1, r1, #15
+ 80005c0:	bf58      	it	pl
+ 80005c2:	424b      	negpl	r3, r1
+ 80005c4:	49a2      	ldr	r1, [pc, #648]	; (8000850 <shiftLeft+0x2bc>)
+ 80005c6:	5ccb      	ldrb	r3, [r1, r3]
+ 80005c8:	005b      	lsls	r3, r3, #1
+	matrix_buffer[0] = (window_buffer[0][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80005ca:	b25b      	sxtb	r3, r3
+ 80005cc:	4313      	orrs	r3, r2
+ 80005ce:	b25a      	sxtb	r2, r3
+					   (window_buffer[0][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 80005d0:	4b9e      	ldr	r3, [pc, #632]	; (800084c <shiftLeft+0x2b8>)
+ 80005d2:	681b      	ldr	r3, [r3, #0]
+ 80005d4:	3302      	adds	r3, #2
+ 80005d6:	4259      	negs	r1, r3
+ 80005d8:	f003 030f 	and.w	r3, r3, #15
+ 80005dc:	f001 010f 	and.w	r1, r1, #15
+ 80005e0:	bf58      	it	pl
+ 80005e2:	424b      	negpl	r3, r1
+ 80005e4:	499a      	ldr	r1, [pc, #616]	; (8000850 <shiftLeft+0x2bc>)
+ 80005e6:	5ccb      	ldrb	r3, [r1, r3]
+ 80005e8:	009b      	lsls	r3, r3, #2
+					   (window_buffer[0][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 80005ea:	b25b      	sxtb	r3, r3
+ 80005ec:	4313      	orrs	r3, r2
+ 80005ee:	b25a      	sxtb	r2, r3
+					   (window_buffer[0][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 80005f0:	4b96      	ldr	r3, [pc, #600]	; (800084c <shiftLeft+0x2b8>)
+ 80005f2:	681b      	ldr	r3, [r3, #0]
+ 80005f4:	3303      	adds	r3, #3
+ 80005f6:	4259      	negs	r1, r3
+ 80005f8:	f003 030f 	and.w	r3, r3, #15
+ 80005fc:	f001 010f 	and.w	r1, r1, #15
+ 8000600:	bf58      	it	pl
+ 8000602:	424b      	negpl	r3, r1
+ 8000604:	4992      	ldr	r1, [pc, #584]	; (8000850 <shiftLeft+0x2bc>)
+ 8000606:	5ccb      	ldrb	r3, [r1, r3]
+ 8000608:	00db      	lsls	r3, r3, #3
+					   (window_buffer[0][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 800060a:	b25b      	sxtb	r3, r3
+ 800060c:	4313      	orrs	r3, r2
+ 800060e:	b25a      	sxtb	r2, r3
+					   (window_buffer[0][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000610:	4b8e      	ldr	r3, [pc, #568]	; (800084c <shiftLeft+0x2b8>)
+ 8000612:	681b      	ldr	r3, [r3, #0]
+ 8000614:	3304      	adds	r3, #4
+ 8000616:	4259      	negs	r1, r3
+ 8000618:	f003 030f 	and.w	r3, r3, #15
+ 800061c:	f001 010f 	and.w	r1, r1, #15
+ 8000620:	bf58      	it	pl
+ 8000622:	424b      	negpl	r3, r1
+ 8000624:	498a      	ldr	r1, [pc, #552]	; (8000850 <shiftLeft+0x2bc>)
+ 8000626:	5ccb      	ldrb	r3, [r1, r3]
+ 8000628:	011b      	lsls	r3, r3, #4
+					   (window_buffer[0][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 800062a:	b25b      	sxtb	r3, r3
+ 800062c:	4313      	orrs	r3, r2
+ 800062e:	b25a      	sxtb	r2, r3
+					   (window_buffer[0][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000630:	4b86      	ldr	r3, [pc, #536]	; (800084c <shiftLeft+0x2b8>)
+ 8000632:	681b      	ldr	r3, [r3, #0]
+ 8000634:	3305      	adds	r3, #5
+ 8000636:	4259      	negs	r1, r3
+ 8000638:	f003 030f 	and.w	r3, r3, #15
+ 800063c:	f001 010f 	and.w	r1, r1, #15
+ 8000640:	bf58      	it	pl
+ 8000642:	424b      	negpl	r3, r1
+ 8000644:	4982      	ldr	r1, [pc, #520]	; (8000850 <shiftLeft+0x2bc>)
+ 8000646:	5ccb      	ldrb	r3, [r1, r3]
+ 8000648:	015b      	lsls	r3, r3, #5
+					   (window_buffer[0][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 800064a:	b25b      	sxtb	r3, r3
+ 800064c:	4313      	orrs	r3, r2
+ 800064e:	b25a      	sxtb	r2, r3
+					   (window_buffer[0][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000650:	4b7e      	ldr	r3, [pc, #504]	; (800084c <shiftLeft+0x2b8>)
+ 8000652:	681b      	ldr	r3, [r3, #0]
+ 8000654:	3306      	adds	r3, #6
+ 8000656:	4259      	negs	r1, r3
+ 8000658:	f003 030f 	and.w	r3, r3, #15
+ 800065c:	f001 010f 	and.w	r1, r1, #15
+ 8000660:	bf58      	it	pl
+ 8000662:	424b      	negpl	r3, r1
+ 8000664:	497a      	ldr	r1, [pc, #488]	; (8000850 <shiftLeft+0x2bc>)
+ 8000666:	5ccb      	ldrb	r3, [r1, r3]
+ 8000668:	019b      	lsls	r3, r3, #6
+					   (window_buffer[0][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 800066a:	b25b      	sxtb	r3, r3
+ 800066c:	4313      	orrs	r3, r2
+ 800066e:	b25a      	sxtb	r2, r3
+					   (window_buffer[0][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 8000670:	4b76      	ldr	r3, [pc, #472]	; (800084c <shiftLeft+0x2b8>)
+ 8000672:	681b      	ldr	r3, [r3, #0]
+ 8000674:	3307      	adds	r3, #7
+ 8000676:	4259      	negs	r1, r3
+ 8000678:	f003 030f 	and.w	r3, r3, #15
+ 800067c:	f001 010f 	and.w	r1, r1, #15
+ 8000680:	bf58      	it	pl
+ 8000682:	424b      	negpl	r3, r1
+ 8000684:	4972      	ldr	r1, [pc, #456]	; (8000850 <shiftLeft+0x2bc>)
+ 8000686:	5ccb      	ldrb	r3, [r1, r3]
+ 8000688:	01db      	lsls	r3, r3, #7
+					   (window_buffer[0][(offset_L + 6)%WINDOW_BUFFER] << 6) |
  800068a:	b25b      	sxtb	r3, r3
-					   (window_buffer[0][(offset_R + 6)%WINDOW_BUFFER] << 1) |
  800068c:	4313      	orrs	r3, r2
  800068e:	b25b      	sxtb	r3, r3
  8000690:	b2da      	uxtb	r2, r3
-	matrix_buffer[0] = (window_buffer[0][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000692:	4b71      	ldr	r3, [pc, #452]	; (8000858 <shiftRight+0x2c4>)
+	matrix_buffer[0] = (window_buffer[0][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000692:	4b70      	ldr	r3, [pc, #448]	; (8000854 <shiftLeft+0x2c0>)
  8000694:	701a      	strb	r2, [r3, #0]
-	matrix_buffer[1] = (window_buffer[1][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000696:	4b6e      	ldr	r3, [pc, #440]	; (8000850 <shiftRight+0x2bc>)
+	matrix_buffer[1] = (window_buffer[1][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000696:	4b6d      	ldr	r3, [pc, #436]	; (800084c <shiftLeft+0x2b8>)
  8000698:	681b      	ldr	r3, [r3, #0]
  800069a:	425a      	negs	r2, r3
  800069c:	f003 030f 	and.w	r3, r3, #15
  80006a0:	f002 020f 	and.w	r2, r2, #15
  80006a4:	bf58      	it	pl
  80006a6:	4253      	negpl	r3, r2
- 80006a8:	4a6a      	ldr	r2, [pc, #424]	; (8000854 <shiftRight+0x2c0>)
+ 80006a8:	4a69      	ldr	r2, [pc, #420]	; (8000850 <shiftLeft+0x2bc>)
  80006aa:	4413      	add	r3, r2
  80006ac:	7c1b      	ldrb	r3, [r3, #16]
- 80006ae:	01db      	lsls	r3, r3, #7
- 80006b0:	b25a      	sxtb	r2, r3
-				   	   (window_buffer[1][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 80006b2:	4b67      	ldr	r3, [pc, #412]	; (8000850 <shiftRight+0x2bc>)
- 80006b4:	681b      	ldr	r3, [r3, #0]
- 80006b6:	3301      	adds	r3, #1
- 80006b8:	4259      	negs	r1, r3
- 80006ba:	f003 030f 	and.w	r3, r3, #15
- 80006be:	f001 010f 	and.w	r1, r1, #15
- 80006c2:	bf58      	it	pl
- 80006c4:	424b      	negpl	r3, r1
- 80006c6:	4963      	ldr	r1, [pc, #396]	; (8000854 <shiftRight+0x2c0>)
- 80006c8:	440b      	add	r3, r1
- 80006ca:	7c1b      	ldrb	r3, [r3, #16]
- 80006cc:	019b      	lsls	r3, r3, #6
-	matrix_buffer[1] = (window_buffer[1][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80006ce:	b25b      	sxtb	r3, r3
- 80006d0:	4313      	orrs	r3, r2
- 80006d2:	b25a      	sxtb	r2, r3
-					   (window_buffer[1][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 80006d4:	4b5e      	ldr	r3, [pc, #376]	; (8000850 <shiftRight+0x2bc>)
- 80006d6:	681b      	ldr	r3, [r3, #0]
- 80006d8:	3302      	adds	r3, #2
- 80006da:	4259      	negs	r1, r3
- 80006dc:	f003 030f 	and.w	r3, r3, #15
- 80006e0:	f001 010f 	and.w	r1, r1, #15
- 80006e4:	bf58      	it	pl
- 80006e6:	424b      	negpl	r3, r1
- 80006e8:	495a      	ldr	r1, [pc, #360]	; (8000854 <shiftRight+0x2c0>)
- 80006ea:	440b      	add	r3, r1
- 80006ec:	7c1b      	ldrb	r3, [r3, #16]
- 80006ee:	015b      	lsls	r3, r3, #5
-				   	   (window_buffer[1][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 80006f0:	b25b      	sxtb	r3, r3
- 80006f2:	4313      	orrs	r3, r2
- 80006f4:	b25a      	sxtb	r2, r3
-					   (window_buffer[1][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 80006f6:	4b56      	ldr	r3, [pc, #344]	; (8000850 <shiftRight+0x2bc>)
- 80006f8:	681b      	ldr	r3, [r3, #0]
- 80006fa:	3303      	adds	r3, #3
- 80006fc:	4259      	negs	r1, r3
- 80006fe:	f003 030f 	and.w	r3, r3, #15
- 8000702:	f001 010f 	and.w	r1, r1, #15
- 8000706:	bf58      	it	pl
- 8000708:	424b      	negpl	r3, r1
- 800070a:	4952      	ldr	r1, [pc, #328]	; (8000854 <shiftRight+0x2c0>)
- 800070c:	440b      	add	r3, r1
- 800070e:	7c1b      	ldrb	r3, [r3, #16]
- 8000710:	011b      	lsls	r3, r3, #4
-					   (window_buffer[1][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000712:	b25b      	sxtb	r3, r3
- 8000714:	4313      	orrs	r3, r2
- 8000716:	b25a      	sxtb	r2, r3
-					   (window_buffer[1][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000718:	4b4d      	ldr	r3, [pc, #308]	; (8000850 <shiftRight+0x2bc>)
- 800071a:	681b      	ldr	r3, [r3, #0]
- 800071c:	3304      	adds	r3, #4
- 800071e:	4259      	negs	r1, r3
- 8000720:	f003 030f 	and.w	r3, r3, #15
- 8000724:	f001 010f 	and.w	r1, r1, #15
- 8000728:	bf58      	it	pl
- 800072a:	424b      	negpl	r3, r1
- 800072c:	4949      	ldr	r1, [pc, #292]	; (8000854 <shiftRight+0x2c0>)
- 800072e:	440b      	add	r3, r1
- 8000730:	7c1b      	ldrb	r3, [r3, #16]
- 8000732:	00db      	lsls	r3, r3, #3
-					   (window_buffer[1][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000734:	b25b      	sxtb	r3, r3
- 8000736:	4313      	orrs	r3, r2
- 8000738:	b25a      	sxtb	r2, r3
-					   (window_buffer[1][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 800073a:	4b45      	ldr	r3, [pc, #276]	; (8000850 <shiftRight+0x2bc>)
- 800073c:	681b      	ldr	r3, [r3, #0]
- 800073e:	3305      	adds	r3, #5
- 8000740:	4259      	negs	r1, r3
- 8000742:	f003 030f 	and.w	r3, r3, #15
- 8000746:	f001 010f 	and.w	r1, r1, #15
- 800074a:	bf58      	it	pl
- 800074c:	424b      	negpl	r3, r1
- 800074e:	4941      	ldr	r1, [pc, #260]	; (8000854 <shiftRight+0x2c0>)
- 8000750:	440b      	add	r3, r1
- 8000752:	7c1b      	ldrb	r3, [r3, #16]
- 8000754:	009b      	lsls	r3, r3, #2
-					   (window_buffer[1][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000756:	b25b      	sxtb	r3, r3
- 8000758:	4313      	orrs	r3, r2
- 800075a:	b25a      	sxtb	r2, r3
-					   (window_buffer[1][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 800075c:	4b3c      	ldr	r3, [pc, #240]	; (8000850 <shiftRight+0x2bc>)
- 800075e:	681b      	ldr	r3, [r3, #0]
- 8000760:	3306      	adds	r3, #6
- 8000762:	4259      	negs	r1, r3
- 8000764:	f003 030f 	and.w	r3, r3, #15
- 8000768:	f001 010f 	and.w	r1, r1, #15
- 800076c:	bf58      	it	pl
- 800076e:	424b      	negpl	r3, r1
- 8000770:	4938      	ldr	r1, [pc, #224]	; (8000854 <shiftRight+0x2c0>)
- 8000772:	440b      	add	r3, r1
- 8000774:	7c1b      	ldrb	r3, [r3, #16]
- 8000776:	005b      	lsls	r3, r3, #1
-					   (window_buffer[1][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000778:	b25b      	sxtb	r3, r3
- 800077a:	4313      	orrs	r3, r2
- 800077c:	b25a      	sxtb	r2, r3
-					   (window_buffer[1][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 800077e:	4b34      	ldr	r3, [pc, #208]	; (8000850 <shiftRight+0x2bc>)
- 8000780:	681b      	ldr	r3, [r3, #0]
- 8000782:	3307      	adds	r3, #7
- 8000784:	4259      	negs	r1, r3
- 8000786:	f003 030f 	and.w	r3, r3, #15
- 800078a:	f001 010f 	and.w	r1, r1, #15
- 800078e:	bf58      	it	pl
- 8000790:	424b      	negpl	r3, r1
- 8000792:	4930      	ldr	r1, [pc, #192]	; (8000854 <shiftRight+0x2c0>)
- 8000794:	440b      	add	r3, r1
- 8000796:	7c1b      	ldrb	r3, [r3, #16]
+ 80006ae:	b25a      	sxtb	r2, r3
+			   	   	   (window_buffer[1][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 80006b0:	4b66      	ldr	r3, [pc, #408]	; (800084c <shiftLeft+0x2b8>)
+ 80006b2:	681b      	ldr	r3, [r3, #0]
+ 80006b4:	3301      	adds	r3, #1
+ 80006b6:	4259      	negs	r1, r3
+ 80006b8:	f003 030f 	and.w	r3, r3, #15
+ 80006bc:	f001 010f 	and.w	r1, r1, #15
+ 80006c0:	bf58      	it	pl
+ 80006c2:	424b      	negpl	r3, r1
+ 80006c4:	4962      	ldr	r1, [pc, #392]	; (8000850 <shiftLeft+0x2bc>)
+ 80006c6:	440b      	add	r3, r1
+ 80006c8:	7c1b      	ldrb	r3, [r3, #16]
+ 80006ca:	005b      	lsls	r3, r3, #1
+	matrix_buffer[1] = (window_buffer[1][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80006cc:	b25b      	sxtb	r3, r3
+ 80006ce:	4313      	orrs	r3, r2
+ 80006d0:	b25a      	sxtb	r2, r3
+					   (window_buffer[1][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 80006d2:	4b5e      	ldr	r3, [pc, #376]	; (800084c <shiftLeft+0x2b8>)
+ 80006d4:	681b      	ldr	r3, [r3, #0]
+ 80006d6:	3302      	adds	r3, #2
+ 80006d8:	4259      	negs	r1, r3
+ 80006da:	f003 030f 	and.w	r3, r3, #15
+ 80006de:	f001 010f 	and.w	r1, r1, #15
+ 80006e2:	bf58      	it	pl
+ 80006e4:	424b      	negpl	r3, r1
+ 80006e6:	495a      	ldr	r1, [pc, #360]	; (8000850 <shiftLeft+0x2bc>)
+ 80006e8:	440b      	add	r3, r1
+ 80006ea:	7c1b      	ldrb	r3, [r3, #16]
+ 80006ec:	009b      	lsls	r3, r3, #2
+			   	   	   (window_buffer[1][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 80006ee:	b25b      	sxtb	r3, r3
+ 80006f0:	4313      	orrs	r3, r2
+ 80006f2:	b25a      	sxtb	r2, r3
+					   (window_buffer[1][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 80006f4:	4b55      	ldr	r3, [pc, #340]	; (800084c <shiftLeft+0x2b8>)
+ 80006f6:	681b      	ldr	r3, [r3, #0]
+ 80006f8:	3303      	adds	r3, #3
+ 80006fa:	4259      	negs	r1, r3
+ 80006fc:	f003 030f 	and.w	r3, r3, #15
+ 8000700:	f001 010f 	and.w	r1, r1, #15
+ 8000704:	bf58      	it	pl
+ 8000706:	424b      	negpl	r3, r1
+ 8000708:	4951      	ldr	r1, [pc, #324]	; (8000850 <shiftLeft+0x2bc>)
+ 800070a:	440b      	add	r3, r1
+ 800070c:	7c1b      	ldrb	r3, [r3, #16]
+ 800070e:	00db      	lsls	r3, r3, #3
+					   (window_buffer[1][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000710:	b25b      	sxtb	r3, r3
+ 8000712:	4313      	orrs	r3, r2
+ 8000714:	b25a      	sxtb	r2, r3
+					   (window_buffer[1][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000716:	4b4d      	ldr	r3, [pc, #308]	; (800084c <shiftLeft+0x2b8>)
+ 8000718:	681b      	ldr	r3, [r3, #0]
+ 800071a:	3304      	adds	r3, #4
+ 800071c:	4259      	negs	r1, r3
+ 800071e:	f003 030f 	and.w	r3, r3, #15
+ 8000722:	f001 010f 	and.w	r1, r1, #15
+ 8000726:	bf58      	it	pl
+ 8000728:	424b      	negpl	r3, r1
+ 800072a:	4949      	ldr	r1, [pc, #292]	; (8000850 <shiftLeft+0x2bc>)
+ 800072c:	440b      	add	r3, r1
+ 800072e:	7c1b      	ldrb	r3, [r3, #16]
+ 8000730:	011b      	lsls	r3, r3, #4
+					   (window_buffer[1][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000732:	b25b      	sxtb	r3, r3
+ 8000734:	4313      	orrs	r3, r2
+ 8000736:	b25a      	sxtb	r2, r3
+					   (window_buffer[1][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000738:	4b44      	ldr	r3, [pc, #272]	; (800084c <shiftLeft+0x2b8>)
+ 800073a:	681b      	ldr	r3, [r3, #0]
+ 800073c:	3305      	adds	r3, #5
+ 800073e:	4259      	negs	r1, r3
+ 8000740:	f003 030f 	and.w	r3, r3, #15
+ 8000744:	f001 010f 	and.w	r1, r1, #15
+ 8000748:	bf58      	it	pl
+ 800074a:	424b      	negpl	r3, r1
+ 800074c:	4940      	ldr	r1, [pc, #256]	; (8000850 <shiftLeft+0x2bc>)
+ 800074e:	440b      	add	r3, r1
+ 8000750:	7c1b      	ldrb	r3, [r3, #16]
+ 8000752:	015b      	lsls	r3, r3, #5
+					   (window_buffer[1][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000754:	b25b      	sxtb	r3, r3
+ 8000756:	4313      	orrs	r3, r2
+ 8000758:	b25a      	sxtb	r2, r3
+					   (window_buffer[1][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 800075a:	4b3c      	ldr	r3, [pc, #240]	; (800084c <shiftLeft+0x2b8>)
+ 800075c:	681b      	ldr	r3, [r3, #0]
+ 800075e:	3306      	adds	r3, #6
+ 8000760:	4259      	negs	r1, r3
+ 8000762:	f003 030f 	and.w	r3, r3, #15
+ 8000766:	f001 010f 	and.w	r1, r1, #15
+ 800076a:	bf58      	it	pl
+ 800076c:	424b      	negpl	r3, r1
+ 800076e:	4938      	ldr	r1, [pc, #224]	; (8000850 <shiftLeft+0x2bc>)
+ 8000770:	440b      	add	r3, r1
+ 8000772:	7c1b      	ldrb	r3, [r3, #16]
+ 8000774:	019b      	lsls	r3, r3, #6
+					   (window_buffer[1][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000776:	b25b      	sxtb	r3, r3
+ 8000778:	4313      	orrs	r3, r2
+ 800077a:	b25a      	sxtb	r2, r3
+					   (window_buffer[1][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 800077c:	4b33      	ldr	r3, [pc, #204]	; (800084c <shiftLeft+0x2b8>)
+ 800077e:	681b      	ldr	r3, [r3, #0]
+ 8000780:	3307      	adds	r3, #7
+ 8000782:	4259      	negs	r1, r3
+ 8000784:	f003 030f 	and.w	r3, r3, #15
+ 8000788:	f001 010f 	and.w	r1, r1, #15
+ 800078c:	bf58      	it	pl
+ 800078e:	424b      	negpl	r3, r1
+ 8000790:	492f      	ldr	r1, [pc, #188]	; (8000850 <shiftLeft+0x2bc>)
+ 8000792:	440b      	add	r3, r1
+ 8000794:	7c1b      	ldrb	r3, [r3, #16]
+ 8000796:	01db      	lsls	r3, r3, #7
+					   (window_buffer[1][(offset_L + 6)%WINDOW_BUFFER] << 6) |
  8000798:	b25b      	sxtb	r3, r3
-					   (window_buffer[1][(offset_R + 6)%WINDOW_BUFFER] << 1) |
  800079a:	4313      	orrs	r3, r2
  800079c:	b25b      	sxtb	r3, r3
  800079e:	b2da      	uxtb	r2, r3
-	matrix_buffer[1] = (window_buffer[1][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80007a0:	4b2d      	ldr	r3, [pc, #180]	; (8000858 <shiftRight+0x2c4>)
+	matrix_buffer[1] = (window_buffer[1][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80007a0:	4b2c      	ldr	r3, [pc, #176]	; (8000854 <shiftLeft+0x2c0>)
  80007a2:	705a      	strb	r2, [r3, #1]
-	matrix_buffer[2] = (window_buffer[2][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80007a4:	4b2a      	ldr	r3, [pc, #168]	; (8000850 <shiftRight+0x2bc>)
+	matrix_buffer[2] = (window_buffer[2][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80007a4:	4b29      	ldr	r3, [pc, #164]	; (800084c <shiftLeft+0x2b8>)
  80007a6:	681b      	ldr	r3, [r3, #0]
  80007a8:	425a      	negs	r2, r3
  80007aa:	f003 030f 	and.w	r3, r3, #15
  80007ae:	f002 020f 	and.w	r2, r2, #15
  80007b2:	bf58      	it	pl
  80007b4:	4253      	negpl	r3, r2
- 80007b6:	4a27      	ldr	r2, [pc, #156]	; (8000854 <shiftRight+0x2c0>)
+ 80007b6:	4a26      	ldr	r2, [pc, #152]	; (8000850 <shiftLeft+0x2bc>)
  80007b8:	4413      	add	r3, r2
  80007ba:	f893 3020 	ldrb.w	r3, [r3, #32]
- 80007be:	01db      	lsls	r3, r3, #7
- 80007c0:	b25a      	sxtb	r2, r3
-				   	   (window_buffer[2][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 80007c2:	4b23      	ldr	r3, [pc, #140]	; (8000850 <shiftRight+0x2bc>)
- 80007c4:	681b      	ldr	r3, [r3, #0]
- 80007c6:	3301      	adds	r3, #1
- 80007c8:	4259      	negs	r1, r3
- 80007ca:	f003 030f 	and.w	r3, r3, #15
- 80007ce:	f001 010f 	and.w	r1, r1, #15
- 80007d2:	bf58      	it	pl
- 80007d4:	424b      	negpl	r3, r1
- 80007d6:	491f      	ldr	r1, [pc, #124]	; (8000854 <shiftRight+0x2c0>)
- 80007d8:	440b      	add	r3, r1
- 80007da:	f893 3020 	ldrb.w	r3, [r3, #32]
- 80007de:	019b      	lsls	r3, r3, #6
-	matrix_buffer[2] = (window_buffer[2][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80007e0:	b25b      	sxtb	r3, r3
- 80007e2:	4313      	orrs	r3, r2
- 80007e4:	b25a      	sxtb	r2, r3
-					   (window_buffer[2][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 80007e6:	4b1a      	ldr	r3, [pc, #104]	; (8000850 <shiftRight+0x2bc>)
- 80007e8:	681b      	ldr	r3, [r3, #0]
- 80007ea:	3302      	adds	r3, #2
- 80007ec:	4259      	negs	r1, r3
- 80007ee:	f003 030f 	and.w	r3, r3, #15
- 80007f2:	f001 010f 	and.w	r1, r1, #15
- 80007f6:	bf58      	it	pl
- 80007f8:	424b      	negpl	r3, r1
- 80007fa:	4916      	ldr	r1, [pc, #88]	; (8000854 <shiftRight+0x2c0>)
- 80007fc:	440b      	add	r3, r1
- 80007fe:	f893 3020 	ldrb.w	r3, [r3, #32]
- 8000802:	015b      	lsls	r3, r3, #5
-				   	   (window_buffer[2][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000804:	b25b      	sxtb	r3, r3
- 8000806:	4313      	orrs	r3, r2
- 8000808:	b25a      	sxtb	r2, r3
-					   (window_buffer[2][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 800080a:	4b11      	ldr	r3, [pc, #68]	; (8000850 <shiftRight+0x2bc>)
- 800080c:	681b      	ldr	r3, [r3, #0]
- 800080e:	3303      	adds	r3, #3
- 8000810:	4259      	negs	r1, r3
- 8000812:	f003 030f 	and.w	r3, r3, #15
- 8000816:	f001 010f 	and.w	r1, r1, #15
- 800081a:	bf58      	it	pl
- 800081c:	424b      	negpl	r3, r1
- 800081e:	490d      	ldr	r1, [pc, #52]	; (8000854 <shiftRight+0x2c0>)
- 8000820:	440b      	add	r3, r1
- 8000822:	f893 3020 	ldrb.w	r3, [r3, #32]
- 8000826:	011b      	lsls	r3, r3, #4
-					   (window_buffer[2][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000828:	b25b      	sxtb	r3, r3
- 800082a:	4313      	orrs	r3, r2
- 800082c:	b25a      	sxtb	r2, r3
-					   (window_buffer[2][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 800082e:	4b08      	ldr	r3, [pc, #32]	; (8000850 <shiftRight+0x2bc>)
- 8000830:	681b      	ldr	r3, [r3, #0]
- 8000832:	3304      	adds	r3, #4
- 8000834:	4259      	negs	r1, r3
- 8000836:	f003 030f 	and.w	r3, r3, #15
- 800083a:	f001 010f 	and.w	r1, r1, #15
- 800083e:	bf58      	it	pl
- 8000840:	424b      	negpl	r3, r1
- 8000842:	4904      	ldr	r1, [pc, #16]	; (8000854 <shiftRight+0x2c0>)
- 8000844:	440b      	add	r3, r1
- 8000846:	f893 3020 	ldrb.w	r3, [r3, #32]
- 800084a:	00db      	lsls	r3, r3, #3
- 800084c:	e006      	b.n	800085c <shiftRight+0x2c8>
- 800084e:	bf00      	nop
- 8000850:	20000098 	.word	0x20000098
- 8000854:	20000018 	.word	0x20000018
- 8000858:	20000010 	.word	0x20000010
-					   (window_buffer[2][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 800085c:	b25b      	sxtb	r3, r3
- 800085e:	4313      	orrs	r3, r2
- 8000860:	b25a      	sxtb	r2, r3
-					   (window_buffer[2][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000862:	4bb5      	ldr	r3, [pc, #724]	; (8000b38 <shiftRight+0x5a4>)
- 8000864:	681b      	ldr	r3, [r3, #0]
- 8000866:	3305      	adds	r3, #5
- 8000868:	4259      	negs	r1, r3
- 800086a:	f003 030f 	and.w	r3, r3, #15
- 800086e:	f001 010f 	and.w	r1, r1, #15
- 8000872:	bf58      	it	pl
- 8000874:	424b      	negpl	r3, r1
- 8000876:	49b1      	ldr	r1, [pc, #708]	; (8000b3c <shiftRight+0x5a8>)
- 8000878:	440b      	add	r3, r1
- 800087a:	f893 3020 	ldrb.w	r3, [r3, #32]
- 800087e:	009b      	lsls	r3, r3, #2
-					   (window_buffer[2][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000880:	b25b      	sxtb	r3, r3
- 8000882:	4313      	orrs	r3, r2
- 8000884:	b25a      	sxtb	r2, r3
-					   (window_buffer[2][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000886:	4bac      	ldr	r3, [pc, #688]	; (8000b38 <shiftRight+0x5a4>)
- 8000888:	681b      	ldr	r3, [r3, #0]
- 800088a:	3306      	adds	r3, #6
- 800088c:	4259      	negs	r1, r3
- 800088e:	f003 030f 	and.w	r3, r3, #15
- 8000892:	f001 010f 	and.w	r1, r1, #15
- 8000896:	bf58      	it	pl
- 8000898:	424b      	negpl	r3, r1
- 800089a:	49a8      	ldr	r1, [pc, #672]	; (8000b3c <shiftRight+0x5a8>)
- 800089c:	440b      	add	r3, r1
- 800089e:	f893 3020 	ldrb.w	r3, [r3, #32]
- 80008a2:	005b      	lsls	r3, r3, #1
-					   (window_buffer[2][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 80008a4:	b25b      	sxtb	r3, r3
- 80008a6:	4313      	orrs	r3, r2
- 80008a8:	b25a      	sxtb	r2, r3
-					   (window_buffer[2][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 80008aa:	4ba3      	ldr	r3, [pc, #652]	; (8000b38 <shiftRight+0x5a4>)
- 80008ac:	681b      	ldr	r3, [r3, #0]
- 80008ae:	3307      	adds	r3, #7
- 80008b0:	4259      	negs	r1, r3
- 80008b2:	f003 030f 	and.w	r3, r3, #15
- 80008b6:	f001 010f 	and.w	r1, r1, #15
- 80008ba:	bf58      	it	pl
- 80008bc:	424b      	negpl	r3, r1
- 80008be:	499f      	ldr	r1, [pc, #636]	; (8000b3c <shiftRight+0x5a8>)
- 80008c0:	440b      	add	r3, r1
- 80008c2:	f893 3020 	ldrb.w	r3, [r3, #32]
- 80008c6:	b25b      	sxtb	r3, r3
-					   (window_buffer[2][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 80008c8:	4313      	orrs	r3, r2
- 80008ca:	b25b      	sxtb	r3, r3
- 80008cc:	b2da      	uxtb	r2, r3
-	matrix_buffer[2] = (window_buffer[2][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80008ce:	4b9c      	ldr	r3, [pc, #624]	; (8000b40 <shiftRight+0x5ac>)
- 80008d0:	709a      	strb	r2, [r3, #2]
-	matrix_buffer[3] = (window_buffer[3][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80008d2:	4b99      	ldr	r3, [pc, #612]	; (8000b38 <shiftRight+0x5a4>)
- 80008d4:	681b      	ldr	r3, [r3, #0]
- 80008d6:	425a      	negs	r2, r3
- 80008d8:	f003 030f 	and.w	r3, r3, #15
- 80008dc:	f002 020f 	and.w	r2, r2, #15
- 80008e0:	bf58      	it	pl
- 80008e2:	4253      	negpl	r3, r2
- 80008e4:	4a95      	ldr	r2, [pc, #596]	; (8000b3c <shiftRight+0x5a8>)
- 80008e6:	4413      	add	r3, r2
- 80008e8:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 80008ec:	01db      	lsls	r3, r3, #7
- 80008ee:	b25a      	sxtb	r2, r3
-				   	   (window_buffer[3][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 80008f0:	4b91      	ldr	r3, [pc, #580]	; (8000b38 <shiftRight+0x5a4>)
- 80008f2:	681b      	ldr	r3, [r3, #0]
- 80008f4:	3301      	adds	r3, #1
- 80008f6:	4259      	negs	r1, r3
- 80008f8:	f003 030f 	and.w	r3, r3, #15
- 80008fc:	f001 010f 	and.w	r1, r1, #15
- 8000900:	bf58      	it	pl
- 8000902:	424b      	negpl	r3, r1
- 8000904:	498d      	ldr	r1, [pc, #564]	; (8000b3c <shiftRight+0x5a8>)
- 8000906:	440b      	add	r3, r1
- 8000908:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 800090c:	019b      	lsls	r3, r3, #6
-	matrix_buffer[3] = (window_buffer[3][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 800090e:	b25b      	sxtb	r3, r3
- 8000910:	4313      	orrs	r3, r2
- 8000912:	b25a      	sxtb	r2, r3
-					   (window_buffer[3][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000914:	4b88      	ldr	r3, [pc, #544]	; (8000b38 <shiftRight+0x5a4>)
- 8000916:	681b      	ldr	r3, [r3, #0]
- 8000918:	3302      	adds	r3, #2
- 800091a:	4259      	negs	r1, r3
- 800091c:	f003 030f 	and.w	r3, r3, #15
- 8000920:	f001 010f 	and.w	r1, r1, #15
- 8000924:	bf58      	it	pl
- 8000926:	424b      	negpl	r3, r1
- 8000928:	4984      	ldr	r1, [pc, #528]	; (8000b3c <shiftRight+0x5a8>)
- 800092a:	440b      	add	r3, r1
- 800092c:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 8000930:	015b      	lsls	r3, r3, #5
-				   	   (window_buffer[3][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000932:	b25b      	sxtb	r3, r3
- 8000934:	4313      	orrs	r3, r2
- 8000936:	b25a      	sxtb	r2, r3
-					   (window_buffer[3][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000938:	4b7f      	ldr	r3, [pc, #508]	; (8000b38 <shiftRight+0x5a4>)
- 800093a:	681b      	ldr	r3, [r3, #0]
- 800093c:	3303      	adds	r3, #3
- 800093e:	4259      	negs	r1, r3
- 8000940:	f003 030f 	and.w	r3, r3, #15
- 8000944:	f001 010f 	and.w	r1, r1, #15
- 8000948:	bf58      	it	pl
- 800094a:	424b      	negpl	r3, r1
- 800094c:	497b      	ldr	r1, [pc, #492]	; (8000b3c <shiftRight+0x5a8>)
- 800094e:	440b      	add	r3, r1
- 8000950:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 8000954:	011b      	lsls	r3, r3, #4
-					   (window_buffer[3][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000956:	b25b      	sxtb	r3, r3
- 8000958:	4313      	orrs	r3, r2
- 800095a:	b25a      	sxtb	r2, r3
-					   (window_buffer[3][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 800095c:	4b76      	ldr	r3, [pc, #472]	; (8000b38 <shiftRight+0x5a4>)
- 800095e:	681b      	ldr	r3, [r3, #0]
- 8000960:	3304      	adds	r3, #4
- 8000962:	4259      	negs	r1, r3
- 8000964:	f003 030f 	and.w	r3, r3, #15
- 8000968:	f001 010f 	and.w	r1, r1, #15
- 800096c:	bf58      	it	pl
- 800096e:	424b      	negpl	r3, r1
- 8000970:	4972      	ldr	r1, [pc, #456]	; (8000b3c <shiftRight+0x5a8>)
- 8000972:	440b      	add	r3, r1
- 8000974:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 8000978:	00db      	lsls	r3, r3, #3
-					   (window_buffer[3][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 800097a:	b25b      	sxtb	r3, r3
- 800097c:	4313      	orrs	r3, r2
- 800097e:	b25a      	sxtb	r2, r3
-					   (window_buffer[3][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000980:	4b6d      	ldr	r3, [pc, #436]	; (8000b38 <shiftRight+0x5a4>)
- 8000982:	681b      	ldr	r3, [r3, #0]
- 8000984:	3305      	adds	r3, #5
- 8000986:	4259      	negs	r1, r3
- 8000988:	f003 030f 	and.w	r3, r3, #15
- 800098c:	f001 010f 	and.w	r1, r1, #15
- 8000990:	bf58      	it	pl
- 8000992:	424b      	negpl	r3, r1
- 8000994:	4969      	ldr	r1, [pc, #420]	; (8000b3c <shiftRight+0x5a8>)
- 8000996:	440b      	add	r3, r1
- 8000998:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 800099c:	009b      	lsls	r3, r3, #2
-					   (window_buffer[3][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 800099e:	b25b      	sxtb	r3, r3
- 80009a0:	4313      	orrs	r3, r2
- 80009a2:	b25a      	sxtb	r2, r3
-					   (window_buffer[3][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 80009a4:	4b64      	ldr	r3, [pc, #400]	; (8000b38 <shiftRight+0x5a4>)
- 80009a6:	681b      	ldr	r3, [r3, #0]
- 80009a8:	3306      	adds	r3, #6
- 80009aa:	4259      	negs	r1, r3
- 80009ac:	f003 030f 	and.w	r3, r3, #15
- 80009b0:	f001 010f 	and.w	r1, r1, #15
- 80009b4:	bf58      	it	pl
- 80009b6:	424b      	negpl	r3, r1
- 80009b8:	4960      	ldr	r1, [pc, #384]	; (8000b3c <shiftRight+0x5a8>)
- 80009ba:	440b      	add	r3, r1
- 80009bc:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 80009c0:	005b      	lsls	r3, r3, #1
-					   (window_buffer[3][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 80009c2:	b25b      	sxtb	r3, r3
- 80009c4:	4313      	orrs	r3, r2
- 80009c6:	b25a      	sxtb	r2, r3
-					   (window_buffer[3][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 80009c8:	4b5b      	ldr	r3, [pc, #364]	; (8000b38 <shiftRight+0x5a4>)
- 80009ca:	681b      	ldr	r3, [r3, #0]
- 80009cc:	3307      	adds	r3, #7
- 80009ce:	4259      	negs	r1, r3
- 80009d0:	f003 030f 	and.w	r3, r3, #15
- 80009d4:	f001 010f 	and.w	r1, r1, #15
- 80009d8:	bf58      	it	pl
- 80009da:	424b      	negpl	r3, r1
- 80009dc:	4957      	ldr	r1, [pc, #348]	; (8000b3c <shiftRight+0x5a8>)
- 80009de:	440b      	add	r3, r1
- 80009e0:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
- 80009e4:	b25b      	sxtb	r3, r3
-					   (window_buffer[3][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 80009e6:	4313      	orrs	r3, r2
- 80009e8:	b25b      	sxtb	r3, r3
- 80009ea:	b2da      	uxtb	r2, r3
-	matrix_buffer[3] = (window_buffer[3][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80009ec:	4b54      	ldr	r3, [pc, #336]	; (8000b40 <shiftRight+0x5ac>)
- 80009ee:	70da      	strb	r2, [r3, #3]
-	matrix_buffer[4] = (window_buffer[4][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 80009f0:	4b51      	ldr	r3, [pc, #324]	; (8000b38 <shiftRight+0x5a4>)
- 80009f2:	681b      	ldr	r3, [r3, #0]
- 80009f4:	425a      	negs	r2, r3
- 80009f6:	f003 030f 	and.w	r3, r3, #15
- 80009fa:	f002 020f 	and.w	r2, r2, #15
- 80009fe:	bf58      	it	pl
- 8000a00:	4253      	negpl	r3, r2
- 8000a02:	4a4e      	ldr	r2, [pc, #312]	; (8000b3c <shiftRight+0x5a8>)
- 8000a04:	4413      	add	r3, r2
- 8000a06:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000a0a:	01db      	lsls	r3, r3, #7
- 8000a0c:	b25a      	sxtb	r2, r3
-				   	   (window_buffer[4][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000a0e:	4b4a      	ldr	r3, [pc, #296]	; (8000b38 <shiftRight+0x5a4>)
- 8000a10:	681b      	ldr	r3, [r3, #0]
- 8000a12:	3301      	adds	r3, #1
- 8000a14:	4259      	negs	r1, r3
- 8000a16:	f003 030f 	and.w	r3, r3, #15
- 8000a1a:	f001 010f 	and.w	r1, r1, #15
- 8000a1e:	bf58      	it	pl
- 8000a20:	424b      	negpl	r3, r1
- 8000a22:	4946      	ldr	r1, [pc, #280]	; (8000b3c <shiftRight+0x5a8>)
- 8000a24:	440b      	add	r3, r1
- 8000a26:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000a2a:	019b      	lsls	r3, r3, #6
-	matrix_buffer[4] = (window_buffer[4][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000a2c:	b25b      	sxtb	r3, r3
- 8000a2e:	4313      	orrs	r3, r2
- 8000a30:	b25a      	sxtb	r2, r3
-					   (window_buffer[4][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000a32:	4b41      	ldr	r3, [pc, #260]	; (8000b38 <shiftRight+0x5a4>)
- 8000a34:	681b      	ldr	r3, [r3, #0]
- 8000a36:	3302      	adds	r3, #2
- 8000a38:	4259      	negs	r1, r3
- 8000a3a:	f003 030f 	and.w	r3, r3, #15
- 8000a3e:	f001 010f 	and.w	r1, r1, #15
- 8000a42:	bf58      	it	pl
- 8000a44:	424b      	negpl	r3, r1
- 8000a46:	493d      	ldr	r1, [pc, #244]	; (8000b3c <shiftRight+0x5a8>)
- 8000a48:	440b      	add	r3, r1
- 8000a4a:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000a4e:	015b      	lsls	r3, r3, #5
-				   	   (window_buffer[4][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000a50:	b25b      	sxtb	r3, r3
- 8000a52:	4313      	orrs	r3, r2
- 8000a54:	b25a      	sxtb	r2, r3
-					   (window_buffer[4][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000a56:	4b38      	ldr	r3, [pc, #224]	; (8000b38 <shiftRight+0x5a4>)
- 8000a58:	681b      	ldr	r3, [r3, #0]
- 8000a5a:	3303      	adds	r3, #3
- 8000a5c:	4259      	negs	r1, r3
- 8000a5e:	f003 030f 	and.w	r3, r3, #15
- 8000a62:	f001 010f 	and.w	r1, r1, #15
- 8000a66:	bf58      	it	pl
- 8000a68:	424b      	negpl	r3, r1
- 8000a6a:	4934      	ldr	r1, [pc, #208]	; (8000b3c <shiftRight+0x5a8>)
- 8000a6c:	440b      	add	r3, r1
- 8000a6e:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000a72:	011b      	lsls	r3, r3, #4
-					   (window_buffer[4][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000a74:	b25b      	sxtb	r3, r3
- 8000a76:	4313      	orrs	r3, r2
- 8000a78:	b25a      	sxtb	r2, r3
-					   (window_buffer[4][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000a7a:	4b2f      	ldr	r3, [pc, #188]	; (8000b38 <shiftRight+0x5a4>)
- 8000a7c:	681b      	ldr	r3, [r3, #0]
- 8000a7e:	3304      	adds	r3, #4
- 8000a80:	4259      	negs	r1, r3
- 8000a82:	f003 030f 	and.w	r3, r3, #15
- 8000a86:	f001 010f 	and.w	r1, r1, #15
- 8000a8a:	bf58      	it	pl
- 8000a8c:	424b      	negpl	r3, r1
- 8000a8e:	492b      	ldr	r1, [pc, #172]	; (8000b3c <shiftRight+0x5a8>)
- 8000a90:	440b      	add	r3, r1
- 8000a92:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000a96:	00db      	lsls	r3, r3, #3
-					   (window_buffer[4][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000a98:	b25b      	sxtb	r3, r3
- 8000a9a:	4313      	orrs	r3, r2
- 8000a9c:	b25a      	sxtb	r2, r3
-					   (window_buffer[4][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000a9e:	4b26      	ldr	r3, [pc, #152]	; (8000b38 <shiftRight+0x5a4>)
- 8000aa0:	681b      	ldr	r3, [r3, #0]
- 8000aa2:	3305      	adds	r3, #5
- 8000aa4:	4259      	negs	r1, r3
- 8000aa6:	f003 030f 	and.w	r3, r3, #15
- 8000aaa:	f001 010f 	and.w	r1, r1, #15
- 8000aae:	bf58      	it	pl
- 8000ab0:	424b      	negpl	r3, r1
- 8000ab2:	4922      	ldr	r1, [pc, #136]	; (8000b3c <shiftRight+0x5a8>)
- 8000ab4:	440b      	add	r3, r1
- 8000ab6:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000aba:	009b      	lsls	r3, r3, #2
-					   (window_buffer[4][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000abc:	b25b      	sxtb	r3, r3
- 8000abe:	4313      	orrs	r3, r2
- 8000ac0:	b25a      	sxtb	r2, r3
-					   (window_buffer[4][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000ac2:	4b1d      	ldr	r3, [pc, #116]	; (8000b38 <shiftRight+0x5a4>)
- 8000ac4:	681b      	ldr	r3, [r3, #0]
- 8000ac6:	3306      	adds	r3, #6
- 8000ac8:	4259      	negs	r1, r3
- 8000aca:	f003 030f 	and.w	r3, r3, #15
- 8000ace:	f001 010f 	and.w	r1, r1, #15
- 8000ad2:	bf58      	it	pl
- 8000ad4:	424b      	negpl	r3, r1
- 8000ad6:	4919      	ldr	r1, [pc, #100]	; (8000b3c <shiftRight+0x5a8>)
- 8000ad8:	440b      	add	r3, r1
- 8000ada:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000ade:	005b      	lsls	r3, r3, #1
-					   (window_buffer[4][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000ae0:	b25b      	sxtb	r3, r3
- 8000ae2:	4313      	orrs	r3, r2
- 8000ae4:	b25a      	sxtb	r2, r3
-					   (window_buffer[4][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 8000ae6:	4b14      	ldr	r3, [pc, #80]	; (8000b38 <shiftRight+0x5a4>)
- 8000ae8:	681b      	ldr	r3, [r3, #0]
- 8000aea:	3307      	adds	r3, #7
- 8000aec:	4259      	negs	r1, r3
- 8000aee:	f003 030f 	and.w	r3, r3, #15
- 8000af2:	f001 010f 	and.w	r1, r1, #15
- 8000af6:	bf58      	it	pl
- 8000af8:	424b      	negpl	r3, r1
- 8000afa:	4910      	ldr	r1, [pc, #64]	; (8000b3c <shiftRight+0x5a8>)
- 8000afc:	440b      	add	r3, r1
- 8000afe:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
- 8000b02:	b25b      	sxtb	r3, r3
-					   (window_buffer[4][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000b04:	4313      	orrs	r3, r2
- 8000b06:	b25b      	sxtb	r3, r3
- 8000b08:	b2da      	uxtb	r2, r3
-	matrix_buffer[4] = (window_buffer[4][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000b0a:	4b0d      	ldr	r3, [pc, #52]	; (8000b40 <shiftRight+0x5ac>)
- 8000b0c:	711a      	strb	r2, [r3, #4]
-	matrix_buffer[5] = (window_buffer[5][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000b0e:	4b0a      	ldr	r3, [pc, #40]	; (8000b38 <shiftRight+0x5a4>)
- 8000b10:	681b      	ldr	r3, [r3, #0]
- 8000b12:	425a      	negs	r2, r3
- 8000b14:	f003 030f 	and.w	r3, r3, #15
- 8000b18:	f002 020f 	and.w	r2, r2, #15
- 8000b1c:	bf58      	it	pl
- 8000b1e:	4253      	negpl	r3, r2
- 8000b20:	4a06      	ldr	r2, [pc, #24]	; (8000b3c <shiftRight+0x5a8>)
- 8000b22:	4413      	add	r3, r2
- 8000b24:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000b28:	01db      	lsls	r3, r3, #7
- 8000b2a:	b25a      	sxtb	r2, r3
-				   	   (window_buffer[5][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000b2c:	4b02      	ldr	r3, [pc, #8]	; (8000b38 <shiftRight+0x5a4>)
- 8000b2e:	681b      	ldr	r3, [r3, #0]
- 8000b30:	3301      	adds	r3, #1
- 8000b32:	4259      	negs	r1, r3
- 8000b34:	e006      	b.n	8000b44 <shiftRight+0x5b0>
- 8000b36:	bf00      	nop
- 8000b38:	20000098 	.word	0x20000098
- 8000b3c:	20000018 	.word	0x20000018
- 8000b40:	20000010 	.word	0x20000010
- 8000b44:	f003 030f 	and.w	r3, r3, #15
- 8000b48:	f001 010f 	and.w	r1, r1, #15
- 8000b4c:	bf58      	it	pl
- 8000b4e:	424b      	negpl	r3, r1
- 8000b50:	49b6      	ldr	r1, [pc, #728]	; (8000e2c <shiftRight+0x898>)
- 8000b52:	440b      	add	r3, r1
- 8000b54:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000b58:	019b      	lsls	r3, r3, #6
-	matrix_buffer[5] = (window_buffer[5][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000b5a:	b25b      	sxtb	r3, r3
- 8000b5c:	4313      	orrs	r3, r2
- 8000b5e:	b25a      	sxtb	r2, r3
-					   (window_buffer[5][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000b60:	4bb3      	ldr	r3, [pc, #716]	; (8000e30 <shiftRight+0x89c>)
- 8000b62:	681b      	ldr	r3, [r3, #0]
- 8000b64:	3302      	adds	r3, #2
- 8000b66:	4259      	negs	r1, r3
- 8000b68:	f003 030f 	and.w	r3, r3, #15
- 8000b6c:	f001 010f 	and.w	r1, r1, #15
- 8000b70:	bf58      	it	pl
- 8000b72:	424b      	negpl	r3, r1
- 8000b74:	49ad      	ldr	r1, [pc, #692]	; (8000e2c <shiftRight+0x898>)
- 8000b76:	440b      	add	r3, r1
- 8000b78:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000b7c:	015b      	lsls	r3, r3, #5
-				   	   (window_buffer[5][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000b7e:	b25b      	sxtb	r3, r3
- 8000b80:	4313      	orrs	r3, r2
- 8000b82:	b25a      	sxtb	r2, r3
-					   (window_buffer[5][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000b84:	4baa      	ldr	r3, [pc, #680]	; (8000e30 <shiftRight+0x89c>)
- 8000b86:	681b      	ldr	r3, [r3, #0]
- 8000b88:	3303      	adds	r3, #3
- 8000b8a:	4259      	negs	r1, r3
- 8000b8c:	f003 030f 	and.w	r3, r3, #15
- 8000b90:	f001 010f 	and.w	r1, r1, #15
- 8000b94:	bf58      	it	pl
- 8000b96:	424b      	negpl	r3, r1
- 8000b98:	49a4      	ldr	r1, [pc, #656]	; (8000e2c <shiftRight+0x898>)
- 8000b9a:	440b      	add	r3, r1
- 8000b9c:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000ba0:	011b      	lsls	r3, r3, #4
-					   (window_buffer[5][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000ba2:	b25b      	sxtb	r3, r3
- 8000ba4:	4313      	orrs	r3, r2
- 8000ba6:	b25a      	sxtb	r2, r3
-					   (window_buffer[5][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000ba8:	4ba1      	ldr	r3, [pc, #644]	; (8000e30 <shiftRight+0x89c>)
- 8000baa:	681b      	ldr	r3, [r3, #0]
- 8000bac:	3304      	adds	r3, #4
- 8000bae:	4259      	negs	r1, r3
- 8000bb0:	f003 030f 	and.w	r3, r3, #15
- 8000bb4:	f001 010f 	and.w	r1, r1, #15
- 8000bb8:	bf58      	it	pl
- 8000bba:	424b      	negpl	r3, r1
- 8000bbc:	499b      	ldr	r1, [pc, #620]	; (8000e2c <shiftRight+0x898>)
- 8000bbe:	440b      	add	r3, r1
- 8000bc0:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000bc4:	00db      	lsls	r3, r3, #3
-					   (window_buffer[5][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000bc6:	b25b      	sxtb	r3, r3
- 8000bc8:	4313      	orrs	r3, r2
- 8000bca:	b25a      	sxtb	r2, r3
-					   (window_buffer[5][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000bcc:	4b98      	ldr	r3, [pc, #608]	; (8000e30 <shiftRight+0x89c>)
- 8000bce:	681b      	ldr	r3, [r3, #0]
- 8000bd0:	3305      	adds	r3, #5
- 8000bd2:	4259      	negs	r1, r3
- 8000bd4:	f003 030f 	and.w	r3, r3, #15
- 8000bd8:	f001 010f 	and.w	r1, r1, #15
- 8000bdc:	bf58      	it	pl
- 8000bde:	424b      	negpl	r3, r1
- 8000be0:	4992      	ldr	r1, [pc, #584]	; (8000e2c <shiftRight+0x898>)
- 8000be2:	440b      	add	r3, r1
- 8000be4:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000be8:	009b      	lsls	r3, r3, #2
-					   (window_buffer[5][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000bea:	b25b      	sxtb	r3, r3
- 8000bec:	4313      	orrs	r3, r2
- 8000bee:	b25a      	sxtb	r2, r3
-					   (window_buffer[5][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000bf0:	4b8f      	ldr	r3, [pc, #572]	; (8000e30 <shiftRight+0x89c>)
- 8000bf2:	681b      	ldr	r3, [r3, #0]
- 8000bf4:	3306      	adds	r3, #6
- 8000bf6:	4259      	negs	r1, r3
- 8000bf8:	f003 030f 	and.w	r3, r3, #15
- 8000bfc:	f001 010f 	and.w	r1, r1, #15
- 8000c00:	bf58      	it	pl
- 8000c02:	424b      	negpl	r3, r1
- 8000c04:	4989      	ldr	r1, [pc, #548]	; (8000e2c <shiftRight+0x898>)
- 8000c06:	440b      	add	r3, r1
- 8000c08:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000c0c:	005b      	lsls	r3, r3, #1
-					   (window_buffer[5][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000c0e:	b25b      	sxtb	r3, r3
- 8000c10:	4313      	orrs	r3, r2
- 8000c12:	b25a      	sxtb	r2, r3
-					   (window_buffer[5][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 8000c14:	4b86      	ldr	r3, [pc, #536]	; (8000e30 <shiftRight+0x89c>)
- 8000c16:	681b      	ldr	r3, [r3, #0]
- 8000c18:	3307      	adds	r3, #7
- 8000c1a:	4259      	negs	r1, r3
- 8000c1c:	f003 030f 	and.w	r3, r3, #15
- 8000c20:	f001 010f 	and.w	r1, r1, #15
- 8000c24:	bf58      	it	pl
- 8000c26:	424b      	negpl	r3, r1
- 8000c28:	4980      	ldr	r1, [pc, #512]	; (8000e2c <shiftRight+0x898>)
- 8000c2a:	440b      	add	r3, r1
- 8000c2c:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
- 8000c30:	b25b      	sxtb	r3, r3
-					   (window_buffer[5][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000c32:	4313      	orrs	r3, r2
- 8000c34:	b25b      	sxtb	r3, r3
- 8000c36:	b2da      	uxtb	r2, r3
-	matrix_buffer[5] = (window_buffer[5][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000c38:	4b7e      	ldr	r3, [pc, #504]	; (8000e34 <shiftRight+0x8a0>)
- 8000c3a:	715a      	strb	r2, [r3, #5]
-	matrix_buffer[6] = (window_buffer[6][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000c3c:	4b7c      	ldr	r3, [pc, #496]	; (8000e30 <shiftRight+0x89c>)
- 8000c3e:	681b      	ldr	r3, [r3, #0]
- 8000c40:	425a      	negs	r2, r3
- 8000c42:	f003 030f 	and.w	r3, r3, #15
- 8000c46:	f002 020f 	and.w	r2, r2, #15
- 8000c4a:	bf58      	it	pl
- 8000c4c:	4253      	negpl	r3, r2
- 8000c4e:	4a77      	ldr	r2, [pc, #476]	; (8000e2c <shiftRight+0x898>)
- 8000c50:	4413      	add	r3, r2
- 8000c52:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000c56:	01db      	lsls	r3, r3, #7
- 8000c58:	b25a      	sxtb	r2, r3
-				   	   (window_buffer[6][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000c5a:	4b75      	ldr	r3, [pc, #468]	; (8000e30 <shiftRight+0x89c>)
- 8000c5c:	681b      	ldr	r3, [r3, #0]
- 8000c5e:	3301      	adds	r3, #1
- 8000c60:	4259      	negs	r1, r3
- 8000c62:	f003 030f 	and.w	r3, r3, #15
- 8000c66:	f001 010f 	and.w	r1, r1, #15
- 8000c6a:	bf58      	it	pl
- 8000c6c:	424b      	negpl	r3, r1
- 8000c6e:	496f      	ldr	r1, [pc, #444]	; (8000e2c <shiftRight+0x898>)
- 8000c70:	440b      	add	r3, r1
- 8000c72:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000c76:	019b      	lsls	r3, r3, #6
-	matrix_buffer[6] = (window_buffer[6][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000c78:	b25b      	sxtb	r3, r3
- 8000c7a:	4313      	orrs	r3, r2
- 8000c7c:	b25a      	sxtb	r2, r3
-					   (window_buffer[6][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000c7e:	4b6c      	ldr	r3, [pc, #432]	; (8000e30 <shiftRight+0x89c>)
- 8000c80:	681b      	ldr	r3, [r3, #0]
- 8000c82:	3302      	adds	r3, #2
- 8000c84:	4259      	negs	r1, r3
- 8000c86:	f003 030f 	and.w	r3, r3, #15
- 8000c8a:	f001 010f 	and.w	r1, r1, #15
- 8000c8e:	bf58      	it	pl
- 8000c90:	424b      	negpl	r3, r1
- 8000c92:	4966      	ldr	r1, [pc, #408]	; (8000e2c <shiftRight+0x898>)
- 8000c94:	440b      	add	r3, r1
- 8000c96:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000c9a:	015b      	lsls	r3, r3, #5
-				   	   (window_buffer[6][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000c9c:	b25b      	sxtb	r3, r3
- 8000c9e:	4313      	orrs	r3, r2
- 8000ca0:	b25a      	sxtb	r2, r3
-					   (window_buffer[6][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000ca2:	4b63      	ldr	r3, [pc, #396]	; (8000e30 <shiftRight+0x89c>)
- 8000ca4:	681b      	ldr	r3, [r3, #0]
- 8000ca6:	3303      	adds	r3, #3
- 8000ca8:	4259      	negs	r1, r3
- 8000caa:	f003 030f 	and.w	r3, r3, #15
- 8000cae:	f001 010f 	and.w	r1, r1, #15
- 8000cb2:	bf58      	it	pl
- 8000cb4:	424b      	negpl	r3, r1
- 8000cb6:	495d      	ldr	r1, [pc, #372]	; (8000e2c <shiftRight+0x898>)
- 8000cb8:	440b      	add	r3, r1
- 8000cba:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000cbe:	011b      	lsls	r3, r3, #4
-					   (window_buffer[6][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000cc0:	b25b      	sxtb	r3, r3
- 8000cc2:	4313      	orrs	r3, r2
- 8000cc4:	b25a      	sxtb	r2, r3
-					   (window_buffer[6][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000cc6:	4b5a      	ldr	r3, [pc, #360]	; (8000e30 <shiftRight+0x89c>)
- 8000cc8:	681b      	ldr	r3, [r3, #0]
- 8000cca:	3304      	adds	r3, #4
- 8000ccc:	4259      	negs	r1, r3
- 8000cce:	f003 030f 	and.w	r3, r3, #15
- 8000cd2:	f001 010f 	and.w	r1, r1, #15
- 8000cd6:	bf58      	it	pl
- 8000cd8:	424b      	negpl	r3, r1
- 8000cda:	4954      	ldr	r1, [pc, #336]	; (8000e2c <shiftRight+0x898>)
- 8000cdc:	440b      	add	r3, r1
- 8000cde:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000ce2:	00db      	lsls	r3, r3, #3
-					   (window_buffer[6][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000ce4:	b25b      	sxtb	r3, r3
- 8000ce6:	4313      	orrs	r3, r2
- 8000ce8:	b25a      	sxtb	r2, r3
-					   (window_buffer[6][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000cea:	4b51      	ldr	r3, [pc, #324]	; (8000e30 <shiftRight+0x89c>)
- 8000cec:	681b      	ldr	r3, [r3, #0]
- 8000cee:	3305      	adds	r3, #5
- 8000cf0:	4259      	negs	r1, r3
- 8000cf2:	f003 030f 	and.w	r3, r3, #15
- 8000cf6:	f001 010f 	and.w	r1, r1, #15
- 8000cfa:	bf58      	it	pl
- 8000cfc:	424b      	negpl	r3, r1
- 8000cfe:	494b      	ldr	r1, [pc, #300]	; (8000e2c <shiftRight+0x898>)
- 8000d00:	440b      	add	r3, r1
- 8000d02:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000d06:	009b      	lsls	r3, r3, #2
-					   (window_buffer[6][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000d08:	b25b      	sxtb	r3, r3
- 8000d0a:	4313      	orrs	r3, r2
- 8000d0c:	b25a      	sxtb	r2, r3
-					   (window_buffer[6][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000d0e:	4b48      	ldr	r3, [pc, #288]	; (8000e30 <shiftRight+0x89c>)
- 8000d10:	681b      	ldr	r3, [r3, #0]
- 8000d12:	3306      	adds	r3, #6
- 8000d14:	4259      	negs	r1, r3
- 8000d16:	f003 030f 	and.w	r3, r3, #15
- 8000d1a:	f001 010f 	and.w	r1, r1, #15
- 8000d1e:	bf58      	it	pl
- 8000d20:	424b      	negpl	r3, r1
- 8000d22:	4942      	ldr	r1, [pc, #264]	; (8000e2c <shiftRight+0x898>)
- 8000d24:	440b      	add	r3, r1
- 8000d26:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000d2a:	005b      	lsls	r3, r3, #1
-					   (window_buffer[6][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000d2c:	b25b      	sxtb	r3, r3
- 8000d2e:	4313      	orrs	r3, r2
- 8000d30:	b25a      	sxtb	r2, r3
-					   (window_buffer[6][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 8000d32:	4b3f      	ldr	r3, [pc, #252]	; (8000e30 <shiftRight+0x89c>)
- 8000d34:	681b      	ldr	r3, [r3, #0]
- 8000d36:	3307      	adds	r3, #7
- 8000d38:	4259      	negs	r1, r3
- 8000d3a:	f003 030f 	and.w	r3, r3, #15
- 8000d3e:	f001 010f 	and.w	r1, r1, #15
- 8000d42:	bf58      	it	pl
- 8000d44:	424b      	negpl	r3, r1
- 8000d46:	4939      	ldr	r1, [pc, #228]	; (8000e2c <shiftRight+0x898>)
- 8000d48:	440b      	add	r3, r1
- 8000d4a:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
- 8000d4e:	b25b      	sxtb	r3, r3
-					   (window_buffer[6][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000d50:	4313      	orrs	r3, r2
- 8000d52:	b25b      	sxtb	r3, r3
- 8000d54:	b2da      	uxtb	r2, r3
-	matrix_buffer[6] = (window_buffer[6][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000d56:	4b37      	ldr	r3, [pc, #220]	; (8000e34 <shiftRight+0x8a0>)
- 8000d58:	719a      	strb	r2, [r3, #6]
-	matrix_buffer[7] = (window_buffer[7][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000d5a:	4b35      	ldr	r3, [pc, #212]	; (8000e30 <shiftRight+0x89c>)
- 8000d5c:	681b      	ldr	r3, [r3, #0]
- 8000d5e:	425a      	negs	r2, r3
- 8000d60:	f003 030f 	and.w	r3, r3, #15
- 8000d64:	f002 020f 	and.w	r2, r2, #15
- 8000d68:	bf58      	it	pl
- 8000d6a:	4253      	negpl	r3, r2
- 8000d6c:	4a2f      	ldr	r2, [pc, #188]	; (8000e2c <shiftRight+0x898>)
- 8000d6e:	4413      	add	r3, r2
- 8000d70:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000d74:	01db      	lsls	r3, r3, #7
- 8000d76:	b25a      	sxtb	r2, r3
-				   	   (window_buffer[7][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000d78:	4b2d      	ldr	r3, [pc, #180]	; (8000e30 <shiftRight+0x89c>)
- 8000d7a:	681b      	ldr	r3, [r3, #0]
- 8000d7c:	3301      	adds	r3, #1
- 8000d7e:	4259      	negs	r1, r3
- 8000d80:	f003 030f 	and.w	r3, r3, #15
- 8000d84:	f001 010f 	and.w	r1, r1, #15
- 8000d88:	bf58      	it	pl
- 8000d8a:	424b      	negpl	r3, r1
- 8000d8c:	4927      	ldr	r1, [pc, #156]	; (8000e2c <shiftRight+0x898>)
- 8000d8e:	440b      	add	r3, r1
- 8000d90:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000d94:	019b      	lsls	r3, r3, #6
-	matrix_buffer[7] = (window_buffer[7][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000d96:	b25b      	sxtb	r3, r3
- 8000d98:	4313      	orrs	r3, r2
- 8000d9a:	b25a      	sxtb	r2, r3
-					   (window_buffer[7][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000d9c:	4b24      	ldr	r3, [pc, #144]	; (8000e30 <shiftRight+0x89c>)
- 8000d9e:	681b      	ldr	r3, [r3, #0]
- 8000da0:	3302      	adds	r3, #2
- 8000da2:	4259      	negs	r1, r3
- 8000da4:	f003 030f 	and.w	r3, r3, #15
- 8000da8:	f001 010f 	and.w	r1, r1, #15
- 8000dac:	bf58      	it	pl
- 8000dae:	424b      	negpl	r3, r1
- 8000db0:	491e      	ldr	r1, [pc, #120]	; (8000e2c <shiftRight+0x898>)
- 8000db2:	440b      	add	r3, r1
- 8000db4:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000db8:	015b      	lsls	r3, r3, #5
-				   	   (window_buffer[7][(offset_R + 1)%WINDOW_BUFFER] << 6) |
- 8000dba:	b25b      	sxtb	r3, r3
- 8000dbc:	4313      	orrs	r3, r2
- 8000dbe:	b25a      	sxtb	r2, r3
-					   (window_buffer[7][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000dc0:	4b1b      	ldr	r3, [pc, #108]	; (8000e30 <shiftRight+0x89c>)
- 8000dc2:	681b      	ldr	r3, [r3, #0]
- 8000dc4:	3303      	adds	r3, #3
- 8000dc6:	4259      	negs	r1, r3
- 8000dc8:	f003 030f 	and.w	r3, r3, #15
- 8000dcc:	f001 010f 	and.w	r1, r1, #15
- 8000dd0:	bf58      	it	pl
- 8000dd2:	424b      	negpl	r3, r1
- 8000dd4:	4915      	ldr	r1, [pc, #84]	; (8000e2c <shiftRight+0x898>)
- 8000dd6:	440b      	add	r3, r1
- 8000dd8:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000ddc:	011b      	lsls	r3, r3, #4
-					   (window_buffer[7][(offset_R + 2)%WINDOW_BUFFER] << 5) |
- 8000dde:	b25b      	sxtb	r3, r3
- 8000de0:	4313      	orrs	r3, r2
- 8000de2:	b25a      	sxtb	r2, r3
-					   (window_buffer[7][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000de4:	4b12      	ldr	r3, [pc, #72]	; (8000e30 <shiftRight+0x89c>)
- 8000de6:	681b      	ldr	r3, [r3, #0]
- 8000de8:	3304      	adds	r3, #4
- 8000dea:	4259      	negs	r1, r3
- 8000dec:	f003 030f 	and.w	r3, r3, #15
- 8000df0:	f001 010f 	and.w	r1, r1, #15
- 8000df4:	bf58      	it	pl
- 8000df6:	424b      	negpl	r3, r1
- 8000df8:	490c      	ldr	r1, [pc, #48]	; (8000e2c <shiftRight+0x898>)
- 8000dfa:	440b      	add	r3, r1
- 8000dfc:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000e00:	00db      	lsls	r3, r3, #3
-					   (window_buffer[7][(offset_R + 3)%WINDOW_BUFFER] << 4) |
- 8000e02:	b25b      	sxtb	r3, r3
- 8000e04:	4313      	orrs	r3, r2
- 8000e06:	b25a      	sxtb	r2, r3
-					   (window_buffer[7][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000e08:	4b09      	ldr	r3, [pc, #36]	; (8000e30 <shiftRight+0x89c>)
- 8000e0a:	681b      	ldr	r3, [r3, #0]
- 8000e0c:	3305      	adds	r3, #5
- 8000e0e:	4259      	negs	r1, r3
- 8000e10:	f003 030f 	and.w	r3, r3, #15
- 8000e14:	f001 010f 	and.w	r1, r1, #15
- 8000e18:	bf58      	it	pl
- 8000e1a:	424b      	negpl	r3, r1
- 8000e1c:	4903      	ldr	r1, [pc, #12]	; (8000e2c <shiftRight+0x898>)
- 8000e1e:	440b      	add	r3, r1
- 8000e20:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000e24:	009b      	lsls	r3, r3, #2
-					   (window_buffer[7][(offset_R + 4)%WINDOW_BUFFER] << 3) |
- 8000e26:	b25b      	sxtb	r3, r3
- 8000e28:	e006      	b.n	8000e38 <shiftRight+0x8a4>
- 8000e2a:	bf00      	nop
- 8000e2c:	20000018 	.word	0x20000018
- 8000e30:	20000098 	.word	0x20000098
- 8000e34:	20000010 	.word	0x20000010
- 8000e38:	4313      	orrs	r3, r2
- 8000e3a:	b25a      	sxtb	r2, r3
-					   (window_buffer[7][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000e3c:	4b1a      	ldr	r3, [pc, #104]	; (8000ea8 <shiftRight+0x914>)
- 8000e3e:	681b      	ldr	r3, [r3, #0]
- 8000e40:	3306      	adds	r3, #6
- 8000e42:	4259      	negs	r1, r3
- 8000e44:	f003 030f 	and.w	r3, r3, #15
- 8000e48:	f001 010f 	and.w	r1, r1, #15
- 8000e4c:	bf58      	it	pl
- 8000e4e:	424b      	negpl	r3, r1
- 8000e50:	4916      	ldr	r1, [pc, #88]	; (8000eac <shiftRight+0x918>)
- 8000e52:	440b      	add	r3, r1
- 8000e54:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000e58:	005b      	lsls	r3, r3, #1
-					   (window_buffer[7][(offset_R + 5)%WINDOW_BUFFER] << 2) |
- 8000e5a:	b25b      	sxtb	r3, r3
- 8000e5c:	4313      	orrs	r3, r2
- 8000e5e:	b25a      	sxtb	r2, r3
-					   (window_buffer[7][(offset_R + 7)%WINDOW_BUFFER] << 0);
- 8000e60:	4b11      	ldr	r3, [pc, #68]	; (8000ea8 <shiftRight+0x914>)
- 8000e62:	681b      	ldr	r3, [r3, #0]
- 8000e64:	3307      	adds	r3, #7
- 8000e66:	4259      	negs	r1, r3
- 8000e68:	f003 030f 	and.w	r3, r3, #15
- 8000e6c:	f001 010f 	and.w	r1, r1, #15
- 8000e70:	bf58      	it	pl
- 8000e72:	424b      	negpl	r3, r1
- 8000e74:	490d      	ldr	r1, [pc, #52]	; (8000eac <shiftRight+0x918>)
- 8000e76:	440b      	add	r3, r1
- 8000e78:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
- 8000e7c:	b25b      	sxtb	r3, r3
-					   (window_buffer[7][(offset_R + 6)%WINDOW_BUFFER] << 1) |
- 8000e7e:	4313      	orrs	r3, r2
- 8000e80:	b25b      	sxtb	r3, r3
- 8000e82:	b2da      	uxtb	r2, r3
-	matrix_buffer[7] = (window_buffer[7][(offset_R + 0)%WINDOW_BUFFER] << 7) |
- 8000e84:	4b0a      	ldr	r3, [pc, #40]	; (8000eb0 <shiftRight+0x91c>)
- 8000e86:	71da      	strb	r2, [r3, #7]
+ 80007be:	b25a      	sxtb	r2, r3
+			   	   	   (window_buffer[2][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 80007c0:	4b22      	ldr	r3, [pc, #136]	; (800084c <shiftLeft+0x2b8>)
+ 80007c2:	681b      	ldr	r3, [r3, #0]
+ 80007c4:	3301      	adds	r3, #1
+ 80007c6:	4259      	negs	r1, r3
+ 80007c8:	f003 030f 	and.w	r3, r3, #15
+ 80007cc:	f001 010f 	and.w	r1, r1, #15
+ 80007d0:	bf58      	it	pl
+ 80007d2:	424b      	negpl	r3, r1
+ 80007d4:	491e      	ldr	r1, [pc, #120]	; (8000850 <shiftLeft+0x2bc>)
+ 80007d6:	440b      	add	r3, r1
+ 80007d8:	f893 3020 	ldrb.w	r3, [r3, #32]
+ 80007dc:	005b      	lsls	r3, r3, #1
+	matrix_buffer[2] = (window_buffer[2][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80007de:	b25b      	sxtb	r3, r3
+ 80007e0:	4313      	orrs	r3, r2
+ 80007e2:	b25a      	sxtb	r2, r3
+					   (window_buffer[2][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 80007e4:	4b19      	ldr	r3, [pc, #100]	; (800084c <shiftLeft+0x2b8>)
+ 80007e6:	681b      	ldr	r3, [r3, #0]
+ 80007e8:	3302      	adds	r3, #2
+ 80007ea:	4259      	negs	r1, r3
+ 80007ec:	f003 030f 	and.w	r3, r3, #15
+ 80007f0:	f001 010f 	and.w	r1, r1, #15
+ 80007f4:	bf58      	it	pl
+ 80007f6:	424b      	negpl	r3, r1
+ 80007f8:	4915      	ldr	r1, [pc, #84]	; (8000850 <shiftLeft+0x2bc>)
+ 80007fa:	440b      	add	r3, r1
+ 80007fc:	f893 3020 	ldrb.w	r3, [r3, #32]
+ 8000800:	009b      	lsls	r3, r3, #2
+			   	   	   (window_buffer[2][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000802:	b25b      	sxtb	r3, r3
+ 8000804:	4313      	orrs	r3, r2
+ 8000806:	b25a      	sxtb	r2, r3
+					   (window_buffer[2][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000808:	4b10      	ldr	r3, [pc, #64]	; (800084c <shiftLeft+0x2b8>)
+ 800080a:	681b      	ldr	r3, [r3, #0]
+ 800080c:	3303      	adds	r3, #3
+ 800080e:	4259      	negs	r1, r3
+ 8000810:	f003 030f 	and.w	r3, r3, #15
+ 8000814:	f001 010f 	and.w	r1, r1, #15
+ 8000818:	bf58      	it	pl
+ 800081a:	424b      	negpl	r3, r1
+ 800081c:	490c      	ldr	r1, [pc, #48]	; (8000850 <shiftLeft+0x2bc>)
+ 800081e:	440b      	add	r3, r1
+ 8000820:	f893 3020 	ldrb.w	r3, [r3, #32]
+ 8000824:	00db      	lsls	r3, r3, #3
+					   (window_buffer[2][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000826:	b25b      	sxtb	r3, r3
+ 8000828:	4313      	orrs	r3, r2
+ 800082a:	b25a      	sxtb	r2, r3
+					   (window_buffer[2][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 800082c:	4b07      	ldr	r3, [pc, #28]	; (800084c <shiftLeft+0x2b8>)
+ 800082e:	681b      	ldr	r3, [r3, #0]
+ 8000830:	3304      	adds	r3, #4
+ 8000832:	4259      	negs	r1, r3
+ 8000834:	f003 030f 	and.w	r3, r3, #15
+ 8000838:	f001 010f 	and.w	r1, r1, #15
+ 800083c:	bf58      	it	pl
+ 800083e:	424b      	negpl	r3, r1
+ 8000840:	4903      	ldr	r1, [pc, #12]	; (8000850 <shiftLeft+0x2bc>)
+ 8000842:	440b      	add	r3, r1
+ 8000844:	f893 3020 	ldrb.w	r3, [r3, #32]
+ 8000848:	011b      	lsls	r3, r3, #4
+ 800084a:	e005      	b.n	8000858 <shiftLeft+0x2c4>
+ 800084c:	200000d4 	.word	0x200000d4
+ 8000850:	20000018 	.word	0x20000018
+ 8000854:	20000010 	.word	0x20000010
+					   (window_buffer[2][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000858:	b25b      	sxtb	r3, r3
+ 800085a:	4313      	orrs	r3, r2
+ 800085c:	b25a      	sxtb	r2, r3
+					   (window_buffer[2][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 800085e:	4bb5      	ldr	r3, [pc, #724]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000860:	681b      	ldr	r3, [r3, #0]
+ 8000862:	3305      	adds	r3, #5
+ 8000864:	4259      	negs	r1, r3
+ 8000866:	f003 030f 	and.w	r3, r3, #15
+ 800086a:	f001 010f 	and.w	r1, r1, #15
+ 800086e:	bf58      	it	pl
+ 8000870:	424b      	negpl	r3, r1
+ 8000872:	49b1      	ldr	r1, [pc, #708]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000874:	440b      	add	r3, r1
+ 8000876:	f893 3020 	ldrb.w	r3, [r3, #32]
+ 800087a:	015b      	lsls	r3, r3, #5
+					   (window_buffer[2][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 800087c:	b25b      	sxtb	r3, r3
+ 800087e:	4313      	orrs	r3, r2
+ 8000880:	b25a      	sxtb	r2, r3
+					   (window_buffer[2][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000882:	4bac      	ldr	r3, [pc, #688]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000884:	681b      	ldr	r3, [r3, #0]
+ 8000886:	3306      	adds	r3, #6
+ 8000888:	4259      	negs	r1, r3
+ 800088a:	f003 030f 	and.w	r3, r3, #15
+ 800088e:	f001 010f 	and.w	r1, r1, #15
+ 8000892:	bf58      	it	pl
+ 8000894:	424b      	negpl	r3, r1
+ 8000896:	49a8      	ldr	r1, [pc, #672]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000898:	440b      	add	r3, r1
+ 800089a:	f893 3020 	ldrb.w	r3, [r3, #32]
+ 800089e:	019b      	lsls	r3, r3, #6
+					   (window_buffer[2][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 80008a0:	b25b      	sxtb	r3, r3
+ 80008a2:	4313      	orrs	r3, r2
+ 80008a4:	b25a      	sxtb	r2, r3
+					   (window_buffer[2][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 80008a6:	4ba3      	ldr	r3, [pc, #652]	; (8000b34 <shiftLeft+0x5a0>)
+ 80008a8:	681b      	ldr	r3, [r3, #0]
+ 80008aa:	3307      	adds	r3, #7
+ 80008ac:	4259      	negs	r1, r3
+ 80008ae:	f003 030f 	and.w	r3, r3, #15
+ 80008b2:	f001 010f 	and.w	r1, r1, #15
+ 80008b6:	bf58      	it	pl
+ 80008b8:	424b      	negpl	r3, r1
+ 80008ba:	499f      	ldr	r1, [pc, #636]	; (8000b38 <shiftLeft+0x5a4>)
+ 80008bc:	440b      	add	r3, r1
+ 80008be:	f893 3020 	ldrb.w	r3, [r3, #32]
+ 80008c2:	01db      	lsls	r3, r3, #7
+					   (window_buffer[2][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 80008c4:	b25b      	sxtb	r3, r3
+ 80008c6:	4313      	orrs	r3, r2
+ 80008c8:	b25b      	sxtb	r3, r3
+ 80008ca:	b2da      	uxtb	r2, r3
+	matrix_buffer[2] = (window_buffer[2][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80008cc:	4b9b      	ldr	r3, [pc, #620]	; (8000b3c <shiftLeft+0x5a8>)
+ 80008ce:	709a      	strb	r2, [r3, #2]
+	matrix_buffer[3] = (window_buffer[3][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80008d0:	4b98      	ldr	r3, [pc, #608]	; (8000b34 <shiftLeft+0x5a0>)
+ 80008d2:	681b      	ldr	r3, [r3, #0]
+ 80008d4:	425a      	negs	r2, r3
+ 80008d6:	f003 030f 	and.w	r3, r3, #15
+ 80008da:	f002 020f 	and.w	r2, r2, #15
+ 80008de:	bf58      	it	pl
+ 80008e0:	4253      	negpl	r3, r2
+ 80008e2:	4a95      	ldr	r2, [pc, #596]	; (8000b38 <shiftLeft+0x5a4>)
+ 80008e4:	4413      	add	r3, r2
+ 80008e6:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 80008ea:	b25a      	sxtb	r2, r3
+			   	   	   (window_buffer[3][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 80008ec:	4b91      	ldr	r3, [pc, #580]	; (8000b34 <shiftLeft+0x5a0>)
+ 80008ee:	681b      	ldr	r3, [r3, #0]
+ 80008f0:	3301      	adds	r3, #1
+ 80008f2:	4259      	negs	r1, r3
+ 80008f4:	f003 030f 	and.w	r3, r3, #15
+ 80008f8:	f001 010f 	and.w	r1, r1, #15
+ 80008fc:	bf58      	it	pl
+ 80008fe:	424b      	negpl	r3, r1
+ 8000900:	498d      	ldr	r1, [pc, #564]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000902:	440b      	add	r3, r1
+ 8000904:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 8000908:	005b      	lsls	r3, r3, #1
+	matrix_buffer[3] = (window_buffer[3][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 800090a:	b25b      	sxtb	r3, r3
+ 800090c:	4313      	orrs	r3, r2
+ 800090e:	b25a      	sxtb	r2, r3
+					   (window_buffer[3][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000910:	4b88      	ldr	r3, [pc, #544]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000912:	681b      	ldr	r3, [r3, #0]
+ 8000914:	3302      	adds	r3, #2
+ 8000916:	4259      	negs	r1, r3
+ 8000918:	f003 030f 	and.w	r3, r3, #15
+ 800091c:	f001 010f 	and.w	r1, r1, #15
+ 8000920:	bf58      	it	pl
+ 8000922:	424b      	negpl	r3, r1
+ 8000924:	4984      	ldr	r1, [pc, #528]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000926:	440b      	add	r3, r1
+ 8000928:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 800092c:	009b      	lsls	r3, r3, #2
+			   	   	   (window_buffer[3][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 800092e:	b25b      	sxtb	r3, r3
+ 8000930:	4313      	orrs	r3, r2
+ 8000932:	b25a      	sxtb	r2, r3
+					   (window_buffer[3][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000934:	4b7f      	ldr	r3, [pc, #508]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000936:	681b      	ldr	r3, [r3, #0]
+ 8000938:	3303      	adds	r3, #3
+ 800093a:	4259      	negs	r1, r3
+ 800093c:	f003 030f 	and.w	r3, r3, #15
+ 8000940:	f001 010f 	and.w	r1, r1, #15
+ 8000944:	bf58      	it	pl
+ 8000946:	424b      	negpl	r3, r1
+ 8000948:	497b      	ldr	r1, [pc, #492]	; (8000b38 <shiftLeft+0x5a4>)
+ 800094a:	440b      	add	r3, r1
+ 800094c:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 8000950:	00db      	lsls	r3, r3, #3
+					   (window_buffer[3][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000952:	b25b      	sxtb	r3, r3
+ 8000954:	4313      	orrs	r3, r2
+ 8000956:	b25a      	sxtb	r2, r3
+					   (window_buffer[3][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000958:	4b76      	ldr	r3, [pc, #472]	; (8000b34 <shiftLeft+0x5a0>)
+ 800095a:	681b      	ldr	r3, [r3, #0]
+ 800095c:	3304      	adds	r3, #4
+ 800095e:	4259      	negs	r1, r3
+ 8000960:	f003 030f 	and.w	r3, r3, #15
+ 8000964:	f001 010f 	and.w	r1, r1, #15
+ 8000968:	bf58      	it	pl
+ 800096a:	424b      	negpl	r3, r1
+ 800096c:	4972      	ldr	r1, [pc, #456]	; (8000b38 <shiftLeft+0x5a4>)
+ 800096e:	440b      	add	r3, r1
+ 8000970:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 8000974:	011b      	lsls	r3, r3, #4
+					   (window_buffer[3][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000976:	b25b      	sxtb	r3, r3
+ 8000978:	4313      	orrs	r3, r2
+ 800097a:	b25a      	sxtb	r2, r3
+					   (window_buffer[3][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 800097c:	4b6d      	ldr	r3, [pc, #436]	; (8000b34 <shiftLeft+0x5a0>)
+ 800097e:	681b      	ldr	r3, [r3, #0]
+ 8000980:	3305      	adds	r3, #5
+ 8000982:	4259      	negs	r1, r3
+ 8000984:	f003 030f 	and.w	r3, r3, #15
+ 8000988:	f001 010f 	and.w	r1, r1, #15
+ 800098c:	bf58      	it	pl
+ 800098e:	424b      	negpl	r3, r1
+ 8000990:	4969      	ldr	r1, [pc, #420]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000992:	440b      	add	r3, r1
+ 8000994:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 8000998:	015b      	lsls	r3, r3, #5
+					   (window_buffer[3][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 800099a:	b25b      	sxtb	r3, r3
+ 800099c:	4313      	orrs	r3, r2
+ 800099e:	b25a      	sxtb	r2, r3
+					   (window_buffer[3][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 80009a0:	4b64      	ldr	r3, [pc, #400]	; (8000b34 <shiftLeft+0x5a0>)
+ 80009a2:	681b      	ldr	r3, [r3, #0]
+ 80009a4:	3306      	adds	r3, #6
+ 80009a6:	4259      	negs	r1, r3
+ 80009a8:	f003 030f 	and.w	r3, r3, #15
+ 80009ac:	f001 010f 	and.w	r1, r1, #15
+ 80009b0:	bf58      	it	pl
+ 80009b2:	424b      	negpl	r3, r1
+ 80009b4:	4960      	ldr	r1, [pc, #384]	; (8000b38 <shiftLeft+0x5a4>)
+ 80009b6:	440b      	add	r3, r1
+ 80009b8:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 80009bc:	019b      	lsls	r3, r3, #6
+					   (window_buffer[3][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 80009be:	b25b      	sxtb	r3, r3
+ 80009c0:	4313      	orrs	r3, r2
+ 80009c2:	b25a      	sxtb	r2, r3
+					   (window_buffer[3][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 80009c4:	4b5b      	ldr	r3, [pc, #364]	; (8000b34 <shiftLeft+0x5a0>)
+ 80009c6:	681b      	ldr	r3, [r3, #0]
+ 80009c8:	3307      	adds	r3, #7
+ 80009ca:	4259      	negs	r1, r3
+ 80009cc:	f003 030f 	and.w	r3, r3, #15
+ 80009d0:	f001 010f 	and.w	r1, r1, #15
+ 80009d4:	bf58      	it	pl
+ 80009d6:	424b      	negpl	r3, r1
+ 80009d8:	4957      	ldr	r1, [pc, #348]	; (8000b38 <shiftLeft+0x5a4>)
+ 80009da:	440b      	add	r3, r1
+ 80009dc:	f893 3030 	ldrb.w	r3, [r3, #48]	; 0x30
+ 80009e0:	01db      	lsls	r3, r3, #7
+					   (window_buffer[3][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 80009e2:	b25b      	sxtb	r3, r3
+ 80009e4:	4313      	orrs	r3, r2
+ 80009e6:	b25b      	sxtb	r3, r3
+ 80009e8:	b2da      	uxtb	r2, r3
+	matrix_buffer[3] = (window_buffer[3][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80009ea:	4b54      	ldr	r3, [pc, #336]	; (8000b3c <shiftLeft+0x5a8>)
+ 80009ec:	70da      	strb	r2, [r3, #3]
+	matrix_buffer[4] = (window_buffer[4][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 80009ee:	4b51      	ldr	r3, [pc, #324]	; (8000b34 <shiftLeft+0x5a0>)
+ 80009f0:	681b      	ldr	r3, [r3, #0]
+ 80009f2:	425a      	negs	r2, r3
+ 80009f4:	f003 030f 	and.w	r3, r3, #15
+ 80009f8:	f002 020f 	and.w	r2, r2, #15
+ 80009fc:	bf58      	it	pl
+ 80009fe:	4253      	negpl	r3, r2
+ 8000a00:	4a4d      	ldr	r2, [pc, #308]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000a02:	4413      	add	r3, r2
+ 8000a04:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000a08:	b25a      	sxtb	r2, r3
+			   	   	   (window_buffer[4][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000a0a:	4b4a      	ldr	r3, [pc, #296]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000a0c:	681b      	ldr	r3, [r3, #0]
+ 8000a0e:	3301      	adds	r3, #1
+ 8000a10:	4259      	negs	r1, r3
+ 8000a12:	f003 030f 	and.w	r3, r3, #15
+ 8000a16:	f001 010f 	and.w	r1, r1, #15
+ 8000a1a:	bf58      	it	pl
+ 8000a1c:	424b      	negpl	r3, r1
+ 8000a1e:	4946      	ldr	r1, [pc, #280]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000a20:	440b      	add	r3, r1
+ 8000a22:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000a26:	005b      	lsls	r3, r3, #1
+	matrix_buffer[4] = (window_buffer[4][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000a28:	b25b      	sxtb	r3, r3
+ 8000a2a:	4313      	orrs	r3, r2
+ 8000a2c:	b25a      	sxtb	r2, r3
+					   (window_buffer[4][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000a2e:	4b41      	ldr	r3, [pc, #260]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000a30:	681b      	ldr	r3, [r3, #0]
+ 8000a32:	3302      	adds	r3, #2
+ 8000a34:	4259      	negs	r1, r3
+ 8000a36:	f003 030f 	and.w	r3, r3, #15
+ 8000a3a:	f001 010f 	and.w	r1, r1, #15
+ 8000a3e:	bf58      	it	pl
+ 8000a40:	424b      	negpl	r3, r1
+ 8000a42:	493d      	ldr	r1, [pc, #244]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000a44:	440b      	add	r3, r1
+ 8000a46:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000a4a:	009b      	lsls	r3, r3, #2
+			   	   	   (window_buffer[4][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000a4c:	b25b      	sxtb	r3, r3
+ 8000a4e:	4313      	orrs	r3, r2
+ 8000a50:	b25a      	sxtb	r2, r3
+					   (window_buffer[4][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000a52:	4b38      	ldr	r3, [pc, #224]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000a54:	681b      	ldr	r3, [r3, #0]
+ 8000a56:	3303      	adds	r3, #3
+ 8000a58:	4259      	negs	r1, r3
+ 8000a5a:	f003 030f 	and.w	r3, r3, #15
+ 8000a5e:	f001 010f 	and.w	r1, r1, #15
+ 8000a62:	bf58      	it	pl
+ 8000a64:	424b      	negpl	r3, r1
+ 8000a66:	4934      	ldr	r1, [pc, #208]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000a68:	440b      	add	r3, r1
+ 8000a6a:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000a6e:	00db      	lsls	r3, r3, #3
+					   (window_buffer[4][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000a70:	b25b      	sxtb	r3, r3
+ 8000a72:	4313      	orrs	r3, r2
+ 8000a74:	b25a      	sxtb	r2, r3
+					   (window_buffer[4][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000a76:	4b2f      	ldr	r3, [pc, #188]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000a78:	681b      	ldr	r3, [r3, #0]
+ 8000a7a:	3304      	adds	r3, #4
+ 8000a7c:	4259      	negs	r1, r3
+ 8000a7e:	f003 030f 	and.w	r3, r3, #15
+ 8000a82:	f001 010f 	and.w	r1, r1, #15
+ 8000a86:	bf58      	it	pl
+ 8000a88:	424b      	negpl	r3, r1
+ 8000a8a:	492b      	ldr	r1, [pc, #172]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000a8c:	440b      	add	r3, r1
+ 8000a8e:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000a92:	011b      	lsls	r3, r3, #4
+					   (window_buffer[4][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000a94:	b25b      	sxtb	r3, r3
+ 8000a96:	4313      	orrs	r3, r2
+ 8000a98:	b25a      	sxtb	r2, r3
+					   (window_buffer[4][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000a9a:	4b26      	ldr	r3, [pc, #152]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000a9c:	681b      	ldr	r3, [r3, #0]
+ 8000a9e:	3305      	adds	r3, #5
+ 8000aa0:	4259      	negs	r1, r3
+ 8000aa2:	f003 030f 	and.w	r3, r3, #15
+ 8000aa6:	f001 010f 	and.w	r1, r1, #15
+ 8000aaa:	bf58      	it	pl
+ 8000aac:	424b      	negpl	r3, r1
+ 8000aae:	4922      	ldr	r1, [pc, #136]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000ab0:	440b      	add	r3, r1
+ 8000ab2:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000ab6:	015b      	lsls	r3, r3, #5
+					   (window_buffer[4][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000ab8:	b25b      	sxtb	r3, r3
+ 8000aba:	4313      	orrs	r3, r2
+ 8000abc:	b25a      	sxtb	r2, r3
+					   (window_buffer[4][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000abe:	4b1d      	ldr	r3, [pc, #116]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000ac0:	681b      	ldr	r3, [r3, #0]
+ 8000ac2:	3306      	adds	r3, #6
+ 8000ac4:	4259      	negs	r1, r3
+ 8000ac6:	f003 030f 	and.w	r3, r3, #15
+ 8000aca:	f001 010f 	and.w	r1, r1, #15
+ 8000ace:	bf58      	it	pl
+ 8000ad0:	424b      	negpl	r3, r1
+ 8000ad2:	4919      	ldr	r1, [pc, #100]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000ad4:	440b      	add	r3, r1
+ 8000ad6:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000ada:	019b      	lsls	r3, r3, #6
+					   (window_buffer[4][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000adc:	b25b      	sxtb	r3, r3
+ 8000ade:	4313      	orrs	r3, r2
+ 8000ae0:	b25a      	sxtb	r2, r3
+					   (window_buffer[4][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 8000ae2:	4b14      	ldr	r3, [pc, #80]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000ae4:	681b      	ldr	r3, [r3, #0]
+ 8000ae6:	3307      	adds	r3, #7
+ 8000ae8:	4259      	negs	r1, r3
+ 8000aea:	f003 030f 	and.w	r3, r3, #15
+ 8000aee:	f001 010f 	and.w	r1, r1, #15
+ 8000af2:	bf58      	it	pl
+ 8000af4:	424b      	negpl	r3, r1
+ 8000af6:	4910      	ldr	r1, [pc, #64]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000af8:	440b      	add	r3, r1
+ 8000afa:	f893 3040 	ldrb.w	r3, [r3, #64]	; 0x40
+ 8000afe:	01db      	lsls	r3, r3, #7
+					   (window_buffer[4][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000b00:	b25b      	sxtb	r3, r3
+ 8000b02:	4313      	orrs	r3, r2
+ 8000b04:	b25b      	sxtb	r3, r3
+ 8000b06:	b2da      	uxtb	r2, r3
+	matrix_buffer[4] = (window_buffer[4][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000b08:	4b0c      	ldr	r3, [pc, #48]	; (8000b3c <shiftLeft+0x5a8>)
+ 8000b0a:	711a      	strb	r2, [r3, #4]
+	matrix_buffer[5] = (window_buffer[5][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000b0c:	4b09      	ldr	r3, [pc, #36]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000b0e:	681b      	ldr	r3, [r3, #0]
+ 8000b10:	425a      	negs	r2, r3
+ 8000b12:	f003 030f 	and.w	r3, r3, #15
+ 8000b16:	f002 020f 	and.w	r2, r2, #15
+ 8000b1a:	bf58      	it	pl
+ 8000b1c:	4253      	negpl	r3, r2
+ 8000b1e:	4a06      	ldr	r2, [pc, #24]	; (8000b38 <shiftLeft+0x5a4>)
+ 8000b20:	4413      	add	r3, r2
+ 8000b22:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000b26:	b25a      	sxtb	r2, r3
+			   	   	   (window_buffer[5][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000b28:	4b02      	ldr	r3, [pc, #8]	; (8000b34 <shiftLeft+0x5a0>)
+ 8000b2a:	681b      	ldr	r3, [r3, #0]
+ 8000b2c:	3301      	adds	r3, #1
+ 8000b2e:	4259      	negs	r1, r3
+ 8000b30:	e006      	b.n	8000b40 <shiftLeft+0x5ac>
+ 8000b32:	bf00      	nop
+ 8000b34:	200000d4 	.word	0x200000d4
+ 8000b38:	20000018 	.word	0x20000018
+ 8000b3c:	20000010 	.word	0x20000010
+ 8000b40:	f003 030f 	and.w	r3, r3, #15
+ 8000b44:	f001 010f 	and.w	r1, r1, #15
+ 8000b48:	bf58      	it	pl
+ 8000b4a:	424b      	negpl	r3, r1
+ 8000b4c:	49b6      	ldr	r1, [pc, #728]	; (8000e28 <shiftLeft+0x894>)
+ 8000b4e:	440b      	add	r3, r1
+ 8000b50:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000b54:	005b      	lsls	r3, r3, #1
+	matrix_buffer[5] = (window_buffer[5][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000b56:	b25b      	sxtb	r3, r3
+ 8000b58:	4313      	orrs	r3, r2
+ 8000b5a:	b25a      	sxtb	r2, r3
+					   (window_buffer[5][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000b5c:	4bb3      	ldr	r3, [pc, #716]	; (8000e2c <shiftLeft+0x898>)
+ 8000b5e:	681b      	ldr	r3, [r3, #0]
+ 8000b60:	3302      	adds	r3, #2
+ 8000b62:	4259      	negs	r1, r3
+ 8000b64:	f003 030f 	and.w	r3, r3, #15
+ 8000b68:	f001 010f 	and.w	r1, r1, #15
+ 8000b6c:	bf58      	it	pl
+ 8000b6e:	424b      	negpl	r3, r1
+ 8000b70:	49ad      	ldr	r1, [pc, #692]	; (8000e28 <shiftLeft+0x894>)
+ 8000b72:	440b      	add	r3, r1
+ 8000b74:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000b78:	009b      	lsls	r3, r3, #2
+			   	   	   (window_buffer[5][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000b7a:	b25b      	sxtb	r3, r3
+ 8000b7c:	4313      	orrs	r3, r2
+ 8000b7e:	b25a      	sxtb	r2, r3
+					   (window_buffer[5][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000b80:	4baa      	ldr	r3, [pc, #680]	; (8000e2c <shiftLeft+0x898>)
+ 8000b82:	681b      	ldr	r3, [r3, #0]
+ 8000b84:	3303      	adds	r3, #3
+ 8000b86:	4259      	negs	r1, r3
+ 8000b88:	f003 030f 	and.w	r3, r3, #15
+ 8000b8c:	f001 010f 	and.w	r1, r1, #15
+ 8000b90:	bf58      	it	pl
+ 8000b92:	424b      	negpl	r3, r1
+ 8000b94:	49a4      	ldr	r1, [pc, #656]	; (8000e28 <shiftLeft+0x894>)
+ 8000b96:	440b      	add	r3, r1
+ 8000b98:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000b9c:	00db      	lsls	r3, r3, #3
+					   (window_buffer[5][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000b9e:	b25b      	sxtb	r3, r3
+ 8000ba0:	4313      	orrs	r3, r2
+ 8000ba2:	b25a      	sxtb	r2, r3
+					   (window_buffer[5][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000ba4:	4ba1      	ldr	r3, [pc, #644]	; (8000e2c <shiftLeft+0x898>)
+ 8000ba6:	681b      	ldr	r3, [r3, #0]
+ 8000ba8:	3304      	adds	r3, #4
+ 8000baa:	4259      	negs	r1, r3
+ 8000bac:	f003 030f 	and.w	r3, r3, #15
+ 8000bb0:	f001 010f 	and.w	r1, r1, #15
+ 8000bb4:	bf58      	it	pl
+ 8000bb6:	424b      	negpl	r3, r1
+ 8000bb8:	499b      	ldr	r1, [pc, #620]	; (8000e28 <shiftLeft+0x894>)
+ 8000bba:	440b      	add	r3, r1
+ 8000bbc:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000bc0:	011b      	lsls	r3, r3, #4
+					   (window_buffer[5][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000bc2:	b25b      	sxtb	r3, r3
+ 8000bc4:	4313      	orrs	r3, r2
+ 8000bc6:	b25a      	sxtb	r2, r3
+					   (window_buffer[5][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000bc8:	4b98      	ldr	r3, [pc, #608]	; (8000e2c <shiftLeft+0x898>)
+ 8000bca:	681b      	ldr	r3, [r3, #0]
+ 8000bcc:	3305      	adds	r3, #5
+ 8000bce:	4259      	negs	r1, r3
+ 8000bd0:	f003 030f 	and.w	r3, r3, #15
+ 8000bd4:	f001 010f 	and.w	r1, r1, #15
+ 8000bd8:	bf58      	it	pl
+ 8000bda:	424b      	negpl	r3, r1
+ 8000bdc:	4992      	ldr	r1, [pc, #584]	; (8000e28 <shiftLeft+0x894>)
+ 8000bde:	440b      	add	r3, r1
+ 8000be0:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000be4:	015b      	lsls	r3, r3, #5
+					   (window_buffer[5][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000be6:	b25b      	sxtb	r3, r3
+ 8000be8:	4313      	orrs	r3, r2
+ 8000bea:	b25a      	sxtb	r2, r3
+					   (window_buffer[5][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000bec:	4b8f      	ldr	r3, [pc, #572]	; (8000e2c <shiftLeft+0x898>)
+ 8000bee:	681b      	ldr	r3, [r3, #0]
+ 8000bf0:	3306      	adds	r3, #6
+ 8000bf2:	4259      	negs	r1, r3
+ 8000bf4:	f003 030f 	and.w	r3, r3, #15
+ 8000bf8:	f001 010f 	and.w	r1, r1, #15
+ 8000bfc:	bf58      	it	pl
+ 8000bfe:	424b      	negpl	r3, r1
+ 8000c00:	4989      	ldr	r1, [pc, #548]	; (8000e28 <shiftLeft+0x894>)
+ 8000c02:	440b      	add	r3, r1
+ 8000c04:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000c08:	019b      	lsls	r3, r3, #6
+					   (window_buffer[5][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000c0a:	b25b      	sxtb	r3, r3
+ 8000c0c:	4313      	orrs	r3, r2
+ 8000c0e:	b25a      	sxtb	r2, r3
+					   (window_buffer[5][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 8000c10:	4b86      	ldr	r3, [pc, #536]	; (8000e2c <shiftLeft+0x898>)
+ 8000c12:	681b      	ldr	r3, [r3, #0]
+ 8000c14:	3307      	adds	r3, #7
+ 8000c16:	4259      	negs	r1, r3
+ 8000c18:	f003 030f 	and.w	r3, r3, #15
+ 8000c1c:	f001 010f 	and.w	r1, r1, #15
+ 8000c20:	bf58      	it	pl
+ 8000c22:	424b      	negpl	r3, r1
+ 8000c24:	4980      	ldr	r1, [pc, #512]	; (8000e28 <shiftLeft+0x894>)
+ 8000c26:	440b      	add	r3, r1
+ 8000c28:	f893 3050 	ldrb.w	r3, [r3, #80]	; 0x50
+ 8000c2c:	01db      	lsls	r3, r3, #7
+					   (window_buffer[5][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000c2e:	b25b      	sxtb	r3, r3
+ 8000c30:	4313      	orrs	r3, r2
+ 8000c32:	b25b      	sxtb	r3, r3
+ 8000c34:	b2da      	uxtb	r2, r3
+	matrix_buffer[5] = (window_buffer[5][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000c36:	4b7e      	ldr	r3, [pc, #504]	; (8000e30 <shiftLeft+0x89c>)
+ 8000c38:	715a      	strb	r2, [r3, #5]
+	matrix_buffer[6] = (window_buffer[6][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000c3a:	4b7c      	ldr	r3, [pc, #496]	; (8000e2c <shiftLeft+0x898>)
+ 8000c3c:	681b      	ldr	r3, [r3, #0]
+ 8000c3e:	425a      	negs	r2, r3
+ 8000c40:	f003 030f 	and.w	r3, r3, #15
+ 8000c44:	f002 020f 	and.w	r2, r2, #15
+ 8000c48:	bf58      	it	pl
+ 8000c4a:	4253      	negpl	r3, r2
+ 8000c4c:	4a76      	ldr	r2, [pc, #472]	; (8000e28 <shiftLeft+0x894>)
+ 8000c4e:	4413      	add	r3, r2
+ 8000c50:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000c54:	b25a      	sxtb	r2, r3
+			   	   	   (window_buffer[6][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000c56:	4b75      	ldr	r3, [pc, #468]	; (8000e2c <shiftLeft+0x898>)
+ 8000c58:	681b      	ldr	r3, [r3, #0]
+ 8000c5a:	3301      	adds	r3, #1
+ 8000c5c:	4259      	negs	r1, r3
+ 8000c5e:	f003 030f 	and.w	r3, r3, #15
+ 8000c62:	f001 010f 	and.w	r1, r1, #15
+ 8000c66:	bf58      	it	pl
+ 8000c68:	424b      	negpl	r3, r1
+ 8000c6a:	496f      	ldr	r1, [pc, #444]	; (8000e28 <shiftLeft+0x894>)
+ 8000c6c:	440b      	add	r3, r1
+ 8000c6e:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000c72:	005b      	lsls	r3, r3, #1
+	matrix_buffer[6] = (window_buffer[6][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000c74:	b25b      	sxtb	r3, r3
+ 8000c76:	4313      	orrs	r3, r2
+ 8000c78:	b25a      	sxtb	r2, r3
+					   (window_buffer[6][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000c7a:	4b6c      	ldr	r3, [pc, #432]	; (8000e2c <shiftLeft+0x898>)
+ 8000c7c:	681b      	ldr	r3, [r3, #0]
+ 8000c7e:	3302      	adds	r3, #2
+ 8000c80:	4259      	negs	r1, r3
+ 8000c82:	f003 030f 	and.w	r3, r3, #15
+ 8000c86:	f001 010f 	and.w	r1, r1, #15
+ 8000c8a:	bf58      	it	pl
+ 8000c8c:	424b      	negpl	r3, r1
+ 8000c8e:	4966      	ldr	r1, [pc, #408]	; (8000e28 <shiftLeft+0x894>)
+ 8000c90:	440b      	add	r3, r1
+ 8000c92:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000c96:	009b      	lsls	r3, r3, #2
+			   	   	   (window_buffer[6][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000c98:	b25b      	sxtb	r3, r3
+ 8000c9a:	4313      	orrs	r3, r2
+ 8000c9c:	b25a      	sxtb	r2, r3
+					   (window_buffer[6][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000c9e:	4b63      	ldr	r3, [pc, #396]	; (8000e2c <shiftLeft+0x898>)
+ 8000ca0:	681b      	ldr	r3, [r3, #0]
+ 8000ca2:	3303      	adds	r3, #3
+ 8000ca4:	4259      	negs	r1, r3
+ 8000ca6:	f003 030f 	and.w	r3, r3, #15
+ 8000caa:	f001 010f 	and.w	r1, r1, #15
+ 8000cae:	bf58      	it	pl
+ 8000cb0:	424b      	negpl	r3, r1
+ 8000cb2:	495d      	ldr	r1, [pc, #372]	; (8000e28 <shiftLeft+0x894>)
+ 8000cb4:	440b      	add	r3, r1
+ 8000cb6:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000cba:	00db      	lsls	r3, r3, #3
+					   (window_buffer[6][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000cbc:	b25b      	sxtb	r3, r3
+ 8000cbe:	4313      	orrs	r3, r2
+ 8000cc0:	b25a      	sxtb	r2, r3
+					   (window_buffer[6][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000cc2:	4b5a      	ldr	r3, [pc, #360]	; (8000e2c <shiftLeft+0x898>)
+ 8000cc4:	681b      	ldr	r3, [r3, #0]
+ 8000cc6:	3304      	adds	r3, #4
+ 8000cc8:	4259      	negs	r1, r3
+ 8000cca:	f003 030f 	and.w	r3, r3, #15
+ 8000cce:	f001 010f 	and.w	r1, r1, #15
+ 8000cd2:	bf58      	it	pl
+ 8000cd4:	424b      	negpl	r3, r1
+ 8000cd6:	4954      	ldr	r1, [pc, #336]	; (8000e28 <shiftLeft+0x894>)
+ 8000cd8:	440b      	add	r3, r1
+ 8000cda:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000cde:	011b      	lsls	r3, r3, #4
+					   (window_buffer[6][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000ce0:	b25b      	sxtb	r3, r3
+ 8000ce2:	4313      	orrs	r3, r2
+ 8000ce4:	b25a      	sxtb	r2, r3
+					   (window_buffer[6][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000ce6:	4b51      	ldr	r3, [pc, #324]	; (8000e2c <shiftLeft+0x898>)
+ 8000ce8:	681b      	ldr	r3, [r3, #0]
+ 8000cea:	3305      	adds	r3, #5
+ 8000cec:	4259      	negs	r1, r3
+ 8000cee:	f003 030f 	and.w	r3, r3, #15
+ 8000cf2:	f001 010f 	and.w	r1, r1, #15
+ 8000cf6:	bf58      	it	pl
+ 8000cf8:	424b      	negpl	r3, r1
+ 8000cfa:	494b      	ldr	r1, [pc, #300]	; (8000e28 <shiftLeft+0x894>)
+ 8000cfc:	440b      	add	r3, r1
+ 8000cfe:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000d02:	015b      	lsls	r3, r3, #5
+					   (window_buffer[6][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000d04:	b25b      	sxtb	r3, r3
+ 8000d06:	4313      	orrs	r3, r2
+ 8000d08:	b25a      	sxtb	r2, r3
+					   (window_buffer[6][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000d0a:	4b48      	ldr	r3, [pc, #288]	; (8000e2c <shiftLeft+0x898>)
+ 8000d0c:	681b      	ldr	r3, [r3, #0]
+ 8000d0e:	3306      	adds	r3, #6
+ 8000d10:	4259      	negs	r1, r3
+ 8000d12:	f003 030f 	and.w	r3, r3, #15
+ 8000d16:	f001 010f 	and.w	r1, r1, #15
+ 8000d1a:	bf58      	it	pl
+ 8000d1c:	424b      	negpl	r3, r1
+ 8000d1e:	4942      	ldr	r1, [pc, #264]	; (8000e28 <shiftLeft+0x894>)
+ 8000d20:	440b      	add	r3, r1
+ 8000d22:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000d26:	019b      	lsls	r3, r3, #6
+					   (window_buffer[6][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000d28:	b25b      	sxtb	r3, r3
+ 8000d2a:	4313      	orrs	r3, r2
+ 8000d2c:	b25a      	sxtb	r2, r3
+					   (window_buffer[6][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 8000d2e:	4b3f      	ldr	r3, [pc, #252]	; (8000e2c <shiftLeft+0x898>)
+ 8000d30:	681b      	ldr	r3, [r3, #0]
+ 8000d32:	3307      	adds	r3, #7
+ 8000d34:	4259      	negs	r1, r3
+ 8000d36:	f003 030f 	and.w	r3, r3, #15
+ 8000d3a:	f001 010f 	and.w	r1, r1, #15
+ 8000d3e:	bf58      	it	pl
+ 8000d40:	424b      	negpl	r3, r1
+ 8000d42:	4939      	ldr	r1, [pc, #228]	; (8000e28 <shiftLeft+0x894>)
+ 8000d44:	440b      	add	r3, r1
+ 8000d46:	f893 3060 	ldrb.w	r3, [r3, #96]	; 0x60
+ 8000d4a:	01db      	lsls	r3, r3, #7
+					   (window_buffer[6][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000d4c:	b25b      	sxtb	r3, r3
+ 8000d4e:	4313      	orrs	r3, r2
+ 8000d50:	b25b      	sxtb	r3, r3
+ 8000d52:	b2da      	uxtb	r2, r3
+	matrix_buffer[6] = (window_buffer[6][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000d54:	4b36      	ldr	r3, [pc, #216]	; (8000e30 <shiftLeft+0x89c>)
+ 8000d56:	719a      	strb	r2, [r3, #6]
+	matrix_buffer[7] = (window_buffer[7][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000d58:	4b34      	ldr	r3, [pc, #208]	; (8000e2c <shiftLeft+0x898>)
+ 8000d5a:	681b      	ldr	r3, [r3, #0]
+ 8000d5c:	425a      	negs	r2, r3
+ 8000d5e:	f003 030f 	and.w	r3, r3, #15
+ 8000d62:	f002 020f 	and.w	r2, r2, #15
+ 8000d66:	bf58      	it	pl
+ 8000d68:	4253      	negpl	r3, r2
+ 8000d6a:	4a2f      	ldr	r2, [pc, #188]	; (8000e28 <shiftLeft+0x894>)
+ 8000d6c:	4413      	add	r3, r2
+ 8000d6e:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000d72:	b25a      	sxtb	r2, r3
+			   	   	   (window_buffer[7][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000d74:	4b2d      	ldr	r3, [pc, #180]	; (8000e2c <shiftLeft+0x898>)
+ 8000d76:	681b      	ldr	r3, [r3, #0]
+ 8000d78:	3301      	adds	r3, #1
+ 8000d7a:	4259      	negs	r1, r3
+ 8000d7c:	f003 030f 	and.w	r3, r3, #15
+ 8000d80:	f001 010f 	and.w	r1, r1, #15
+ 8000d84:	bf58      	it	pl
+ 8000d86:	424b      	negpl	r3, r1
+ 8000d88:	4927      	ldr	r1, [pc, #156]	; (8000e28 <shiftLeft+0x894>)
+ 8000d8a:	440b      	add	r3, r1
+ 8000d8c:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000d90:	005b      	lsls	r3, r3, #1
+	matrix_buffer[7] = (window_buffer[7][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000d92:	b25b      	sxtb	r3, r3
+ 8000d94:	4313      	orrs	r3, r2
+ 8000d96:	b25a      	sxtb	r2, r3
+					   (window_buffer[7][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000d98:	4b24      	ldr	r3, [pc, #144]	; (8000e2c <shiftLeft+0x898>)
+ 8000d9a:	681b      	ldr	r3, [r3, #0]
+ 8000d9c:	3302      	adds	r3, #2
+ 8000d9e:	4259      	negs	r1, r3
+ 8000da0:	f003 030f 	and.w	r3, r3, #15
+ 8000da4:	f001 010f 	and.w	r1, r1, #15
+ 8000da8:	bf58      	it	pl
+ 8000daa:	424b      	negpl	r3, r1
+ 8000dac:	491e      	ldr	r1, [pc, #120]	; (8000e28 <shiftLeft+0x894>)
+ 8000dae:	440b      	add	r3, r1
+ 8000db0:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000db4:	009b      	lsls	r3, r3, #2
+			   	   	   (window_buffer[7][(offset_L + 1)%WINDOW_BUFFER] << 1) |
+ 8000db6:	b25b      	sxtb	r3, r3
+ 8000db8:	4313      	orrs	r3, r2
+ 8000dba:	b25a      	sxtb	r2, r3
+					   (window_buffer[7][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000dbc:	4b1b      	ldr	r3, [pc, #108]	; (8000e2c <shiftLeft+0x898>)
+ 8000dbe:	681b      	ldr	r3, [r3, #0]
+ 8000dc0:	3303      	adds	r3, #3
+ 8000dc2:	4259      	negs	r1, r3
+ 8000dc4:	f003 030f 	and.w	r3, r3, #15
+ 8000dc8:	f001 010f 	and.w	r1, r1, #15
+ 8000dcc:	bf58      	it	pl
+ 8000dce:	424b      	negpl	r3, r1
+ 8000dd0:	4915      	ldr	r1, [pc, #84]	; (8000e28 <shiftLeft+0x894>)
+ 8000dd2:	440b      	add	r3, r1
+ 8000dd4:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000dd8:	00db      	lsls	r3, r3, #3
+					   (window_buffer[7][(offset_L + 2)%WINDOW_BUFFER] << 2) |
+ 8000dda:	b25b      	sxtb	r3, r3
+ 8000ddc:	4313      	orrs	r3, r2
+ 8000dde:	b25a      	sxtb	r2, r3
+					   (window_buffer[7][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000de0:	4b12      	ldr	r3, [pc, #72]	; (8000e2c <shiftLeft+0x898>)
+ 8000de2:	681b      	ldr	r3, [r3, #0]
+ 8000de4:	3304      	adds	r3, #4
+ 8000de6:	4259      	negs	r1, r3
+ 8000de8:	f003 030f 	and.w	r3, r3, #15
+ 8000dec:	f001 010f 	and.w	r1, r1, #15
+ 8000df0:	bf58      	it	pl
+ 8000df2:	424b      	negpl	r3, r1
+ 8000df4:	490c      	ldr	r1, [pc, #48]	; (8000e28 <shiftLeft+0x894>)
+ 8000df6:	440b      	add	r3, r1
+ 8000df8:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000dfc:	011b      	lsls	r3, r3, #4
+					   (window_buffer[7][(offset_L + 3)%WINDOW_BUFFER] << 3) |
+ 8000dfe:	b25b      	sxtb	r3, r3
+ 8000e00:	4313      	orrs	r3, r2
+ 8000e02:	b25a      	sxtb	r2, r3
+					   (window_buffer[7][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000e04:	4b09      	ldr	r3, [pc, #36]	; (8000e2c <shiftLeft+0x898>)
+ 8000e06:	681b      	ldr	r3, [r3, #0]
+ 8000e08:	3305      	adds	r3, #5
+ 8000e0a:	4259      	negs	r1, r3
+ 8000e0c:	f003 030f 	and.w	r3, r3, #15
+ 8000e10:	f001 010f 	and.w	r1, r1, #15
+ 8000e14:	bf58      	it	pl
+ 8000e16:	424b      	negpl	r3, r1
+ 8000e18:	4903      	ldr	r1, [pc, #12]	; (8000e28 <shiftLeft+0x894>)
+ 8000e1a:	440b      	add	r3, r1
+ 8000e1c:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000e20:	015b      	lsls	r3, r3, #5
+					   (window_buffer[7][(offset_L + 4)%WINDOW_BUFFER] << 4) |
+ 8000e22:	b25b      	sxtb	r3, r3
+ 8000e24:	e006      	b.n	8000e34 <shiftLeft+0x8a0>
+ 8000e26:	bf00      	nop
+ 8000e28:	20000018 	.word	0x20000018
+ 8000e2c:	200000d4 	.word	0x200000d4
+ 8000e30:	20000010 	.word	0x20000010
+ 8000e34:	4313      	orrs	r3, r2
+ 8000e36:	b25a      	sxtb	r2, r3
+					   (window_buffer[7][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000e38:	4b1b      	ldr	r3, [pc, #108]	; (8000ea8 <shiftLeft+0x914>)
+ 8000e3a:	681b      	ldr	r3, [r3, #0]
+ 8000e3c:	3306      	adds	r3, #6
+ 8000e3e:	4259      	negs	r1, r3
+ 8000e40:	f003 030f 	and.w	r3, r3, #15
+ 8000e44:	f001 010f 	and.w	r1, r1, #15
+ 8000e48:	bf58      	it	pl
+ 8000e4a:	424b      	negpl	r3, r1
+ 8000e4c:	4917      	ldr	r1, [pc, #92]	; (8000eac <shiftLeft+0x918>)
+ 8000e4e:	440b      	add	r3, r1
+ 8000e50:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000e54:	019b      	lsls	r3, r3, #6
+					   (window_buffer[7][(offset_L + 5)%WINDOW_BUFFER] << 5) |
+ 8000e56:	b25b      	sxtb	r3, r3
+ 8000e58:	4313      	orrs	r3, r2
+ 8000e5a:	b25a      	sxtb	r2, r3
+					   (window_buffer[7][(offset_L + 7)%WINDOW_BUFFER] << 7);
+ 8000e5c:	4b12      	ldr	r3, [pc, #72]	; (8000ea8 <shiftLeft+0x914>)
+ 8000e5e:	681b      	ldr	r3, [r3, #0]
+ 8000e60:	3307      	adds	r3, #7
+ 8000e62:	4259      	negs	r1, r3
+ 8000e64:	f003 030f 	and.w	r3, r3, #15
+ 8000e68:	f001 010f 	and.w	r1, r1, #15
+ 8000e6c:	bf58      	it	pl
+ 8000e6e:	424b      	negpl	r3, r1
+ 8000e70:	490e      	ldr	r1, [pc, #56]	; (8000eac <shiftLeft+0x918>)
+ 8000e72:	440b      	add	r3, r1
+ 8000e74:	f893 3070 	ldrb.w	r3, [r3, #112]	; 0x70
+ 8000e78:	01db      	lsls	r3, r3, #7
+					   (window_buffer[7][(offset_L + 6)%WINDOW_BUFFER] << 6) |
+ 8000e7a:	b25b      	sxtb	r3, r3
+ 8000e7c:	4313      	orrs	r3, r2
+ 8000e7e:	b25b      	sxtb	r3, r3
+ 8000e80:	b2da      	uxtb	r2, r3
+	matrix_buffer[7] = (window_buffer[7][(offset_L + 0)%WINDOW_BUFFER] << 0) |
+ 8000e82:	4b0b      	ldr	r3, [pc, #44]	; (8000eb0 <shiftLeft+0x91c>)
+ 8000e84:	71da      	strb	r2, [r3, #7]
 
 	// Increase the offset
-	offset_R = (offset_R - 1 + WINDOW_BUFFER) % WINDOW_BUFFER;
- 8000e88:	4b07      	ldr	r3, [pc, #28]	; (8000ea8 <shiftRight+0x914>)
- 8000e8a:	681b      	ldr	r3, [r3, #0]
- 8000e8c:	330f      	adds	r3, #15
- 8000e8e:	425a      	negs	r2, r3
- 8000e90:	f003 030f 	and.w	r3, r3, #15
- 8000e94:	f002 020f 	and.w	r2, r2, #15
- 8000e98:	bf58      	it	pl
- 8000e9a:	4253      	negpl	r3, r2
- 8000e9c:	4a02      	ldr	r2, [pc, #8]	; (8000ea8 <shiftRight+0x914>)
- 8000e9e:	6013      	str	r3, [r2, #0]
+	offset_L = (offset_L + 1) % WINDOW_BUFFER;
+ 8000e86:	4b08      	ldr	r3, [pc, #32]	; (8000ea8 <shiftLeft+0x914>)
+ 8000e88:	681b      	ldr	r3, [r3, #0]
+ 8000e8a:	3301      	adds	r3, #1
+ 8000e8c:	425a      	negs	r2, r3
+ 8000e8e:	f003 030f 	and.w	r3, r3, #15
+ 8000e92:	f002 020f 	and.w	r2, r2, #15
+ 8000e96:	bf58      	it	pl
+ 8000e98:	4253      	negpl	r3, r2
+ 8000e9a:	4a03      	ldr	r2, [pc, #12]	; (8000ea8 <shiftLeft+0x914>)
+ 8000e9c:	6013      	str	r3, [r2, #0]
 }
- 8000ea0:	bf00      	nop
- 8000ea2:	46bd      	mov	sp, r7
- 8000ea4:	bc80      	pop	{r7}
- 8000ea6:	4770      	bx	lr
- 8000ea8:	20000098 	.word	0x20000098
+ 8000e9e:	bf00      	nop
+ 8000ea0:	46bd      	mov	sp, r7
+ 8000ea2:	bc80      	pop	{r7}
+ 8000ea4:	4770      	bx	lr
+ 8000ea6:	bf00      	nop
+ 8000ea8:	200000d4 	.word	0x200000d4
  8000eac:	20000018 	.word	0x20000018
  8000eb0:	20000010 	.word	0x20000010
 
@@ -2419,9 +2419,8 @@ int main(void)
 		  timer5_set(500);
  80012e0:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
  80012e4:	f000 f9a6 	bl	8001634 <timer5_set>
-		  // shiftLeft();
-		  shiftRight();
- 80012e8:	f7ff f954 	bl	8000594 <shiftRight>
+		  shiftLeft();
+ 80012e8:	f7ff f954 	bl	8000594 <shiftLeft>
 	  if (timer1_flag == 1) {
  80012ec:	e7ae      	b.n	800124c <main+0x18>
  80012ee:	bf00      	nop
@@ -2429,9 +2428,9 @@ int main(void)
  80012f4:	40010800 	.word	0x40010800
  80012f8:	20000128 	.word	0x20000128
  80012fc:	20000130 	.word	0x20000130
- 8001300:	200000c4 	.word	0x200000c4
+ 8001300:	200000c0 	.word	0x200000c0
  8001304:	20000138 	.word	0x20000138
- 8001308:	200000d4 	.word	0x200000d4
+ 8001308:	200000d0 	.word	0x200000d0
  800130c:	20000140 	.word	0x20000140
 
 08001310 <SystemClock_Config>:
@@ -2803,9 +2802,9 @@ void init_system(void) {
  800151e:	bd80      	pop	{r7, pc}
  8001520:	200000d8 	.word	0x200000d8
  8001524:	40010800 	.word	0x40010800
- 8001528:	200000c8 	.word	0x200000c8
- 800152c:	200000cc 	.word	0x200000cc
- 8001530:	200000d0 	.word	0x200000d0
+ 8001528:	200000c4 	.word	0x200000c4
+ 800152c:	200000c8 	.word	0x200000c8
+ 8001530:	200000cc 	.word	0x200000cc
 
 08001534 <HAL_TIM_PeriodElapsedCallback>:
 
@@ -3546,11 +3545,11 @@ LoopFillZerobss:
   ldr r0, =_sdata
  8001890:	20000000 	.word	0x20000000
   ldr r1, =_edata
- 8001894:	200000a8 	.word	0x200000a8
+ 8001894:	200000a4 	.word	0x200000a4
   ldr r2, =_sidata
  8001898:	08002ef4 	.word	0x08002ef4
   ldr r2, =_sbss
- 800189c:	200000a8 	.word	0x200000a8
+ 800189c:	200000a4 	.word	0x200000a4
   ldr r4, =_ebss
  80018a0:	2000014c 	.word	0x2000014c
 
@@ -3672,9 +3671,9 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
  8001922:	3708      	adds	r7, #8
  8001924:	46bd      	mov	sp, r7
  8001926:	bd80      	pop	{r7, pc}
- 8001928:	2000009c 	.word	0x2000009c
- 800192c:	200000a4 	.word	0x200000a4
- 8001930:	200000a0 	.word	0x200000a0
+ 8001928:	20000098 	.word	0x20000098
+ 800192c:	200000a0 	.word	0x200000a0
+ 8001930:	2000009c 	.word	0x2000009c
 
 08001934 <HAL_IncTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -3699,7 +3698,7 @@ __weak void HAL_IncTick(void)
  800194a:	46bd      	mov	sp, r7
  800194c:	bc80      	pop	{r7}
  800194e:	4770      	bx	lr
- 8001950:	200000a4 	.word	0x200000a4
+ 8001950:	200000a0 	.word	0x200000a0
  8001954:	20000148 	.word	0x20000148
 
 08001958 <HAL_GetTick>:
@@ -5899,8 +5898,8 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
  80025a8:	40022000 	.word	0x40022000
  80025ac:	40021000 	.word	0x40021000
  80025b0:	08002ec8 	.word	0x08002ec8
- 80025b4:	2000009c 	.word	0x2000009c
- 80025b8:	200000a0 	.word	0x200000a0
+ 80025b4:	20000098 	.word	0x20000098
+ 80025b8:	2000009c 	.word	0x2000009c
 
 080025bc <HAL_RCC_GetSysClockFreq>:
   *         right SYSCLK value. Otherwise, any configuration based on this function will be incorrect.
@@ -6075,7 +6074,7 @@ static void RCC_Delay(uint32_t mdelay)
  8002692:	46bd      	mov	sp, r7
  8002694:	bc80      	pop	{r7}
  8002696:	4770      	bx	lr
- 8002698:	2000009c 	.word	0x2000009c
+ 8002698:	20000098 	.word	0x20000098
  800269c:	10624dd3 	.word	0x10624dd3
 
 080026a0 <HAL_TIM_Base_Init>:
